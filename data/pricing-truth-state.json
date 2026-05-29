@@ -1,0 +1,15 @@
+{
+  "lastRunAt": "2026-05-29T09:30:37.256Z",
+  "lastRunStatus": "verified",
+  "lastRunSummary": "Truth graph confirmó los claims verificados sin generar cambios.",
+  "provider": "openrouter",
+  "model": "openrouter/free",
+  "protocolVersion": "pricing-truth-v1",
+  "totalClaims": 33,
+  "publishableUpdates": 0,
+  "appliedUpdates": 0,
+  "needsAttention": 0,
+  "verdictCounts": {
+    "confirmed": 33
+  }
+}

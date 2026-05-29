@@ -1,0 +1,177 @@
+{
+  "version": "pricing-surface-v1",
+  "vendors": {
+    "chatgpt": {
+      "modelLineup": ["GPT-5.4 mini", "GPT-5.4", "GPT-5.5"],
+      "seatPlanNames": ["ChatGPT Plus", "ChatGPT Business", "Enterprise"],
+      "requiredSignals": [
+        {
+          "id": "chatgpt-plus-gpt55",
+          "label": "ChatGPT Plus highlights GPT-5.5",
+          "sourceIds": ["openai-chatgpt-plus-help"],
+          "pattern": "GPT-5\\.5"
+        },
+        {
+          "id": "chatgpt-business-help",
+          "label": "ChatGPT Business help article reachable",
+          "sourceIds": ["openai-chatgpt-business-help"],
+          "pattern": "ChatGPT Business"
+        },
+        {
+          "id": "chatgpt-gpt55-default",
+          "label": "GPT-5.5 Instant is the default for logged-in users",
+          "sourceIds": ["openai-chatgpt-gpt55-help"],
+          "pattern": "GPT-5\\.5 Instant in ChatGPT is the default for all logged-in users"
+        },
+        {
+          "id": "chatgpt-gpt55-pro-limitations",
+          "label": "GPT-5.5 Pro limitations remain visible",
+          "sourceIds": ["openai-chatgpt-gpt55-help"],
+          "pattern": "Apps, Memory, Canvas, and image generation are not available with Pro"
+        },
+        {
+          "id": "chatgpt-legacy-retirement",
+          "label": "Legacy ChatGPT models retired from ChatGPT",
+          "sourceIds": ["openai-chatgpt-plus-help"],
+          "pattern": "As of February 13, 2026, models GPT-4o, GPT-4\\.1, GPT-4\\.1 mini, OpenAI o4-mini, and GPT-5 \\(Instant and Thinking\\) have been retired from ChatGPT"
+        }
+      ]
+    },
+    "gemini": {
+      "modelLineup": ["Gemini 2.5 Flash-Lite", "Gemini 2.5 Flash", "Gemini 2.5 Pro"],
+      "seatPlanNames": ["Google AI Plus", "Workspace Plus", "Enterprise / Vertex AI"],
+      "requiredSignals": [
+        {
+          "id": "gemini-20-flash-shutdown",
+          "label": "Gemini 2.0 Flash shutdown notice",
+          "sourceIds": ["google-gemini-api-pricing"],
+          "pattern": "Gemini 2\\.0 Flash[\\s\\S]{0,200}?shut down June 1, 2026"
+        },
+        {
+          "id": "google-ai-plus-rename",
+          "label": "AI Premium renamed to Google AI Plus",
+          "sourceIds": ["google-one-ai-pricing"],
+          "pattern": "AI Premium[\\s\\S]{0,180}?new name: Google AI Plus"
+        },
+        {
+          "id": "workspace-plus-max-users",
+          "label": "Workspace Plus remains capped at 300 users",
+          "sourceIds": ["google-workspace-pricing"],
+          "pattern": "Starter,? Standard,? and Plus plans can be purchased for a maximum of 300 users"
+        },
+        {
+          "id": "workspace-plus-gemini-copy",
+          "label": "Workspace Plus still exposes Gemini AI assistant copy",
+          "sourceIds": ["google-workspace-pricing"],
+          "pattern": "Gemini AI assistant in Gmail, Docs, Meet,? and more"
+        },
+        {
+          "id": "google-ai-plus-notebooklm",
+          "label": "Google AI Plus still mentions NotebookLM",
+          "sourceIds": ["google-one-ai-pricing"],
+          "pattern": "NotebookLM"
+        }
+      ]
+    },
+    "githubcopilot": {
+      "modelLineup": [],
+      "seatPlanNames": ["Copilot Business", "Copilot Enterprise"],
+      "requiredSignals": [
+        {
+          "id": "copilot-june-1-transition",
+          "label": "Usage-based billing starts June 1, 2026",
+          "sourceIds": ["github-copilot-org-billing"],
+          "pattern": "Starting June 1, 2026, GitHub is moving Copilot from request-based billing to usage-based billing"
+        },
+        {
+          "id": "copilot-premium-overage",
+          "label": "Premium request overage published",
+          "sourceIds": ["github-copilot-org-billing"],
+          "pattern": "\\$0\\.04 USD per request"
+        },
+        {
+          "id": "copilot-credits-transition-window",
+          "label": "Transition window with extra AI credits remains published",
+          "sourceIds": ["github-copilot-usage-billing"],
+          "pattern": "higher amount of included AI credits for the first three months of usage-based billing"
+        },
+        {
+          "id": "copilot-chat-in-ides",
+          "label": "Plans page still exposes Copilot Chat in IDEs",
+          "sourceIds": ["github-copilot-plans"],
+          "pattern": "Copilot Chat in IDEs"
+        }
+      ]
+    },
+    "m365copilot": {
+      "modelLineup": [],
+      "seatPlanNames": ["Microsoft 365 Copilot Business"],
+      "requiredSignals": [
+        {
+          "id": "m365-copilot-chat",
+          "label": "Copilot Chat present in business page",
+          "sourceIds": ["microsoft-copilot-business"],
+          "pattern": "Copilot Chat"
+        },
+        {
+          "id": "m365-up-to-300-users",
+          "label": "Up to 300 users limit",
+          "sourceIds": ["microsoft-copilot-business"],
+          "pattern": "up to 300 users"
+        },
+        {
+          "id": "m365-qualifying-plan-required",
+          "label": "Qualifying Microsoft 365 plan required",
+          "sourceIds": ["microsoft-copilot-business"],
+          "pattern": "A separate license for a qualifying Microsoft 365 plan is required to purchase Microsoft 365 Copilot"
+        },
+        {
+          "id": "m365-agents-copy",
+          "label": "Agents remain core in business copy",
+          "sourceIds": ["microsoft-copilot-business"],
+          "pattern": "Comprehensive access to agents"
+        }
+      ]
+    },
+    "mistral": {
+      "modelLineup": [],
+      "seatPlanNames": ["Le Chat Pro", "Le Chat Team", "Enterprise / La Plateforme"],
+      "requiredSignals": []
+    },
+    "xai": {
+      "modelLineup": [],
+      "seatPlanNames": ["Premium (X)", "SuperGrok", "xAI API"],
+      "requiredSignals": []
+    },
+    "deepseek": {
+      "modelLineup": [],
+      "seatPlanNames": ["DeepSeek API", "Self-hosted"],
+      "requiredSignals": []
+    },
+    "cohere": {
+      "modelLineup": [],
+      "seatPlanNames": ["Cohere API", "Cohere Enterprise / North"],
+      "requiredSignals": []
+    },
+    "perplexity": {
+      "modelLineup": [],
+      "seatPlanNames": ["Perplexity Pro", "Perplexity Enterprise Pro", "Sonar API"],
+      "requiredSignals": []
+    },
+    "meta": {
+      "modelLineup": [],
+      "seatPlanNames": ["Llama API", "Self-hosted / partners"],
+      "requiredSignals": []
+    },
+    "awsbedrock": {
+      "modelLineup": [],
+      "seatPlanNames": ["On-demand", "Provisioned throughput"],
+      "requiredSignals": []
+    },
+    "azureopenai": {
+      "modelLineup": [],
+      "seatPlanNames": ["Pay-as-you-go", "Provisioned Throughput Units", "Enterprise Agreement"],
+      "requiredSignals": []
+    }
+  }
+}

@@ -1,0 +1,2 @@
+id,label,status,useCaseId,roleProfileId,sampleWindowDays,sampleSizeRequests,sampleSizeUsers,avgInputTokens,avgOutputTokens,overheadMultiplier,avgRequestsPerUserPerDay,cacheHitRate,batchHitRate,confidence,sourceLabel,recordedAt,notes
+telemetry-support-chat-q2,Support desk · chat,active,chat,support_agent,14,128240,74,340,255,1.08,84,0.58,0.03,0.93,Gateway logs + product analytics,2026-04-24T07:45:00.000Z,Measured traffic for tier-fast support conversations.

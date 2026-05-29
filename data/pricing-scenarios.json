@@ -1,0 +1,132 @@
+[
+  {
+    "id": "S01",
+    "label": "Ligero diario",
+    "inputTokensPerDay": 10000,
+    "outputTokensPerDay": 3000,
+    "daysPerMonth": 22,
+    "category": "light",
+    "provenance": {
+      "inputTokensPerDay": "estimated",
+      "outputTokensPerDay": "estimated",
+      "daysPerMonth": "estimated"
+    }
+  },
+  {
+    "id": "S02",
+    "label": "Normal estandar",
+    "inputTokensPerDay": 50000,
+    "outputTokensPerDay": 15000,
+    "daysPerMonth": 22,
+    "category": "normal",
+    "provenance": {
+      "inputTokensPerDay": "estimated",
+      "outputTokensPerDay": "estimated",
+      "daysPerMonth": "estimated"
+    }
+  },
+  {
+    "id": "S03",
+    "label": "Medio profesional",
+    "inputTokensPerDay": 100000,
+    "outputTokensPerDay": 30000,
+    "daysPerMonth": 22,
+    "category": "medium",
+    "provenance": {
+      "inputTokensPerDay": "estimated",
+      "outputTokensPerDay": "estimated",
+      "daysPerMonth": "estimated"
+    }
+  },
+  {
+    "id": "S04",
+    "label": "Intenso diario",
+    "inputTokensPerDay": 500000,
+    "outputTokensPerDay": 150000,
+    "daysPerMonth": 22,
+    "category": "heavy",
+    "provenance": {
+      "inputTokensPerDay": "estimated",
+      "outputTokensPerDay": "estimated",
+      "daysPerMonth": "estimated"
+    }
+  },
+  {
+    "id": "S05",
+    "label": "Intenso 24/7",
+    "inputTokensPerDay": 500000,
+    "outputTokensPerDay": 150000,
+    "daysPerMonth": 30,
+    "category": "24x7",
+    "provenance": {
+      "inputTokensPerDay": "estimated",
+      "outputTokensPerDay": "estimated",
+      "daysPerMonth": "estimated"
+    }
+  },
+  {
+    "id": "S06",
+    "label": "Alto volumen",
+    "inputTokensPerDay": 1000000,
+    "outputTokensPerDay": 300000,
+    "daysPerMonth": 22,
+    "category": "heavy",
+    "provenance": {
+      "inputTokensPerDay": "estimated",
+      "outputTokensPerDay": "estimated",
+      "daysPerMonth": "estimated"
+    }
+  },
+  {
+    "id": "S07",
+    "label": "Coding diario",
+    "inputTokensPerDay": 200000,
+    "outputTokensPerDay": 50000,
+    "daysPerMonth": 22,
+    "category": "medium",
+    "provenance": {
+      "inputTokensPerDay": "estimated",
+      "outputTokensPerDay": "estimated",
+      "daysPerMonth": "estimated"
+    }
+  },
+  {
+    "id": "S08",
+    "label": "Analisis docs",
+    "inputTokensPerDay": 300000,
+    "outputTokensPerDay": 100000,
+    "daysPerMonth": 22,
+    "category": "heavy",
+    "provenance": {
+      "inputTokensPerDay": "estimated",
+      "outputTokensPerDay": "estimated",
+      "daysPerMonth": "estimated"
+    }
+  },
+  {
+    "id": "S09",
+    "label": "RAG empresarial",
+    "inputTokensPerDay": 2000000,
+    "outputTokensPerDay": 500000,
+    "daysPerMonth": 22,
+    "category": "heavy",
+    "provenance": {
+      "inputTokensPerDay": "estimated",
+      "outputTokensPerDay": "estimated",
+      "daysPerMonth": "estimated"
+    }
+  },
+  {
+    "id": "S10",
+    "label": "LLM 24/7 masivo",
+    "inputTokensPerDay": 4000000,
+    "outputTokensPerDay": 1200000,
+    "daysPerMonth": 30,
+    "category": "24x7",
+    "provenance": {
+      "inputTokensPerDay": "estimated",
+      "outputTokensPerDay": "estimated",
+      "daysPerMonth": "estimated"
+    }
+  }
+]

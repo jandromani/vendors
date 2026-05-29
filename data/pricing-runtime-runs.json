@@ -1,0 +1,947 @@
+[
+  {
+    "runAt": "2026-05-29T09:31:11.857Z",
+    "status": "updated",
+    "protocolVersion": "pricing-runtime-v1",
+    "autonomousMode": true,
+    "manualEditsLocked": true,
+    "summary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+    "sourceHealth": [
+      {
+        "sourceId": "support-chat-warehouse",
+        "label": "Support desk warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "engineer-coding-warehouse",
+        "label": "Engineering copilot warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "agent-builder-warehouse",
+        "label": "Agent runtime analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "legal-docs-warehouse",
+        "label": "Document review analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      }
+    ],
+    "ingestedTelemetry": [
+      {
+        "id": "telemetry-support-chat-q2",
+        "label": "Support desk · chat",
+        "status": "active",
+        "useCaseId": "chat",
+        "roleProfileId": "support_agent",
+        "sampleWindowDays": 14,
+        "sampleSizeRequests": 128240,
+        "sampleSizeUsers": 74,
+        "avgInputTokens": 340,
+        "avgOutputTokens": 255,
+        "overheadMultiplier": 1.08,
+        "avgRequestsPerUserPerDay": 84,
+        "cacheHitRate": 0.58,
+        "batchHitRate": 0.03,
+        "confidence": 0.93,
+        "sourceLabel": "Gateway logs + product analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Measured traffic for tier-fast support conversations."
+      },
+      {
+        "id": "telemetry-engineer-coding-q2",
+        "label": "Engineering copilot · coding",
+        "status": "active",
+        "useCaseId": "coding",
+        "roleProfileId": "engineer",
+        "sampleWindowDays": 21,
+        "sampleSizeRequests": 46210,
+        "sampleSizeUsers": 19,
+        "avgInputTokens": 1825,
+        "avgOutputTokens": 2140,
+        "overheadMultiplier": 1.32,
+        "avgRequestsPerUserPerDay": 61,
+        "cacheHitRate": 0.44,
+        "batchHitRate": 0.04,
+        "confidence": 0.89,
+        "sourceLabel": "IDE assistant telemetry",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Captures longer prompts and follow-up debugging loops."
+      },
+      {
+        "id": "telemetry-agents-builder-q2",
+        "label": "Agent builders · autonomous flows",
+        "status": "active",
+        "useCaseId": "agent",
+        "roleProfileId": "autonomous_builder",
+        "sampleWindowDays": 10,
+        "sampleSizeRequests": 18320,
+        "sampleSizeUsers": 9,
+        "avgInputTokens": 2380,
+        "avgOutputTokens": 1240,
+        "overheadMultiplier": 6.1,
+        "avgRequestsPerUserPerDay": 73,
+        "cacheHitRate": 0.36,
+        "batchHitRate": 0.22,
+        "confidence": 0.87,
+        "sourceLabel": "Agent runtime traces",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Long-running agent loops with tools and retries."
+      },
+      {
+        "id": "telemetry-legal-docs-q2",
+        "label": "Legal review · document analysis",
+        "status": "active",
+        "useCaseId": "doc_analysis",
+        "roleProfileId": "analyst",
+        "sampleWindowDays": 18,
+        "sampleSizeRequests": 9240,
+        "sampleSizeUsers": 11,
+        "avgInputTokens": 14800,
+        "avgOutputTokens": 920,
+        "overheadMultiplier": 1.18,
+        "avgRequestsPerUserPerDay": 31,
+        "cacheHitRate": 0.12,
+        "batchHitRate": 0.38,
+        "confidence": 0.91,
+        "sourceLabel": "Document workflow analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Large-context PDF and contract review workload."
+      }
+    ],
+    "appliedAssumptionOverrides": [
+      {
+        "id": "optimization.cache_hit_rate_default",
+        "value": 0.507,
+        "provenance": "measured",
+        "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
+        "updatedAt": "2026-05-29T09:31:11.865Z"
+      }
+    ],
+    "sourceRegistryVersion": "pricing-runtime-sources-v1",
+    "sourceCounts": {
+      "configured": 4,
+      "ok": 4,
+      "errors": 0
+    }
+  },
+  {
+    "runAt": "2026-05-29T09:25:45.600Z",
+    "status": "updated",
+    "protocolVersion": "pricing-runtime-v1",
+    "autonomousMode": true,
+    "manualEditsLocked": true,
+    "summary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+    "sourceHealth": [
+      {
+        "sourceId": "support-chat-warehouse",
+        "label": "Support desk warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "engineer-coding-warehouse",
+        "label": "Engineering copilot warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "agent-builder-warehouse",
+        "label": "Agent runtime analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "legal-docs-warehouse",
+        "label": "Document review analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      }
+    ],
+    "ingestedTelemetry": [
+      {
+        "id": "telemetry-support-chat-q2",
+        "label": "Support desk · chat",
+        "status": "active",
+        "useCaseId": "chat",
+        "roleProfileId": "support_agent",
+        "sampleWindowDays": 14,
+        "sampleSizeRequests": 128240,
+        "sampleSizeUsers": 74,
+        "avgInputTokens": 340,
+        "avgOutputTokens": 255,
+        "overheadMultiplier": 1.08,
+        "avgRequestsPerUserPerDay": 84,
+        "cacheHitRate": 0.58,
+        "batchHitRate": 0.03,
+        "confidence": 0.93,
+        "sourceLabel": "Gateway logs + product analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Measured traffic for tier-fast support conversations."
+      },
+      {
+        "id": "telemetry-engineer-coding-q2",
+        "label": "Engineering copilot · coding",
+        "status": "active",
+        "useCaseId": "coding",
+        "roleProfileId": "engineer",
+        "sampleWindowDays": 21,
+        "sampleSizeRequests": 46210,
+        "sampleSizeUsers": 19,
+        "avgInputTokens": 1825,
+        "avgOutputTokens": 2140,
+        "overheadMultiplier": 1.32,
+        "avgRequestsPerUserPerDay": 61,
+        "cacheHitRate": 0.44,
+        "batchHitRate": 0.04,
+        "confidence": 0.89,
+        "sourceLabel": "IDE assistant telemetry",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Captures longer prompts and follow-up debugging loops."
+      },
+      {
+        "id": "telemetry-agents-builder-q2",
+        "label": "Agent builders · autonomous flows",
+        "status": "active",
+        "useCaseId": "agent",
+        "roleProfileId": "autonomous_builder",
+        "sampleWindowDays": 10,
+        "sampleSizeRequests": 18320,
+        "sampleSizeUsers": 9,
+        "avgInputTokens": 2380,
+        "avgOutputTokens": 1240,
+        "overheadMultiplier": 6.1,
+        "avgRequestsPerUserPerDay": 73,
+        "cacheHitRate": 0.36,
+        "batchHitRate": 0.22,
+        "confidence": 0.87,
+        "sourceLabel": "Agent runtime traces",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Long-running agent loops with tools and retries."
+      },
+      {
+        "id": "telemetry-legal-docs-q2",
+        "label": "Legal review · document analysis",
+        "status": "active",
+        "useCaseId": "doc_analysis",
+        "roleProfileId": "analyst",
+        "sampleWindowDays": 18,
+        "sampleSizeRequests": 9240,
+        "sampleSizeUsers": 11,
+        "avgInputTokens": 14800,
+        "avgOutputTokens": 920,
+        "overheadMultiplier": 1.18,
+        "avgRequestsPerUserPerDay": 31,
+        "cacheHitRate": 0.12,
+        "batchHitRate": 0.38,
+        "confidence": 0.91,
+        "sourceLabel": "Document workflow analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Large-context PDF and contract review workload."
+      }
+    ],
+    "appliedAssumptionOverrides": [
+      {
+        "id": "optimization.cache_hit_rate_default",
+        "value": 0.507,
+        "provenance": "measured",
+        "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
+        "updatedAt": "2026-05-29T09:25:45.608Z"
+      }
+    ],
+    "sourceRegistryVersion": "pricing-runtime-sources-v1",
+    "sourceCounts": {
+      "configured": 4,
+      "ok": 4,
+      "errors": 0
+    }
+  },
+  {
+    "runAt": "2026-05-29T09:19:29.706Z",
+    "status": "updated",
+    "protocolVersion": "pricing-runtime-v1",
+    "autonomousMode": true,
+    "manualEditsLocked": true,
+    "summary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+    "sourceHealth": [
+      {
+        "sourceId": "support-chat-warehouse",
+        "label": "Support desk warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "engineer-coding-warehouse",
+        "label": "Engineering copilot warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "agent-builder-warehouse",
+        "label": "Agent runtime analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "legal-docs-warehouse",
+        "label": "Document review analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      }
+    ],
+    "ingestedTelemetry": [
+      {
+        "id": "telemetry-support-chat-q2",
+        "label": "Support desk · chat",
+        "status": "active",
+        "useCaseId": "chat",
+        "roleProfileId": "support_agent",
+        "sampleWindowDays": 14,
+        "sampleSizeRequests": 128240,
+        "sampleSizeUsers": 74,
+        "avgInputTokens": 340,
+        "avgOutputTokens": 255,
+        "overheadMultiplier": 1.08,
+        "avgRequestsPerUserPerDay": 84,
+        "cacheHitRate": 0.58,
+        "batchHitRate": 0.03,
+        "confidence": 0.93,
+        "sourceLabel": "Gateway logs + product analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Measured traffic for tier-fast support conversations."
+      },
+      {
+        "id": "telemetry-engineer-coding-q2",
+        "label": "Engineering copilot · coding",
+        "status": "active",
+        "useCaseId": "coding",
+        "roleProfileId": "engineer",
+        "sampleWindowDays": 21,
+        "sampleSizeRequests": 46210,
+        "sampleSizeUsers": 19,
+        "avgInputTokens": 1825,
+        "avgOutputTokens": 2140,
+        "overheadMultiplier": 1.32,
+        "avgRequestsPerUserPerDay": 61,
+        "cacheHitRate": 0.44,
+        "batchHitRate": 0.04,
+        "confidence": 0.89,
+        "sourceLabel": "IDE assistant telemetry",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Captures longer prompts and follow-up debugging loops."
+      },
+      {
+        "id": "telemetry-agents-builder-q2",
+        "label": "Agent builders · autonomous flows",
+        "status": "active",
+        "useCaseId": "agent",
+        "roleProfileId": "autonomous_builder",
+        "sampleWindowDays": 10,
+        "sampleSizeRequests": 18320,
+        "sampleSizeUsers": 9,
+        "avgInputTokens": 2380,
+        "avgOutputTokens": 1240,
+        "overheadMultiplier": 6.1,
+        "avgRequestsPerUserPerDay": 73,
+        "cacheHitRate": 0.36,
+        "batchHitRate": 0.22,
+        "confidence": 0.87,
+        "sourceLabel": "Agent runtime traces",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Long-running agent loops with tools and retries."
+      },
+      {
+        "id": "telemetry-legal-docs-q2",
+        "label": "Legal review · document analysis",
+        "status": "active",
+        "useCaseId": "doc_analysis",
+        "roleProfileId": "analyst",
+        "sampleWindowDays": 18,
+        "sampleSizeRequests": 9240,
+        "sampleSizeUsers": 11,
+        "avgInputTokens": 14800,
+        "avgOutputTokens": 920,
+        "overheadMultiplier": 1.18,
+        "avgRequestsPerUserPerDay": 31,
+        "cacheHitRate": 0.12,
+        "batchHitRate": 0.38,
+        "confidence": 0.91,
+        "sourceLabel": "Document workflow analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Large-context PDF and contract review workload."
+      }
+    ],
+    "appliedAssumptionOverrides": [
+      {
+        "id": "optimization.cache_hit_rate_default",
+        "value": 0.507,
+        "provenance": "measured",
+        "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
+        "updatedAt": "2026-05-29T09:19:29.716Z"
+      }
+    ],
+    "sourceRegistryVersion": "pricing-runtime-sources-v1",
+    "sourceCounts": {
+      "configured": 4,
+      "ok": 4,
+      "errors": 0
+    }
+  },
+  {
+    "runAt": "2026-05-29T08:58:42.297Z",
+    "status": "updated",
+    "protocolVersion": "pricing-runtime-v1",
+    "autonomousMode": true,
+    "manualEditsLocked": true,
+    "summary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+    "sourceHealth": [
+      {
+        "sourceId": "support-chat-warehouse",
+        "label": "Support desk warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "engineer-coding-warehouse",
+        "label": "Engineering copilot warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "agent-builder-warehouse",
+        "label": "Agent runtime analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "legal-docs-warehouse",
+        "label": "Document review analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      }
+    ],
+    "ingestedTelemetry": [
+      {
+        "id": "telemetry-support-chat-q2",
+        "label": "Support desk · chat",
+        "status": "active",
+        "useCaseId": "chat",
+        "roleProfileId": "support_agent",
+        "sampleWindowDays": 14,
+        "sampleSizeRequests": 128240,
+        "sampleSizeUsers": 74,
+        "avgInputTokens": 340,
+        "avgOutputTokens": 255,
+        "overheadMultiplier": 1.08,
+        "avgRequestsPerUserPerDay": 84,
+        "cacheHitRate": 0.58,
+        "batchHitRate": 0.03,
+        "confidence": 0.93,
+        "sourceLabel": "Gateway logs + product analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Measured traffic for tier-fast support conversations."
+      },
+      {
+        "id": "telemetry-engineer-coding-q2",
+        "label": "Engineering copilot · coding",
+        "status": "active",
+        "useCaseId": "coding",
+        "roleProfileId": "engineer",
+        "sampleWindowDays": 21,
+        "sampleSizeRequests": 46210,
+        "sampleSizeUsers": 19,
+        "avgInputTokens": 1825,
+        "avgOutputTokens": 2140,
+        "overheadMultiplier": 1.32,
+        "avgRequestsPerUserPerDay": 61,
+        "cacheHitRate": 0.44,
+        "batchHitRate": 0.04,
+        "confidence": 0.89,
+        "sourceLabel": "IDE assistant telemetry",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Captures longer prompts and follow-up debugging loops."
+      },
+      {
+        "id": "telemetry-agents-builder-q2",
+        "label": "Agent builders · autonomous flows",
+        "status": "active",
+        "useCaseId": "agent",
+        "roleProfileId": "autonomous_builder",
+        "sampleWindowDays": 10,
+        "sampleSizeRequests": 18320,
+        "sampleSizeUsers": 9,
+        "avgInputTokens": 2380,
+        "avgOutputTokens": 1240,
+        "overheadMultiplier": 6.1,
+        "avgRequestsPerUserPerDay": 73,
+        "cacheHitRate": 0.36,
+        "batchHitRate": 0.22,
+        "confidence": 0.87,
+        "sourceLabel": "Agent runtime traces",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Long-running agent loops with tools and retries."
+      },
+      {
+        "id": "telemetry-legal-docs-q2",
+        "label": "Legal review · document analysis",
+        "status": "active",
+        "useCaseId": "doc_analysis",
+        "roleProfileId": "analyst",
+        "sampleWindowDays": 18,
+        "sampleSizeRequests": 9240,
+        "sampleSizeUsers": 11,
+        "avgInputTokens": 14800,
+        "avgOutputTokens": 920,
+        "overheadMultiplier": 1.18,
+        "avgRequestsPerUserPerDay": 31,
+        "cacheHitRate": 0.12,
+        "batchHitRate": 0.38,
+        "confidence": 0.91,
+        "sourceLabel": "Document workflow analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Large-context PDF and contract review workload."
+      }
+    ],
+    "appliedAssumptionOverrides": [
+      {
+        "id": "optimization.cache_hit_rate_default",
+        "value": 0.507,
+        "provenance": "measured",
+        "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
+        "updatedAt": "2026-05-29T08:58:42.305Z"
+      }
+    ],
+    "sourceRegistryVersion": "pricing-runtime-sources-v1",
+    "sourceCounts": {
+      "configured": 4,
+      "ok": 4,
+      "errors": 0
+    }
+  },
+  {
+    "runAt": "2026-05-29T08:46:54.206Z",
+    "status": "updated",
+    "protocolVersion": "pricing-runtime-v1",
+    "autonomousMode": true,
+    "manualEditsLocked": true,
+    "summary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+    "sourceHealth": [
+      {
+        "sourceId": "support-chat-warehouse",
+        "label": "Support desk warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "engineer-coding-warehouse",
+        "label": "Engineering copilot warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "agent-builder-warehouse",
+        "label": "Agent runtime analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "legal-docs-warehouse",
+        "label": "Document review analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      }
+    ],
+    "ingestedTelemetry": [
+      {
+        "id": "telemetry-support-chat-q2",
+        "label": "Support desk · chat",
+        "status": "active",
+        "useCaseId": "chat",
+        "roleProfileId": "support_agent",
+        "sampleWindowDays": 14,
+        "sampleSizeRequests": 128240,
+        "sampleSizeUsers": 74,
+        "avgInputTokens": 340,
+        "avgOutputTokens": 255,
+        "overheadMultiplier": 1.08,
+        "avgRequestsPerUserPerDay": 84,
+        "cacheHitRate": 0.58,
+        "batchHitRate": 0.03,
+        "confidence": 0.93,
+        "sourceLabel": "Gateway logs + product analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Measured traffic for tier-fast support conversations."
+      },
+      {
+        "id": "telemetry-engineer-coding-q2",
+        "label": "Engineering copilot · coding",
+        "status": "active",
+        "useCaseId": "coding",
+        "roleProfileId": "engineer",
+        "sampleWindowDays": 21,
+        "sampleSizeRequests": 46210,
+        "sampleSizeUsers": 19,
+        "avgInputTokens": 1825,
+        "avgOutputTokens": 2140,
+        "overheadMultiplier": 1.32,
+        "avgRequestsPerUserPerDay": 61,
+        "cacheHitRate": 0.44,
+        "batchHitRate": 0.04,
+        "confidence": 0.89,
+        "sourceLabel": "IDE assistant telemetry",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Captures longer prompts and follow-up debugging loops."
+      },
+      {
+        "id": "telemetry-agents-builder-q2",
+        "label": "Agent builders · autonomous flows",
+        "status": "active",
+        "useCaseId": "agent",
+        "roleProfileId": "autonomous_builder",
+        "sampleWindowDays": 10,
+        "sampleSizeRequests": 18320,
+        "sampleSizeUsers": 9,
+        "avgInputTokens": 2380,
+        "avgOutputTokens": 1240,
+        "overheadMultiplier": 6.1,
+        "avgRequestsPerUserPerDay": 73,
+        "cacheHitRate": 0.36,
+        "batchHitRate": 0.22,
+        "confidence": 0.87,
+        "sourceLabel": "Agent runtime traces",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Long-running agent loops with tools and retries."
+      },
+      {
+        "id": "telemetry-legal-docs-q2",
+        "label": "Legal review · document analysis",
+        "status": "active",
+        "useCaseId": "doc_analysis",
+        "roleProfileId": "analyst",
+        "sampleWindowDays": 18,
+        "sampleSizeRequests": 9240,
+        "sampleSizeUsers": 11,
+        "avgInputTokens": 14800,
+        "avgOutputTokens": 920,
+        "overheadMultiplier": 1.18,
+        "avgRequestsPerUserPerDay": 31,
+        "cacheHitRate": 0.12,
+        "batchHitRate": 0.38,
+        "confidence": 0.91,
+        "sourceLabel": "Document workflow analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Large-context PDF and contract review workload."
+      }
+    ],
+    "appliedAssumptionOverrides": [
+      {
+        "id": "optimization.cache_hit_rate_default",
+        "value": 0.507,
+        "provenance": "measured",
+        "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
+        "updatedAt": "2026-05-29T08:46:54.216Z"
+      }
+    ],
+    "sourceRegistryVersion": "pricing-runtime-sources-v1",
+    "sourceCounts": {
+      "configured": 4,
+      "ok": 4,
+      "errors": 0
+    }
+  },
+  {
+    "runAt": "2026-04-24T08:46:07.895Z",
+    "status": "updated",
+    "protocolVersion": "pricing-runtime-v1",
+    "autonomousMode": true,
+    "manualEditsLocked": true,
+    "summary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+    "sourceHealth": [
+      {
+        "sourceId": "support-chat-warehouse",
+        "label": "Support desk warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "engineer-coding-warehouse",
+        "label": "Engineering copilot warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "agent-builder-warehouse",
+        "label": "Agent runtime analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "legal-docs-warehouse",
+        "label": "Document review analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      }
+    ],
+    "ingestedTelemetry": [
+      {
+        "id": "telemetry-support-chat-q2",
+        "label": "Support desk · chat",
+        "status": "active",
+        "useCaseId": "chat",
+        "roleProfileId": "support_agent",
+        "sampleWindowDays": 14,
+        "sampleSizeRequests": 128240,
+        "sampleSizeUsers": 74,
+        "avgInputTokens": 340,
+        "avgOutputTokens": 255,
+        "overheadMultiplier": 1.08,
+        "avgRequestsPerUserPerDay": 84,
+        "cacheHitRate": 0.58,
+        "batchHitRate": 0.03,
+        "confidence": 0.93,
+        "sourceLabel": "Gateway logs + product analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Measured traffic for tier-fast support conversations."
+      },
+      {
+        "id": "telemetry-engineer-coding-q2",
+        "label": "Engineering copilot · coding",
+        "status": "active",
+        "useCaseId": "coding",
+        "roleProfileId": "engineer",
+        "sampleWindowDays": 21,
+        "sampleSizeRequests": 46210,
+        "sampleSizeUsers": 19,
+        "avgInputTokens": 1825,
+        "avgOutputTokens": 2140,
+        "overheadMultiplier": 1.32,
+        "avgRequestsPerUserPerDay": 61,
+        "cacheHitRate": 0.44,
+        "batchHitRate": 0.04,
+        "confidence": 0.89,
+        "sourceLabel": "IDE assistant telemetry",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Captures longer prompts and follow-up debugging loops."
+      },
+      {
+        "id": "telemetry-agents-builder-q2",
+        "label": "Agent builders · autonomous flows",
+        "status": "active",
+        "useCaseId": "agent",
+        "roleProfileId": "autonomous_builder",
+        "sampleWindowDays": 10,
+        "sampleSizeRequests": 18320,
+        "sampleSizeUsers": 9,
+        "avgInputTokens": 2380,
+        "avgOutputTokens": 1240,
+        "overheadMultiplier": 6.1,
+        "avgRequestsPerUserPerDay": 73,
+        "cacheHitRate": 0.36,
+        "batchHitRate": 0.22,
+        "confidence": 0.87,
+        "sourceLabel": "Agent runtime traces",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Long-running agent loops with tools and retries."
+      },
+      {
+        "id": "telemetry-legal-docs-q2",
+        "label": "Legal review · document analysis",
+        "status": "active",
+        "useCaseId": "doc_analysis",
+        "roleProfileId": "analyst",
+        "sampleWindowDays": 18,
+        "sampleSizeRequests": 9240,
+        "sampleSizeUsers": 11,
+        "avgInputTokens": 14800,
+        "avgOutputTokens": 920,
+        "overheadMultiplier": 1.18,
+        "avgRequestsPerUserPerDay": 31,
+        "cacheHitRate": 0.12,
+        "batchHitRate": 0.38,
+        "confidence": 0.91,
+        "sourceLabel": "Document workflow analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Large-context PDF and contract review workload."
+      }
+    ],
+    "appliedAssumptionOverrides": [
+      {
+        "id": "optimization.cache_hit_rate_default",
+        "value": 0.507,
+        "provenance": "measured",
+        "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
+        "updatedAt": "2026-04-24T08:46:07.903Z"
+      }
+    ],
+    "sourceRegistryVersion": "pricing-runtime-sources-v1",
+    "sourceCounts": {
+      "configured": 4,
+      "ok": 4,
+      "errors": 0
+    }
+  },
+  {
+    "runAt": "2026-04-24T08:43:51.920Z",
+    "status": "updated",
+    "protocolVersion": "pricing-runtime-v1",
+    "autonomousMode": true,
+    "manualEditsLocked": true,
+    "summary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+    "sourceHealth": [
+      {
+        "sourceId": "support-chat-warehouse",
+        "label": "Support desk warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "engineer-coding-warehouse",
+        "label": "Engineering copilot warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "agent-builder-warehouse",
+        "label": "Agent runtime analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "legal-docs-warehouse",
+        "label": "Document review analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      }
+    ],
+    "ingestedTelemetry": [
+      {
+        "id": "telemetry-support-chat-q2",
+        "label": "Support desk · chat",
+        "status": "active",
+        "useCaseId": "chat",
+        "roleProfileId": "support_agent",
+        "sampleWindowDays": 14,
+        "sampleSizeRequests": 128240,
+        "sampleSizeUsers": 74,
+        "avgInputTokens": 340,
+        "avgOutputTokens": 255,
+        "overheadMultiplier": 1.08,
+        "avgRequestsPerUserPerDay": 84,
+        "cacheHitRate": 0.58,
+        "batchHitRate": 0.03,
+        "confidence": 0.93,
+        "sourceLabel": "Gateway logs + product analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Measured traffic for tier-fast support conversations."
+      },
+      {
+        "id": "telemetry-engineer-coding-q2",
+        "label": "Engineering copilot · coding",
+        "status": "active",
+        "useCaseId": "coding",
+        "roleProfileId": "engineer",
+        "sampleWindowDays": 21,
+        "sampleSizeRequests": 46210,
+        "sampleSizeUsers": 19,
+        "avgInputTokens": 1825,
+        "avgOutputTokens": 2140,
+        "overheadMultiplier": 1.32,
+        "avgRequestsPerUserPerDay": 61,
+        "cacheHitRate": 0.44,
+        "batchHitRate": 0.04,
+        "confidence": 0.89,
+        "sourceLabel": "IDE assistant telemetry",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Captures longer prompts and follow-up debugging loops."
+      },
+      {
+        "id": "telemetry-agents-builder-q2",
+        "label": "Agent builders · autonomous flows",
+        "status": "active",
+        "useCaseId": "agent",
+        "roleProfileId": "autonomous_builder",
+        "sampleWindowDays": 10,
+        "sampleSizeRequests": 18320,
+        "sampleSizeUsers": 9,
+        "avgInputTokens": 2380,
+        "avgOutputTokens": 1240,
+        "overheadMultiplier": 6.1,
+        "avgRequestsPerUserPerDay": 73,
+        "cacheHitRate": 0.36,
+        "batchHitRate": 0.22,
+        "confidence": 0.87,
+        "sourceLabel": "Agent runtime traces",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Long-running agent loops with tools and retries."
+      },
+      {
+        "id": "telemetry-legal-docs-q2",
+        "label": "Legal review · document analysis",
+        "status": "active",
+        "useCaseId": "doc_analysis",
+        "roleProfileId": "analyst",
+        "sampleWindowDays": 18,
+        "sampleSizeRequests": 9240,
+        "sampleSizeUsers": 11,
+        "avgInputTokens": 14800,
+        "avgOutputTokens": 920,
+        "overheadMultiplier": 1.18,
+        "avgRequestsPerUserPerDay": 31,
+        "cacheHitRate": 0.12,
+        "batchHitRate": 0.38,
+        "confidence": 0.91,
+        "sourceLabel": "Document workflow analytics",
+        "recordedAt": "2026-04-24T07:45:00.000Z",
+        "notes": "Large-context PDF and contract review workload."
+      }
+    ],
+    "appliedAssumptionOverrides": [
+      {
+        "id": "optimization.cache_hit_rate_default",
+        "value": 0.507,
+        "provenance": "measured",
+        "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
+        "updatedAt": "2026-04-24T08:43:51.935Z"
+      }
+    ],
+    "sourceRegistryVersion": "pricing-runtime-sources-v1",
+    "sourceCounts": {
+      "configured": 4,
+      "ok": 4,
+      "errors": 0
+    }
+  }
+]

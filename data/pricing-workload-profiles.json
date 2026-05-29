@@ -1,0 +1,122 @@
+[
+  {
+    "id": "chat",
+    "label": "Chat simple",
+    "description": "Conversación directa usuario-modelo. 1 llamada por request. Sin herramientas.",
+    "avgInputTokens": 300,
+    "avgOutputTokens": 400,
+    "overheadMultiplier": 1,
+    "extraCostPer1KRequests": {
+      "claude": 0,
+      "chatgpt": 0,
+      "gemini": 0
+    },
+    "icon": "MessageSquare",
+    "provenance": {
+      "avgInputTokens": "estimated",
+      "avgOutputTokens": "estimated",
+      "overheadMultiplier": "estimated",
+      "extraCostPer1KRequests": "editorial"
+    }
+  },
+  {
+    "id": "rag",
+    "label": "RAG empresarial",
+    "description": "Retrieval + generación. Incluye embedding externo, chunking y contexto aumentado.",
+    "avgInputTokens": 4000,
+    "avgOutputTokens": 600,
+    "overheadMultiplier": 1.3,
+    "extraCostPer1KRequests": {
+      "claude": 0,
+      "chatgpt": 0.2,
+      "gemini": 0
+    },
+    "icon": "Database",
+    "provenance": {
+      "avgInputTokens": "estimated",
+      "avgOutputTokens": "estimated",
+      "overheadMultiplier": "estimated",
+      "extraCostPer1KRequests": "editorial"
+    }
+  },
+  {
+    "id": "agent",
+    "label": "Agente autonomo",
+    "description": "Flujo multi-step. Promedio 6-8 llamadas internas por tarea. Búsqueda web incluida.",
+    "avgInputTokens": 2000,
+    "avgOutputTokens": 1000,
+    "overheadMultiplier": 7,
+    "extraCostPer1KRequests": {
+      "claude": 10,
+      "chatgpt": 0,
+      "gemini": 35
+    },
+    "icon": "Bot",
+    "provenance": {
+      "avgInputTokens": "estimated",
+      "avgOutputTokens": "estimated",
+      "overheadMultiplier": "estimated",
+      "extraCostPer1KRequests": "editorial"
+    }
+  },
+  {
+    "id": "coding",
+    "label": "Asistente de codigo",
+    "description": "Generación, revisión y explicación de código. Contexto medio-alto, output extenso.",
+    "avgInputTokens": 1500,
+    "avgOutputTokens": 2000,
+    "overheadMultiplier": 1.2,
+    "extraCostPer1KRequests": {
+      "claude": 0,
+      "chatgpt": 0,
+      "gemini": 0
+    },
+    "icon": "Code2",
+    "provenance": {
+      "avgInputTokens": "estimated",
+      "avgOutputTokens": "estimated",
+      "overheadMultiplier": "estimated",
+      "extraCostPer1KRequests": "editorial"
+    }
+  },
+  {
+    "id": "doc_analysis",
+    "label": "Analisis de documentos",
+    "description": "Procesamiento de PDFs, contratos o informes. Contexto largo y salida concisa.",
+    "avgInputTokens": 12000,
+    "avgOutputTokens": 800,
+    "overheadMultiplier": 1.1,
+    "extraCostPer1KRequests": {
+      "claude": 0,
+      "chatgpt": 0.2,
+      "gemini": 0
+    },
+    "icon": "FileText",
+    "provenance": {
+      "avgInputTokens": "estimated",
+      "avgOutputTokens": "estimated",
+      "overheadMultiplier": "estimated",
+      "extraCostPer1KRequests": "editorial"
+    }
+  },
+  {
+    "id": "realtime",
+    "label": "Streaming / tiempo real",
+    "description": "Live API o Realtime API. Multiplicador de coste por streaming y latencia.",
+    "avgInputTokens": 500,
+    "avgOutputTokens": 500,
+    "overheadMultiplier": 2,
+    "extraCostPer1KRequests": {
+      "claude": 0,
+      "chatgpt": 0,
+      "gemini": 35
+    },
+    "icon": "Zap",
+    "provenance": {
+      "avgInputTokens": "estimated",
+      "avgOutputTokens": "estimated",
+      "overheadMultiplier": "estimated",
+      "extraCostPer1KRequests": "editorial"
+    }
+  }
+]

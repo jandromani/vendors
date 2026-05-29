@@ -1,0 +1,80 @@
+{
+  "version": "pricing-formulas-v1",
+  "formulas": [
+    {
+      "id": "scenario_token_monthly_v1",
+      "label": "Coste mensual por tokens",
+      "version": 1,
+      "output": "monthly_token_cost",
+      "expression": "daysPerMonth * ((inputTokensPerDay / 1_000_000) * inputPricePerMTok + (outputTokensPerDay / 1_000_000) * outputPricePerMTok)",
+      "description": "Convierte un escenario diario de tokens en coste mensual puro de inferencia.",
+      "inputs": [
+        "inputTokensPerDay",
+        "outputTokensPerDay",
+        "daysPerMonth",
+        "inputPricePerMTok",
+        "outputPricePerMTok"
+      ]
+    },
+    {
+      "id": "use_case_cost_per_1k_v1",
+      "label": "Coste por 1K requests",
+      "version": 1,
+      "output": "cost_per_1k_requests",
+      "expression": "((avgInputTokens * overheadMultiplier) / 1_000_000) * inputPricePerMTok * 1000 + ((avgOutputTokens * overheadMultiplier) / 1_000_000) * outputPricePerMTok * 1000 + extras - cacheSavings - batchSavings",
+      "description": "Calcula el coste unitario por 1.000 requests mezclando precios verificados y supuestos operativos del workload.",
+      "inputs": [
+        "avgInputTokens",
+        "avgOutputTokens",
+        "overheadMultiplier",
+        "inputPricePerMTok",
+        "outputPricePerMTok",
+        "extraCostPer1KRequests",
+        "cacheHitRate",
+        "cacheDiscountRate",
+        "batchDiscountRate"
+      ]
+    },
+    {
+      "id": "degradation_mix_80_15_5_v1",
+      "label": "Degradación 80/15/5",
+      "version": 1,
+      "output": "mixed_monthly_cost",
+      "expression": "fastCost * fastWeight + balancedCost * balancedWeight + premiumCost * premiumWeight",
+      "description": "Distribuye la carga entre tier rápido, equilibrado y premium para estimar un routing mixto.",
+      "inputs": [
+        "fastCost",
+        "balancedCost",
+        "premiumCost",
+        "fastWeight",
+        "balancedWeight",
+        "premiumWeight"
+      ]
+    },
+    {
+      "id": "role_total_monthly_v1",
+      "label": "Coste mensual por rol",
+      "version": 1,
+      "output": "role_monthly_total",
+      "expression": "teamSize * (seatCostPerUser + apiMonthlyCostPerUser + explicitToolingCostPerUser)",
+      "description": "Suma el coste de asiento, API y tooling explícito para un perfil de puesto y su equipo.",
+      "inputs": [
+        "teamSize",
+        "seatCostPerUser",
+        "apiMonthlyCostPerUser",
+        "explicitToolingCostPerUser"
+      ]
+    },
+    {
+      "id": "role_total_annual_v1",
+      "label": "Coste anual por rol",
+      "version": 1,
+      "output": "role_annual_total",
+      "expression": "roleMonthlyTotal * 12",
+      "description": "Proyecta el coste total anual a partir del coste mensual trazado.",
+      "inputs": [
+        "roleMonthlyTotal"
+      ]
+    }
+  ]
+}

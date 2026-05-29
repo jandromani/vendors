@@ -1,0 +1,2 @@
+id,label,status,useCaseId,roleProfileId,sampleWindowDays,sampleSizeRequests,sampleSizeUsers,avgInputTokens,avgOutputTokens,overheadMultiplier,avgRequestsPerUserPerDay,cacheHitRate,batchHitRate,confidence,sourceLabel,recordedAt,notes
+telemetry-engineer-coding-q2,Engineering copilot · coding,active,coding,engineer,21,46210,19,1825,2140,1.32,61,0.44,0.04,0.89,IDE assistant telemetry,2026-04-24T07:45:00.000Z,Captures longer prompts and follow-up debugging loops.

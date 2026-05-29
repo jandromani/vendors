@@ -1,0 +1,236 @@
+[
+  {
+    "id": "knowledge_worker",
+    "label": "Knowledge Worker",
+    "description": "Perfil generalista de productividad, documentos, resumen y chat diario.",
+    "primaryUseCaseId": "chat",
+    "defaultTeamSize": 25,
+    "dailyRequestsPerUser": 35,
+    "daysPerMonth": 22,
+    "dataSensitivity": "internal",
+    "withCache": true,
+    "withBatch": false,
+    "billingPreference": "annual",
+    "explicitToolingCostPerUser": {
+      "claude": 0,
+      "chatgpt": 0,
+      "gemini": 0
+    },
+    "vendorTargets": {
+      "claude": {
+        "seatPlanName": "Team Standard",
+        "modelTier": "fast"
+      },
+      "chatgpt": {
+        "seatPlanName": "ChatGPT Plus",
+        "modelTier": "fast"
+      },
+      "gemini": {
+        "seatPlanName": "Google AI Plus",
+        "modelTier": "fast"
+      }
+    },
+    "provenance": {
+      "defaultTeamSize": "estimated",
+      "dailyRequestsPerUser": "estimated",
+      "daysPerMonth": "estimated",
+      "billingPreference": "editorial",
+      "explicitToolingCostPerUser": "editorial"
+    }
+  },
+  {
+    "id": "support_agent",
+    "label": "Support Agent",
+    "description": "Operadores con mucho volumen, respuestas rápidas y necesidad de coste contenido.",
+    "primaryUseCaseId": "chat",
+    "defaultTeamSize": 80,
+    "dailyRequestsPerUser": 90,
+    "daysPerMonth": 22,
+    "dataSensitivity": "internal",
+    "withCache": true,
+    "withBatch": false,
+    "billingPreference": "annual",
+    "explicitToolingCostPerUser": {
+      "claude": 0,
+      "chatgpt": 0,
+      "gemini": 0
+    },
+    "vendorTargets": {
+      "claude": {
+        "seatPlanName": "Team Standard",
+        "modelTier": "fast"
+      },
+      "chatgpt": {
+        "seatPlanName": "ChatGPT Business",
+        "modelTier": "fast"
+      },
+      "gemini": {
+        "seatPlanName": "Workspace Plus",
+        "modelTier": "fast"
+      }
+    },
+    "provenance": {
+      "defaultTeamSize": "estimated",
+      "dailyRequestsPerUser": "estimated",
+      "daysPerMonth": "estimated",
+      "billingPreference": "editorial",
+      "explicitToolingCostPerUser": "editorial"
+    }
+  },
+  {
+    "id": "sales_ops",
+    "label": "Sales / RevOps",
+    "description": "Perfiles comerciales que mezclan correo, síntesis, investigación y preparación de reuniones.",
+    "primaryUseCaseId": "rag",
+    "defaultTeamSize": 30,
+    "dailyRequestsPerUser": 45,
+    "daysPerMonth": 22,
+    "dataSensitivity": "internal",
+    "withCache": true,
+    "withBatch": false,
+    "billingPreference": "annual",
+    "explicitToolingCostPerUser": {
+      "claude": 0,
+      "chatgpt": 0,
+      "gemini": 0
+    },
+    "vendorTargets": {
+      "claude": {
+        "seatPlanName": "Team Standard",
+        "modelTier": "balanced"
+      },
+      "chatgpt": {
+        "seatPlanName": "ChatGPT Business",
+        "modelTier": "balanced"
+      },
+      "gemini": {
+        "seatPlanName": "Workspace Plus",
+        "modelTier": "balanced"
+      }
+    },
+    "provenance": {
+      "defaultTeamSize": "estimated",
+      "dailyRequestsPerUser": "estimated",
+      "daysPerMonth": "estimated",
+      "billingPreference": "editorial",
+      "explicitToolingCostPerUser": "editorial"
+    }
+  },
+  {
+    "id": "engineer",
+    "label": "Engineer",
+    "description": "Desarrollo diario, revisión de código, debugging y documentación técnica.",
+    "primaryUseCaseId": "coding",
+    "defaultTeamSize": 18,
+    "dailyRequestsPerUser": 55,
+    "daysPerMonth": 22,
+    "dataSensitivity": "confidential",
+    "withCache": true,
+    "withBatch": false,
+    "billingPreference": "annual",
+    "explicitToolingCostPerUser": {
+      "claude": 0,
+      "chatgpt": 0,
+      "gemini": 0
+    },
+    "vendorTargets": {
+      "claude": {
+        "seatPlanName": "Team Standard",
+        "modelTier": "balanced"
+      },
+      "chatgpt": {
+        "seatPlanName": "ChatGPT Business",
+        "modelTier": "balanced"
+      },
+      "gemini": {
+        "seatPlanName": "Workspace Plus",
+        "modelTier": "balanced"
+      }
+    },
+    "provenance": {
+      "defaultTeamSize": "estimated",
+      "dailyRequestsPerUser": "estimated",
+      "daysPerMonth": "estimated",
+      "billingPreference": "editorial",
+      "explicitToolingCostPerUser": "editorial"
+    }
+  },
+  {
+    "id": "analyst",
+    "label": "Analyst / Legal Review",
+    "description": "Lectura intensiva de documentos, comparación, extracción y síntesis de texto largo.",
+    "primaryUseCaseId": "doc_analysis",
+    "defaultTeamSize": 12,
+    "dailyRequestsPerUser": 28,
+    "daysPerMonth": 22,
+    "dataSensitivity": "confidential",
+    "withCache": false,
+    "withBatch": true,
+    "billingPreference": "annual",
+    "explicitToolingCostPerUser": {
+      "claude": 0,
+      "chatgpt": 0,
+      "gemini": 0
+    },
+    "vendorTargets": {
+      "claude": {
+        "seatPlanName": "Team Standard",
+        "modelTier": "balanced"
+      },
+      "chatgpt": {
+        "seatPlanName": "ChatGPT Business",
+        "modelTier": "balanced"
+      },
+      "gemini": {
+        "seatPlanName": "Workspace Plus",
+        "modelTier": "balanced"
+      }
+    },
+    "provenance": {
+      "defaultTeamSize": "estimated",
+      "dailyRequestsPerUser": "estimated",
+      "daysPerMonth": "estimated",
+      "billingPreference": "editorial",
+      "explicitToolingCostPerUser": "editorial"
+    }
+  },
+  {
+    "id": "autonomous_builder",
+    "label": "Autonomous Agent Builder",
+    "description": "Equipos que construyen agentes, tools, loops largos y automatización compleja.",
+    "primaryUseCaseId": "agent",
+    "defaultTeamSize": 8,
+    "dailyRequestsPerUser": 70,
+    "daysPerMonth": 22,
+    "dataSensitivity": "confidential",
+    "withCache": true,
+    "withBatch": true,
+    "billingPreference": "annual",
+    "explicitToolingCostPerUser": {
+      "claude": 12,
+      "chatgpt": 8,
+      "gemini": 16
+    },
+    "vendorTargets": {
+      "claude": {
+        "seatPlanName": "Team Premium",
+        "modelTier": "premium"
+      },
+      "chatgpt": {
+        "seatPlanName": "ChatGPT Business",
+        "modelTier": "premium"
+      },
+      "gemini": {
+        "seatPlanName": "Workspace Plus",
+        "modelTier": "premium"
+      }
+    },
+    "provenance": {
+      "defaultTeamSize": "estimated",
+      "dailyRequestsPerUser": "estimated",
+      "daysPerMonth": "estimated",
+      "billingPreference": "editorial",
+      "explicitToolingCostPerUser": "estimated"
+    }
+  }
+]

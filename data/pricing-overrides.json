@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "timezone": "Europe/Madrid",
+    "snapshotTakenAt": "2026-04-23T00:00:00.000Z",
+    "updatedByAgentAt": "2026-05-29T08:58:14.864Z",
+    "lastRunStatus": "no_changes",
+    "lastRunSummary": "Sistema agéntico ejecutado sin cambios aprobados.",
+    "sourcesChecked": [
+      "OpenAI News RSS",
+      "Anthropic News",
+      "Anthropic API Changelog",
+      "Google AI Blog RSS",
+      "GitHub Changelog",
+      "Microsoft 365 Blog",
+      "Google News: OpenAI pricing",
+      "Google News: Anthropic pricing",
+      "Google News: Gemini pricing",
+      "Google News: GitHub Copilot pricing",
+      "Google News: Microsoft 365 Copilot pricing"
+    ],
+    "provider": "openrouter",
+    "model": "openrouter/free",
+    "protocolVersion": "pricing-agentic-v2",
+    "truthVerification": {
+      "lastRunAt": "2026-05-29T09:30:37.256Z",
+      "status": "verified",
+      "needsAttention": 0,
+      "publishableUpdates": 0,
+      "appliedUpdates": 0
+    },
+    "truthSourcesChecked": [
+      "Anthropic API Pricing",
+      "Anthropic Pricing",
+      "OpenAI GPT-5.4 mini Model Page",
+      "OpenAI GPT-5.4 Model Page",
+      "OpenAI GPT-5.5 Model Page",
+      "OpenAI ChatGPT Plus Help",
+      "OpenAI ChatGPT Business Help",
+      "Google Gemini API Pricing",
+      "Google AI Plans",
+      "Google Workspace Pricing",
+      "GitHub Copilot Org Billing"
+    ]
+  },
+  "modelPriceOverrides": {},
+  "seatPlanOverrides": {
+    "gemini": {
+      "Workspace Plus": {
+        "priceMonthly": 22,
+        "priceAnnual": 22
+      }
+    }
+  }
+}

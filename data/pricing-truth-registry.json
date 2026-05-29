@@ -1,0 +1,513 @@
+{
+  "version": "pricing-truth-v1",
+  "defaults": {
+    "ttlHours": 24,
+    "minJudgeConfidence": 0.9,
+    "minPublishConfidence": 0.92
+  },
+  "truthSources": [
+    {
+      "id": "openai-api-pricing",
+      "label": "OpenAI API Pricing",
+      "vendorId": "chatgpt",
+      "url": "https://openai.com/api/pricing/",
+      "sourceClass": "official",
+      "claimScope": [
+        "model"
+      ],
+      "notes": "Official OpenAI API pricing landing page."
+    },
+    {
+      "id": "openai-chatgpt-business-help",
+      "label": "OpenAI ChatGPT Business Help",
+      "vendorId": "chatgpt",
+      "url": "https://help.openai.com/en/articles/8792828",
+      "sourceClass": "official",
+      "claimScope": [
+        "seatPlan"
+      ]
+    },
+    {
+      "id": "openai-chatgpt-plus-help",
+      "label": "OpenAI ChatGPT Plus Help",
+      "vendorId": "chatgpt",
+      "url": "https://help.openai.com/en/articles/6950777",
+      "sourceClass": "official",
+      "claimScope": [
+        "seatPlan"
+      ]
+    },
+    {
+      "id": "openai-chatgpt-gpt55-help",
+      "label": "OpenAI GPT-5.5 in ChatGPT Help",
+      "vendorId": "chatgpt",
+      "url": "https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt",
+      "sourceClass": "official",
+      "claimScope": [
+        "surface"
+      ]
+    },
+    {
+      "id": "openai-model-gpt-5-4-mini",
+      "label": "OpenAI GPT-5.4 mini Model Page",
+      "vendorId": "chatgpt",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+      "sourceClass": "official",
+      "claimScope": [
+        "model"
+      ]
+    },
+    {
+      "id": "openai-model-gpt-5-4",
+      "label": "OpenAI GPT-5.4 Model Page",
+      "vendorId": "chatgpt",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+      "sourceClass": "official",
+      "claimScope": [
+        "model"
+      ]
+    },
+    {
+      "id": "openai-model-gpt-5-5",
+      "label": "OpenAI GPT-5.5 Model Page",
+      "vendorId": "chatgpt",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.5/",
+      "sourceClass": "official",
+      "claimScope": [
+        "model"
+      ]
+    },
+    {
+      "id": "anthropic-api-pricing",
+      "label": "Anthropic API Pricing",
+      "vendorId": "claude",
+      "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+      "sourceClass": "official",
+      "claimScope": [
+        "model"
+      ]
+    },
+    {
+      "id": "anthropic-pricing",
+      "label": "Anthropic Pricing",
+      "vendorId": "claude",
+      "url": "https://www.anthropic.com/pricing",
+      "sourceClass": "official",
+      "claimScope": [
+        "model",
+        "seatPlan"
+      ]
+    },
+    {
+      "id": "google-gemini-api-pricing",
+      "label": "Google Gemini API Pricing",
+      "vendorId": "gemini",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "sourceClass": "official",
+      "claimScope": [
+        "model"
+      ]
+    },
+    {
+      "id": "google-workspace-pricing",
+      "label": "Google Workspace Pricing",
+      "vendorId": "gemini",
+      "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
+      "sourceClass": "official",
+      "claimScope": [
+        "seatPlan"
+      ]
+    },
+    {
+      "id": "google-one-ai-pricing",
+      "label": "Google AI Plans",
+      "vendorId": "gemini",
+      "url": "https://one.google.com/about/google-ai-plans?hl=en",
+      "sourceClass": "official",
+      "claimScope": [
+        "seatPlan"
+      ]
+    },
+    {
+      "id": "google-vertex-pricing",
+      "label": "Google Vertex AI Pricing",
+      "vendorId": "gemini",
+      "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+      "sourceClass": "official",
+      "claimScope": [
+        "model",
+        "seatPlan"
+      ]
+    },
+    {
+      "id": "github-copilot-org-billing",
+      "label": "GitHub Copilot Org Billing",
+      "vendorId": "githubcopilot",
+      "url": "https://docs.github.com/en/copilot/concepts/billing/organizations-and-enterprises",
+      "sourceClass": "official",
+      "claimScope": [
+        "seatPlan"
+      ]
+    },
+    {
+      "id": "github-copilot-usage-billing",
+      "label": "GitHub Copilot Usage Billing",
+      "vendorId": "githubcopilot",
+      "url": "https://docs.github.com/copilot/concepts/billing/usage-based-billing-for-organizations-and-enterprises",
+      "sourceClass": "official",
+      "claimScope": [
+        "surface"
+      ]
+    },
+    {
+      "id": "github-copilot-plans",
+      "label": "GitHub Copilot Plans",
+      "vendorId": "githubcopilot",
+      "url": "https://docs.github.com/en/copilot/get-started/plans",
+      "sourceClass": "official",
+      "claimScope": [
+        "surface"
+      ]
+    },
+    {
+      "id": "microsoft-copilot-business",
+      "label": "Microsoft 365 Copilot Business",
+      "vendorId": "m365copilot",
+      "url": "https://www.microsoft.com/en-us/microsoft-365-copilot/business",
+      "sourceClass": "official",
+      "claimScope": [
+        "seatPlan"
+      ]
+    },
+    {
+      "id": "mistral-le-chat-pricing",
+      "label": "Mistral Le Chat Pricing",
+      "vendorId": "mistral",
+      "url": "https://mistral.ai/products/le-chat",
+      "sourceClass": "official",
+      "claimScope": ["seatPlan"]
+    },
+    {
+      "id": "mistral-la-plateforme-pricing",
+      "label": "Mistral La Plateforme Pricing",
+      "vendorId": "mistral",
+      "url": "https://mistral.ai/pricing",
+      "sourceClass": "official",
+      "claimScope": ["model", "seatPlan"]
+    },
+    {
+      "id": "xai-api-pricing",
+      "label": "xAI API Pricing",
+      "vendorId": "xai",
+      "url": "https://docs.x.ai/docs/models",
+      "sourceClass": "official",
+      "claimScope": ["model"]
+    },
+    {
+      "id": "xai-grok-pricing",
+      "label": "xAI Grok Plans",
+      "vendorId": "xai",
+      "url": "https://x.ai/grok",
+      "sourceClass": "official",
+      "claimScope": ["seatPlan"]
+    },
+    {
+      "id": "deepseek-api-pricing",
+      "label": "DeepSeek API Pricing",
+      "vendorId": "deepseek",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "sourceClass": "official",
+      "claimScope": ["model", "seatPlan"]
+    },
+    {
+      "id": "cohere-pricing",
+      "label": "Cohere Pricing",
+      "vendorId": "cohere",
+      "url": "https://cohere.com/pricing",
+      "sourceClass": "official",
+      "claimScope": ["model", "seatPlan"]
+    },
+    {
+      "id": "perplexity-pricing",
+      "label": "Perplexity Pricing",
+      "vendorId": "perplexity",
+      "url": "https://www.perplexity.ai/hub/blog/introducing-perplexity-enterprise-pro",
+      "sourceClass": "official",
+      "claimScope": ["seatPlan"]
+    },
+    {
+      "id": "perplexity-sonar-pricing",
+      "label": "Perplexity Sonar API Pricing",
+      "vendorId": "perplexity",
+      "url": "https://docs.perplexity.ai/guides/pricing",
+      "sourceClass": "official",
+      "claimScope": ["model"]
+    },
+    {
+      "id": "meta-llama-api-pricing",
+      "label": "Meta Llama API",
+      "vendorId": "meta",
+      "url": "https://llama.developer.meta.com/docs/api/pricing",
+      "sourceClass": "official",
+      "claimScope": ["model"]
+    },
+    {
+      "id": "aws-bedrock-pricing",
+      "label": "AWS Bedrock Pricing",
+      "vendorId": "awsbedrock",
+      "url": "https://aws.amazon.com/bedrock/pricing/",
+      "sourceClass": "official",
+      "claimScope": ["model", "seatPlan"]
+    },
+    {
+      "id": "azure-openai-pricing",
+      "label": "Azure OpenAI Service Pricing",
+      "vendorId": "azureopenai",
+      "url": "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/",
+      "sourceClass": "official",
+      "claimScope": ["model", "seatPlan"]
+    }
+  ],
+  "vendorPolicies": {
+    "claude": {
+      "modelSources": [
+        "anthropic-api-pricing",
+        "anthropic-pricing"
+      ],
+      "seatPlanSources": [
+        "anthropic-pricing"
+      ],
+      "targetOverrides": {
+        "Team Standard": {
+          "claimAliases": [
+            "Standard seat",
+            "Claude Team Standard"
+          ]
+        },
+        "Team Premium": {
+          "claimAliases": [
+            "Premium seat",
+            "Claude Team Premium"
+          ]
+        },
+        "Enterprise": {
+          "publishRule": "manual_only",
+          "autoPatch": false
+        }
+      }
+    },
+    "chatgpt": {
+      "modelSources": [
+        "openai-api-pricing"
+      ],
+      "seatPlanSources": [
+        "openai-chatgpt-plus-help",
+        "openai-chatgpt-business-help"
+      ],
+      "targetOverrides": {
+        "GPT-5.4 mini": {
+          "sourceIds": [
+            "openai-model-gpt-5-4-mini"
+          ]
+        },
+        "GPT-5.4": {
+          "sourceIds": [
+            "openai-model-gpt-5-4"
+          ]
+        },
+        "GPT-5.5": {
+          "sourceIds": [
+            "openai-model-gpt-5-5"
+          ]
+        },
+        "ChatGPT Plus": {
+          "claimAliases": [
+            "Plus"
+          ],
+          "sourceIds": [
+            "openai-chatgpt-plus-help"
+          ]
+        },
+        "ChatGPT Business": {
+          "sourceIds": [
+            "openai-chatgpt-business-help"
+          ],
+          "claimAliases": [
+            "Business",
+            "Business plan",
+            "Business ChatGPT & Codex"
+          ]
+        },
+        "Enterprise": {
+          "publishRule": "manual_only",
+          "autoPatch": false
+        }
+      }
+    },
+    "gemini": {
+      "modelSources": [
+        "google-gemini-api-pricing",
+        "google-vertex-pricing"
+      ],
+      "seatPlanSources": [
+        "google-workspace-pricing",
+        "google-one-ai-pricing"
+      ],
+      "targetOverrides": {
+        "Gemini 2.5 Flash-Lite": {
+          "sourceIds": [
+            "google-gemini-api-pricing"
+          ],
+          "claimAliases": [
+            "Gemini 2.5 Flash-Lite"
+          ]
+        },
+        "Gemini 2.5 Flash": {
+          "sourceIds": [
+            "google-gemini-api-pricing"
+          ],
+          "claimAliases": [
+            "Gemini 2.5 Flash"
+          ]
+        },
+        "Gemini 2.5 Pro": {
+          "sourceIds": [
+            "google-gemini-api-pricing"
+          ],
+          "claimAliases": [
+            "Gemini 2.5 Pro"
+          ]
+        },
+        "Google AI Plus": {
+          "sourceIds": [
+            "google-one-ai-pricing"
+          ],
+          "claimAliases": [
+            "Google AI Plus",
+            "AI Premium",
+            "Google AI Premium"
+          ],
+          "publishRule": "judge_allowed",
+          "autoPatch": true
+        },
+        "Workspace Plus": {
+          "sourceIds": [
+            "google-workspace-pricing"
+          ],
+          "claimAliases": [
+            "Business Plus",
+            "Workspace Business",
+            "Workspace Plus"
+          ],
+          "publishRule": "judge_allowed",
+          "autoPatch": true
+        },
+        "Enterprise / Vertex AI": {
+          "sourceIds": [
+            "google-vertex-pricing"
+          ],
+          "publishRule": "manual_only",
+          "autoPatch": false
+        }
+      }
+    },
+    "githubcopilot": {
+      "modelSources": [],
+      "seatPlanSources": [
+        "github-copilot-org-billing"
+      ],
+      "targetOverrides": {
+        "Copilot Business": {
+          "sourceIds": [
+            "github-copilot-org-billing"
+          ],
+          "claimAliases": [
+            "Copilot Business",
+            "GitHub Copilot Business"
+          ],
+          "publishRule": "judge_allowed",
+          "autoPatch": true
+        },
+        "Copilot Enterprise": {
+          "sourceIds": [
+            "github-copilot-org-billing"
+          ],
+          "claimAliases": [
+            "Copilot Enterprise",
+            "GitHub Copilot Enterprise"
+          ],
+          "publishRule": "judge_allowed",
+          "autoPatch": true
+        }
+      }
+    },
+    "mistral": {
+      "modelSources": ["mistral-la-plateforme-pricing"],
+      "seatPlanSources": ["mistral-le-chat-pricing"],
+      "targetOverrides": {
+        "Le Chat Pro": { "publishRule": "manual_only", "autoPatch": false },
+        "Le Chat Team": { "publishRule": "manual_only", "autoPatch": false },
+        "Enterprise / La Plateforme": { "publishRule": "manual_only", "autoPatch": false }
+      }
+    },
+    "xai": {
+      "modelSources": ["xai-api-pricing"],
+      "seatPlanSources": ["xai-grok-pricing"],
+      "targetOverrides": {
+        "Premium (X)": { "publishRule": "manual_only", "autoPatch": false },
+        "SuperGrok": { "publishRule": "manual_only", "autoPatch": false },
+        "xAI API": { "publishRule": "manual_only", "autoPatch": false }
+      }
+    },
+    "deepseek": {
+      "modelSources": ["deepseek-api-pricing"],
+      "seatPlanSources": ["deepseek-api-pricing"],
+      "targetOverrides": {
+        "DeepSeek API": { "publishRule": "manual_only", "autoPatch": false },
+        "Self-hosted": { "publishRule": "manual_only", "autoPatch": false }
+      }
+    },
+    "cohere": {
+      "modelSources": ["cohere-pricing"],
+      "seatPlanSources": ["cohere-pricing"],
+      "targetOverrides": {
+        "Cohere API": { "publishRule": "manual_only", "autoPatch": false },
+        "Cohere Enterprise / North": { "publishRule": "manual_only", "autoPatch": false }
+      }
+    },
+    "perplexity": {
+      "modelSources": ["perplexity-sonar-pricing"],
+      "seatPlanSources": ["perplexity-pricing"],
+      "targetOverrides": {
+        "Perplexity Pro": { "publishRule": "manual_only", "autoPatch": false },
+        "Perplexity Enterprise Pro": { "publishRule": "manual_only", "autoPatch": false },
+        "Sonar API": { "publishRule": "manual_only", "autoPatch": false }
+      }
+    },
+    "meta": {
+      "modelSources": ["meta-llama-api-pricing"],
+      "seatPlanSources": [],
+      "targetOverrides": {
+        "Llama API": { "publishRule": "manual_only", "autoPatch": false },
+        "Self-hosted / partners": { "publishRule": "manual_only", "autoPatch": false }
+      }
+    },
+    "awsbedrock": {
+      "modelSources": ["aws-bedrock-pricing"],
+      "seatPlanSources": ["aws-bedrock-pricing"],
+      "targetOverrides": {
+        "On-demand": { "publishRule": "manual_only", "autoPatch": false },
+        "Provisioned throughput": { "publishRule": "manual_only", "autoPatch": false }
+      }
+    },
+    "azureopenai": {
+      "modelSources": ["azure-openai-pricing"],
+      "seatPlanSources": ["azure-openai-pricing"],
+      "targetOverrides": {
+        "Pay-as-you-go": { "publishRule": "manual_only", "autoPatch": false },
+        "Provisioned Throughput Units": { "publishRule": "manual_only", "autoPatch": false },
+        "Enterprise Agreement": { "publishRule": "manual_only", "autoPatch": false }
+      }
+    }
+  }
+}

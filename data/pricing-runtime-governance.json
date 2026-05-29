@@ -1,0 +1,17 @@
+{
+  "version": "pricing-runtime-governance-v1",
+  "autonomousMode": true,
+  "manualEditsLocked": true,
+  "updatedAt": "2026-04-24T08:00:00.000Z",
+  "protocolVersion": "pricing-runtime-v1",
+  "guardrails": {
+    "minSourceConfidence": 0.8,
+    "minSampleRequestsPerSource": 5000,
+    "minWeightedRequestsForMeasuredOverride": 25000,
+    "allowedAssumptionOverrideIds": [
+      "optimization.cache_hit_rate_default"
+    ],
+    "maxCacheHitRate": 0.95,
+    "minCacheHitRate": 0.05
+  }
+}

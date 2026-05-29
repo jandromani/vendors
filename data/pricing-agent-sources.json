@@ -1,0 +1,196 @@
+{
+  "officialSources": [
+    {
+      "id": "openai-news-rss",
+      "label": "OpenAI News RSS",
+      "kind": "rss",
+      "url": "https://openai.com/news/rss.xml",
+      "vendorHint": "chatgpt",
+      "official": true
+    },
+    {
+      "id": "anthropic-news-page",
+      "label": "Anthropic News",
+      "kind": "html-news",
+      "url": "https://www.anthropic.com/news",
+      "vendorHint": "claude",
+      "official": true
+    },
+    {
+      "id": "anthropic-api-changelog",
+      "label": "Anthropic API Changelog",
+      "kind": "html-news",
+      "url": "https://docs.anthropic.com/en/api/changelog",
+      "vendorHint": "claude",
+      "official": true
+    },
+    {
+      "id": "google-ai-blog-rss",
+      "label": "Google AI Blog RSS",
+      "kind": "rss",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "vendorHint": "gemini",
+      "official": true
+    },
+    {
+      "id": "github-changelog-copilot",
+      "label": "GitHub Changelog",
+      "kind": "html-news",
+      "url": "https://github.blog/changelog/",
+      "vendorHint": "githubcopilot",
+      "official": true
+    },
+    {
+      "id": "microsoft-365-blog",
+      "label": "Microsoft 365 Blog",
+      "kind": "html-news",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/",
+      "vendorHint": "m365copilot",
+      "official": true
+    },
+    {
+      "id": "mistral-news",
+      "label": "Mistral AI News",
+      "kind": "html-news",
+      "url": "https://mistral.ai/news",
+      "vendorHint": "mistral",
+      "official": true
+    },
+    {
+      "id": "xai-news",
+      "label": "xAI News",
+      "kind": "html-news",
+      "url": "https://x.ai/news",
+      "vendorHint": "xai",
+      "official": true
+    },
+    {
+      "id": "deepseek-news",
+      "label": "DeepSeek News",
+      "kind": "html-news",
+      "url": "https://api-docs.deepseek.com/news/",
+      "vendorHint": "deepseek",
+      "official": true
+    },
+    {
+      "id": "cohere-blog",
+      "label": "Cohere Blog",
+      "kind": "html-news",
+      "url": "https://cohere.com/blog",
+      "vendorHint": "cohere",
+      "official": true
+    },
+    {
+      "id": "perplexity-blog",
+      "label": "Perplexity Blog",
+      "kind": "html-news",
+      "url": "https://www.perplexity.ai/hub/blog",
+      "vendorHint": "perplexity",
+      "official": true
+    },
+    {
+      "id": "meta-ai-blog",
+      "label": "Meta AI Blog",
+      "kind": "html-news",
+      "url": "https://ai.meta.com/blog/",
+      "vendorHint": "meta",
+      "official": true
+    },
+    {
+      "id": "aws-bedrock-whats-new",
+      "label": "AWS What's New (Bedrock)",
+      "kind": "html-news",
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/?whats-new-content.sort-by=item.additionalFields.postDateTime&whats-new-content.sort-order=desc&awsf.whats-new-categories=general-products%23amazon-bedrock",
+      "vendorHint": "awsbedrock",
+      "official": true
+    },
+    {
+      "id": "azure-openai-updates",
+      "label": "Azure OpenAI Service updates",
+      "kind": "html-news",
+      "url": "https://azure.microsoft.com/en-us/updates/?query=Azure%20OpenAI",
+      "vendorHint": "azureopenai",
+      "official": true
+    }
+  ],
+  "googleNewsQueries": [
+    {
+      "id": "google-news-chatgpt-pricing",
+      "label": "Google News: OpenAI pricing",
+      "vendorId": "chatgpt",
+      "query": "openai chatgpt api pricing OR billing OR token cost"
+    },
+    {
+      "id": "google-news-claude-pricing",
+      "label": "Google News: Anthropic pricing",
+      "vendorId": "claude",
+      "query": "anthropic claude api pricing OR billing OR token cost"
+    },
+    {
+      "id": "google-news-gemini-pricing",
+      "label": "Google News: Gemini pricing",
+      "vendorId": "gemini",
+      "query": "google gemini api pricing OR billing OR token cost"
+    },
+    {
+      "id": "google-news-github-copilot-pricing",
+      "label": "Google News: GitHub Copilot pricing",
+      "vendorId": "githubcopilot",
+      "query": "github copilot pricing OR billing OR premium requests OR usage-based billing"
+    },
+    {
+      "id": "google-news-m365-copilot-pricing",
+      "label": "Google News: Microsoft 365 Copilot pricing",
+      "vendorId": "m365copilot",
+      "query": "microsoft 365 copilot pricing OR billing OR business plan"
+    },
+    {
+      "id": "google-news-mistral-pricing",
+      "label": "Google News: Mistral pricing",
+      "vendorId": "mistral",
+      "query": "mistral ai pricing OR le chat OR la plateforme OR codestral pricing"
+    },
+    {
+      "id": "google-news-xai-pricing",
+      "label": "Google News: xAI Grok pricing",
+      "vendorId": "xai",
+      "query": "xai grok api pricing OR supergrok OR x premium pricing"
+    },
+    {
+      "id": "google-news-deepseek-pricing",
+      "label": "Google News: DeepSeek pricing",
+      "vendorId": "deepseek",
+      "query": "deepseek api pricing OR cache hit OR off-peak"
+    },
+    {
+      "id": "google-news-cohere-pricing",
+      "label": "Google News: Cohere pricing",
+      "vendorId": "cohere",
+      "query": "cohere command pricing OR embed OR rerank OR enterprise"
+    },
+    {
+      "id": "google-news-perplexity-pricing",
+      "label": "Google News: Perplexity pricing",
+      "vendorId": "perplexity",
+      "query": "perplexity pro enterprise pricing OR sonar api pricing"
+    },
+    {
+      "id": "google-news-meta-pricing",
+      "label": "Google News: Meta Llama API pricing",
+      "vendorId": "meta",
+      "query": "meta llama api pricing OR llama 4 pricing"
+    },
+    {
+      "id": "google-news-aws-bedrock-pricing",
+      "label": "Google News: AWS Bedrock pricing",
+      "vendorId": "awsbedrock",
+      "query": "aws bedrock pricing OR provisioned throughput OR agents"
+    },
+    {
+      "id": "google-news-azure-openai-pricing",
+      "label": "Google News: Azure OpenAI Service pricing",
+      "vendorId": "azureopenai",
+      "query": "azure openai service pricing OR ptu provisioned"
+    }
+  ]
+}

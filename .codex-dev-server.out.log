@@ -1,0 +1,28 @@
+
+> my-project@0.1.0 dev C:\Users\abaratas\Desktop\vendors\vendors
+> next dev "--port" "3000"
+
+▲ Next.js 16.2.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.138:3000
+- Environments: .env.local
+✓ Ready in 1005ms
+Creating turbopack project {
+  dir: 'C:\\Users\\abaratas\\Desktop\\vendors\\vendors',
+  testMode: true
+}
+
+○ Compiling / ...
+ GET / 200 in 10.6s (next.js: 6.0s, application-code: 4.5s)
+ GET / 200 in 1251ms (next.js: 61ms, application-code: 1190ms)
+ GET /internal/agents 200 in 4.6s (next.js: 11ms, application-code: 4.5s)
+ GET /internal/agents 200 in 6.8s (next.js: 1959ms, application-code: 4.8s)
+ GET /internal/agents 200 in 4.6s (next.js: 52ms, application-code: 4.5s)
+ GET /internal/agents 200 in 4.6s (next.js: 11ms, application-code: 4.6s)
+ GET /internal/agents 200 in 2.2s (next.js: 14ms, application-code: 2.2s)
+ GET /internal/truth 200 in 16.4s (next.js: 1496ms, application-code: 14.9s)
+ GET /internal/truth 200 in 11.1s (next.js: 17ms, application-code: 11.1s)
+ GET /internal/lab 200 in 1084ms (next.js: 993ms, application-code: 90ms)
+ GET /internal/truth 200 in 3.2s (next.js: 7ms, application-code: 3.2s)
+ GET / 200 in 132ms (next.js: 9ms, application-code: 123ms)
+ ELIFECYCLE  Command failed with exit code 3221225786.

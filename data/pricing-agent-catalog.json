@@ -1,0 +1,305 @@
+{
+  "vendors": [
+    {
+      "id": "claude",
+      "name": "Claude",
+      "aliases": [
+        "anthropic",
+        "claude"
+      ],
+      "models": [
+        {
+          "name": "Haiku",
+          "aliases": [
+            "haiku",
+            "claude haiku"
+          ],
+          "allowedFields": [
+            "inputPricePerMTok",
+            "outputPricePerMTok"
+          ]
+        },
+        {
+          "name": "Sonnet",
+          "aliases": [
+            "sonnet",
+            "claude sonnet"
+          ],
+          "allowedFields": [
+            "inputPricePerMTok",
+            "outputPricePerMTok"
+          ]
+        },
+        {
+          "name": "Opus",
+          "aliases": [
+            "opus",
+            "claude opus"
+          ],
+          "allowedFields": [
+            "inputPricePerMTok",
+            "outputPricePerMTok"
+          ]
+        }
+      ],
+      "seatPlans": [
+        {
+          "name": "Team Standard",
+          "aliases": [
+            "team standard",
+            "claude team standard"
+          ],
+          "allowedFields": [
+            "priceMonthly",
+            "priceAnnual"
+          ]
+        },
+        {
+          "name": "Team Premium",
+          "aliases": [
+            "team premium",
+            "claude team premium"
+          ],
+          "allowedFields": [
+            "priceMonthly",
+            "priceAnnual"
+          ]
+        },
+        {
+          "name": "Enterprise",
+          "aliases": [
+            "enterprise",
+            "claude enterprise"
+          ],
+          "allowedFields": []
+        }
+      ]
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "aliases": [
+        "openai",
+        "chatgpt",
+        "codex"
+      ],
+      "models": [
+        {
+          "name": "GPT-5.4 mini",
+          "aliases": [
+            "gpt-5.4 mini",
+            "gpt-5.4-mini",
+            "gpt54mini",
+            "gpt-5 mini"
+          ],
+          "allowedFields": [
+            "inputPricePerMTok",
+            "outputPricePerMTok"
+          ]
+        },
+        {
+          "name": "GPT-5.4",
+          "aliases": [
+            "gpt-5.4",
+            "gpt54",
+            "gpt-5"
+          ],
+          "allowedFields": [
+            "inputPricePerMTok",
+            "outputPricePerMTok"
+          ]
+        },
+        {
+          "name": "GPT-5.5",
+          "aliases": [
+            "gpt-5.5",
+            "gpt55"
+          ],
+          "allowedFields": [
+            "inputPricePerMTok",
+            "outputPricePerMTok"
+          ]
+        }
+      ],
+      "seatPlans": [
+        {
+          "name": "ChatGPT Plus",
+          "aliases": [
+            "chatgpt plus",
+            "plus plan",
+            "plus"
+          ],
+          "allowedFields": [
+            "priceMonthly"
+          ]
+        },
+        {
+          "name": "ChatGPT Business",
+          "aliases": [
+            "chatgpt business",
+            "business plan",
+            "business",
+            "chatgpt & codex",
+            "business chatgpt & codex"
+          ],
+          "allowedFields": [
+            "priceMonthly",
+            "priceAnnual"
+          ]
+        },
+        {
+          "name": "Enterprise",
+          "aliases": [
+            "enterprise",
+            "openai enterprise",
+            "chatgpt enterprise"
+          ],
+          "allowedFields": []
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "aliases": [
+        "google",
+        "gemini",
+        "vertex ai",
+        "google ai"
+      ],
+      "models": [
+        {
+          "name": "Gemini 2.5 Flash-Lite",
+          "aliases": [
+            "gemini 2.5 flash-lite",
+            "gemini 2.5 flash lite",
+            "2.5 flash-lite",
+            "flash-lite"
+          ],
+          "allowedFields": [
+            "inputPricePerMTok",
+            "outputPricePerMTok"
+          ]
+        },
+        {
+          "name": "Gemini 2.5 Flash",
+          "aliases": [
+            "gemini 2.5 flash",
+            "2.5 flash"
+          ],
+          "allowedFields": [
+            "inputPricePerMTok",
+            "outputPricePerMTok"
+          ]
+        },
+        {
+          "name": "Gemini 2.5 Pro",
+          "aliases": [
+            "gemini 2.5 pro",
+            "2.5 pro",
+            "gemini pro"
+          ],
+          "allowedFields": [
+            "inputPricePerMTok",
+            "outputPricePerMTok"
+          ]
+        }
+      ],
+      "seatPlans": [
+        {
+          "name": "Google AI Plus",
+          "aliases": [
+            "google ai plus",
+            "google ai premium",
+            "ai premium",
+            "ai plus"
+          ],
+          "allowedFields": [
+            "priceMonthly",
+            "priceAnnual"
+          ]
+        },
+        {
+          "name": "Workspace Plus",
+          "aliases": [
+            "workspace plus",
+            "workspace business",
+            "business plus",
+            "google workspace plus"
+          ],
+          "allowedFields": [
+            "priceMonthly",
+            "priceAnnual"
+          ]
+        },
+        {
+          "name": "Enterprise / Vertex AI",
+          "aliases": [
+            "enterprise",
+            "vertex ai enterprise",
+            "enterprise vertex ai"
+          ],
+          "allowedFields": []
+        }
+      ]
+    },
+    {
+      "id": "githubcopilot",
+      "name": "GitHub Copilot",
+      "aliases": [
+        "github copilot",
+        "copilot business",
+        "copilot enterprise"
+      ],
+      "models": [],
+      "seatPlans": [
+        {
+          "name": "Copilot Business",
+          "aliases": [
+            "copilot business",
+            "github copilot business"
+          ],
+          "allowedFields": [
+            "priceMonthly",
+            "priceAnnual"
+          ]
+        },
+        {
+          "name": "Copilot Enterprise",
+          "aliases": [
+            "copilot enterprise",
+            "github copilot enterprise"
+          ],
+          "allowedFields": [
+            "priceMonthly",
+            "priceAnnual"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m365copilot",
+      "name": "Microsoft 365 Copilot",
+      "aliases": [
+        "microsoft copilot",
+        "microsoft 365 copilot",
+        "copilot for business"
+      ],
+      "models": [],
+      "seatPlans": [
+        {
+          "name": "Microsoft 365 Copilot Business",
+          "aliases": [
+            "microsoft 365 copilot business",
+            "copilot business for microsoft 365",
+            "m365 copilot business"
+          ],
+          "allowedFields": [
+            "priceMonthly",
+            "priceAnnual"
+          ]
+        }
+      ]
+    }
+  ]
+}

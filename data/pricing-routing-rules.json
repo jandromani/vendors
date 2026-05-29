@@ -1,0 +1,91 @@
+[
+  {
+    "condition": {
+      "volumeMin": 5000,
+      "costSensitivity": "high"
+    },
+    "vendorId": "gemini",
+    "modelTier": "fast",
+    "reason": "Gemini 2.5 Flash-Lite minimiza el coste unitario cuando el volumen es alto y prima el ahorro.",
+    "optimization": "batch",
+    "provenance": "editorial"
+  },
+  {
+    "condition": {
+      "useCase": "chat",
+      "complexityMax": 2
+    },
+    "vendorId": "chatgpt",
+    "modelTier": "fast",
+    "reason": "GPT-5.4 mini mantiene buen nivel en chat simple con el mejor precio de OpenAI.",
+    "optimization": "cache",
+    "provenance": "editorial"
+  },
+  {
+    "condition": {
+      "useCase": "coding",
+      "complexityMin": 3
+    },
+    "vendorId": "claude",
+    "modelTier": "balanced",
+    "reason": "Claude Sonnet es la apuesta editorial para coding complejo con contexto largo y buen coste.",
+    "provenance": "editorial"
+  },
+  {
+    "condition": {
+      "useCase": "rag"
+    },
+    "vendorId": "gemini",
+    "modelTier": "balanced",
+    "reason": "Gemini 2.5 Pro favorece casos RAG por contexto nativo muy amplio.",
+    "provenance": "editorial"
+  },
+  {
+    "condition": {
+      "useCase": "agent",
+      "complexityMin": 2,
+      "complexityMax": 4
+    },
+    "vendorId": "claude",
+    "modelTier": "balanced",
+    "reason": "Claude ofrece una combinación editorial fuerte para agentes estructurados de complejidad media.",
+    "provenance": "editorial"
+  },
+  {
+    "condition": {
+      "useCase": "agent",
+      "complexityMin": 4
+    },
+    "vendorId": "chatgpt",
+    "modelTier": "premium",
+    "reason": "GPT-5.5 queda como tier premium para agentes de razonamiento más profundo.",
+    "provenance": "editorial"
+  },
+  {
+    "condition": {
+      "useCase": "doc_analysis"
+    },
+    "vendorId": "gemini",
+    "modelTier": "balanced",
+    "reason": "Gemini 2.5 Pro aprovecha contexto largo en análisis documental.",
+    "provenance": "editorial"
+  },
+  {
+    "condition": {
+      "useCase": "realtime"
+    },
+    "vendorId": "chatgpt",
+    "modelTier": "balanced",
+    "reason": "OpenAI sigue siendo la referencia editorial para Realtime API en producto.",
+    "provenance": "editorial"
+  },
+  {
+    "condition": {
+      "complexityMin": 5
+    },
+    "vendorId": "chatgpt",
+    "modelTier": "premium",
+    "reason": "En razonamiento máximo, el routing editorial empuja a premium.",
+    "provenance": "editorial"
+  }
+]

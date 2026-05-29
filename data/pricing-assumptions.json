@@ -1,0 +1,112 @@
+{
+  "version": "pricing-assumptions-v1",
+  "provenanceLegend": [
+    {
+      "kind": "verified",
+      "label": "Verificado",
+      "description": "Dato confirmado por el truth graph contra una fuente oficial."
+    },
+    {
+      "kind": "measured",
+      "label": "Medido",
+      "description": "Dato calibrado con telemetria real de uso, no con una estimacion editorial."
+    },
+    {
+      "kind": "derived",
+      "label": "Derivado",
+      "description": "Resultado matemático calculado a partir de datos de entrada explícitos."
+    },
+    {
+      "kind": "estimated",
+      "label": "Estimado",
+      "description": "Supuesto operativo para modelar producción real donde no existe un claim verificable."
+    },
+    {
+      "kind": "editorial",
+      "label": "Editorial",
+      "description": "Regla o criterio de producto para recomendaciones y lectura comparativa."
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "calendar.working_days_default",
+      "label": "Dias laborables por mes",
+      "description": "Base estándar para proyecciones mensuales cuando el usuario no fija un calendario propio.",
+      "value": 22,
+      "unit": "days/month",
+      "provenance": "estimated"
+    },
+    {
+      "id": "optimization.batch_discount_rate",
+      "label": "Descuento Batch API",
+      "description": "Descuento operativo usado en simulaciones cuando se activa batch.",
+      "value": 0.5,
+      "unit": "share",
+      "provenance": "editorial"
+    },
+    {
+      "id": "optimization.cache_hit_rate_default",
+      "label": "Cache hit rate",
+      "description": "Porcentaje de input reutilizado cuando el usuario activa cache hits.",
+      "value": 0.4,
+      "unit": "share",
+      "provenance": "estimated"
+    },
+    {
+      "id": "optimization.cache_discount.claude",
+      "label": "Descuento cache Claude",
+      "description": "Factor usado para estimar el ahorro de input cacheado.",
+      "value": 0.9,
+      "unit": "share",
+      "provenance": "editorial"
+    },
+    {
+      "id": "optimization.cache_discount.chatgpt",
+      "label": "Descuento cache ChatGPT",
+      "description": "Factor usado para estimar el ahorro de input cacheado.",
+      "value": 0.5,
+      "unit": "share",
+      "provenance": "editorial"
+    },
+    {
+      "id": "optimization.cache_discount.gemini",
+      "label": "Descuento cache Gemini",
+      "description": "Factor usado para estimar el ahorro de input cacheado.",
+      "value": 0.75,
+      "unit": "share",
+      "provenance": "editorial"
+    },
+    {
+      "id": "routing.degradation.fast_weight",
+      "label": "Peso tier rapido",
+      "description": "Parte de la carga que se enruta al tier rápido en el modelo mixto.",
+      "value": 0.8,
+      "unit": "share",
+      "provenance": "estimated"
+    },
+    {
+      "id": "routing.degradation.balanced_weight",
+      "label": "Peso tier equilibrado",
+      "description": "Parte de la carga que se enruta al tier equilibrado en el modelo mixto.",
+      "value": 0.15,
+      "unit": "share",
+      "provenance": "estimated"
+    },
+    {
+      "id": "routing.degradation.premium_weight",
+      "label": "Peso tier premium",
+      "description": "Parte de la carga que se enruta al tier premium en el modelo mixto.",
+      "value": 0.05,
+      "unit": "share",
+      "provenance": "estimated"
+    },
+    {
+      "id": "planning.enterprise_negotiation_threshold",
+      "label": "Umbral de negociación enterprise",
+      "description": "Volumen mensual a partir del cual la UI recomienda negociar descuentos directos.",
+      "value": 100000,
+      "unit": "requests/day",
+      "provenance": "editorial"
+    }
+  ]
+}

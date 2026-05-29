@@ -1,0 +1,10 @@
+{
+  "lastRunAt": "2026-05-29T09:31:11.852Z",
+  "lastRunStatus": "verified",
+  "lastRunSummary": "Surface graph confirmó lineup, nombres de plan y señales críticas.",
+  "protocolVersion": "pricing-surface-v1",
+  "totalChecks": 26,
+  "verifiedChecks": 26,
+  "needsReview": 0,
+  "unverifiableChecks": 0
+}

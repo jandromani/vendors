@@ -1,0 +1,2 @@
+id,label,status,useCaseId,roleProfileId,sampleWindowDays,sampleSizeRequests,sampleSizeUsers,avgInputTokens,avgOutputTokens,overheadMultiplier,avgRequestsPerUserPerDay,cacheHitRate,batchHitRate,confidence,sourceLabel,recordedAt,notes
+telemetry-agents-builder-q2,Agent builders · autonomous flows,active,agent,autonomous_builder,10,18320,9,2380,1240,6.1,73,0.36,0.22,0.87,Agent runtime traces,2026-04-24T07:45:00.000Z,Long-running agent loops with tools and retries.

@@ -1,0 +1,127 @@
+{
+  "lastRunAt": "2026-05-29T09:31:11.882Z",
+  "seenItemIds": [
+    "9b789f2682a586dcfa373b11fd55338043f9cd25",
+    "1fb1260a997be0e2ac4b86b94ab5440e9392e12d",
+    "20dac67e92bfb56defc44e40f09b60a2ec1d7b30",
+    "abfc8e3e67d71b33cbcab7403f2cd7bae9bf4b43",
+    "f97990f35e2ada01381d9871cf8536ae058e4f50",
+    "02d2442873414b3c43b203ae907d21bab667d5f1",
+    "ae5b941be83fe068390cdce0c7e258ad17a93d8d",
+    "ff3071557ec432e6836f42e66f4f0d369a3913e2",
+    "a30ca60ccacf68a24195017a2ee2fe5043f36d50",
+    "997c247085c32bcc6943f082617decaa1b74c3e1",
+    "87697d22832281c5f08883c19d48460667ecf4e7",
+    "f0254dcecb06cb29a80c7874058b32a14038ec48",
+    "b36b23dc3785723c556ddbfe0fa795b662f17c03",
+    "53eaaa618f876a23810688acbff3299b09a18849",
+    "105347f8fdacbd89fc00138d0a9f62a02e8910b4",
+    "cc461b44b457e361cbfc96ea13a7fd0cea7794fc",
+    "6e6f6f688081ef171c084ecd1cc4df4fec46a84e",
+    "3ce1030970bacab75bf74f4e7d47160f57da55d9",
+    "a1ba8fc3b83338b49467737691aafdf80131c768",
+    "bd36ad40baaaeaae90ca305913808290c9bbf39b",
+    "ba401a389c1e80d61d7e67798f859e91159a7503",
+    "6d13a48b77f4224489a0f7f4aa3a9d5ab5a54c1c",
+    "f394f87b76cbe3d59443766526fbaab5f960d0f3",
+    "62785750fcbe60c855d877283bc2d5c58627f747",
+    "7b2dcadcde85dd730cd15e4b58bdda9ac7c8ac65",
+    "29bcc179b7b946caea779e10e8a84577f9493d93",
+    "81aaabb4e8c0e9c509d55e4847ec56ef489bbd7b",
+    "4edc3a5ca2a85b2aeecd4d88dadb2f76bc3f4bfb",
+    "589193e4c72060602992d2840cf15b395950cabc",
+    "28a5b26503ce82ea1f9856006c588986f484de68",
+    "a8a0f70841ec9617cdca84f06ae23068199e1c22"
+  ],
+  "lastRunStatus": "no_changes",
+  "lastRunSummary": "Truth graph confirmó los claims verificados sin generar cambios.",
+  "provider": "openrouter",
+  "model": "openrouter/free",
+  "protocolVersion": "pricing-agentic-v2",
+  "lastRunId": "2026-05-29T09:30:08.022Z::openrouter::openrouter/free",
+  "truthVerification": {
+    "lastRunAt": "2026-05-29T09:30:37.256Z",
+    "lastRunStatus": "verified",
+    "lastRunSummary": "Truth graph confirmó los claims verificados sin generar cambios.",
+    "provider": "openrouter",
+    "model": "openrouter/free",
+    "protocolVersion": "pricing-truth-v1",
+    "totalClaims": 33,
+    "publishableUpdates": 0,
+    "appliedUpdates": 0,
+    "needsAttention": 0,
+    "verdictCounts": {
+      "confirmed": 33
+    }
+  },
+  "runtimeAutopilot": {
+    "lastRunAt": "2026-05-29T09:31:11.857Z",
+    "lastRunStatus": "updated",
+    "lastRunSummary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+    "protocolVersion": "pricing-runtime-v1",
+    "autonomousMode": true,
+    "manualEditsLocked": true,
+    "sourceHealth": [
+      {
+        "sourceId": "support-chat-warehouse",
+        "label": "Support desk warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "engineer-coding-warehouse",
+        "label": "Engineering copilot warehouse export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "agent-builder-warehouse",
+        "label": "Agent runtime analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      },
+      {
+        "sourceId": "legal-docs-warehouse",
+        "label": "Document review analytics export",
+        "status": "ok",
+        "connectorType": "csv_file",
+        "rowCount": 1
+      }
+    ],
+    "telemetrySources": 4,
+    "appliedAssumptionOverrides": 1
+  },
+  "surfaceVerification": {
+    "lastRunAt": "2026-05-29T09:31:11.852Z",
+    "lastRunStatus": "verified",
+    "lastRunSummary": "Surface graph confirmó lineup, nombres de plan y señales críticas.",
+    "protocolVersion": "pricing-surface-v1",
+    "totalChecks": 26,
+    "verifiedChecks": 26,
+    "needsReview": 0,
+    "unverifiableChecks": 0
+  },
+  "providerStrategy": {
+    "preferredProvider": "openrouter",
+    "preferredModel": "openrouter/free",
+    "selectedProvider": "openrouter",
+    "selectedModel": "openrouter/free",
+    "degradedMode": false,
+    "failoverUsed": false,
+    "attempts": [
+      {
+        "provider": "openrouter",
+        "model": "openrouter/free",
+        "mode": "primary",
+        "startedAt": "2026-05-29T09:26:42.484Z",
+        "finishedAt": "2026-05-29T09:30:08.022Z",
+        "status": "ok",
+        "reason": "Configured primary provider."
+      }
+    ],
+    "summary": "Primary provider openrouter completed the run without failover."
+  }
+}

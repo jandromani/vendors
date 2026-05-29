@@ -1,0 +1,16 @@
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `FeatureMatrix`. See https://react.dev/link/warning-keys for more information.
+[browser] Each child in a list should have a unique "key" prop.
+
+Check the render method of `FeatureMatrix`. See https://react.dev/link/warning-keys for more information. 
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `FeatureMatrix`. See https://react.dev/link/warning-keys for more information.
+[browser] Each child in a list should have a unique "key" prop.
+
+Check the render method of `FeatureMatrix`. See https://react.dev/link/warning-keys for more information. 
+[browser] Each child in a list should have a unique "key" prop.
+
+Check the top-level render call using <section>. See https://react.dev/link/warning-keys for more information. 
+^C

@@ -1,0 +1,537 @@
+{
+  "protocolVersion": "pricing-surface-v1",
+  "runAt": "2026-05-29T09:31:11.852Z",
+  "status": "verified",
+  "totalChecks": 26,
+  "verifiedChecks": 26,
+  "needsReview": 0,
+  "unverifiableChecks": 0,
+  "checks": [
+    {
+      "checkId": "chatgpt::model-lineup",
+      "vendorId": "chatgpt",
+      "kind": "model_lineup",
+      "label": "ChatGPT model lineup",
+      "status": "verified",
+      "details": {
+        "expected": [
+          "GPT-5.4 mini",
+          "GPT-5.4",
+          "GPT-5.5"
+        ],
+        "current": [
+          "GPT-5.4 mini",
+          "GPT-5.4",
+          "GPT-5.5"
+        ],
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "checkId": "chatgpt::seat-plans",
+      "vendorId": "chatgpt",
+      "kind": "seat_plan_names",
+      "label": "ChatGPT seat plan names",
+      "status": "verified",
+      "details": {
+        "expected": [
+          "ChatGPT Plus",
+          "ChatGPT Business",
+          "Enterprise"
+        ],
+        "current": [
+          "ChatGPT Plus",
+          "ChatGPT Business",
+          "Enterprise"
+        ],
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "checkId": "chatgpt::signal::chatgpt-plus-gpt55",
+      "vendorId": "chatgpt",
+      "kind": "critical_signal",
+      "label": "ChatGPT Plus highlights GPT-5.5",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "openai-chatgpt-plus-help"
+        ],
+        "matchedSourceId": "openai-chatgpt-plus-help",
+        "snippet": "What is ChatGPT Plus? | OpenAI Help Center Language English Login All Collections ChatGPT What is ChatGPT Plus? What is ChatGPT Plus? Information about our paid subscription plan, Plus. Updated: 8 days ago As of February 13, 2026, models GPT-4o, GPT-4.1, GPT-4.1 mini, OpenAI o4-m...",
+        "sourceHealth": [
+          {
+            "sourceId": "openai-chatgpt-plus-help",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "chatgpt::signal::chatgpt-business-help",
+      "vendorId": "chatgpt",
+      "kind": "critical_signal",
+      "label": "ChatGPT Business help article reachable",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "openai-chatgpt-business-help"
+        ],
+        "matchedSourceId": "openai-chatgpt-business-help",
+        "snippet": "What is ChatGPT Business? | OpenAI Help Center Language English Login All Collections ChatGPT Business What is ChatGPT Business? What is ChatGPT Business? Learn what ChatGPT Business is, how different seat types work, and how pricing, privacy, and admin controls work. Updated: 8 ...",
+        "sourceHealth": [
+          {
+            "sourceId": "openai-chatgpt-business-help",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "chatgpt::signal::chatgpt-gpt55-default",
+      "vendorId": "chatgpt",
+      "kind": "critical_signal",
+      "label": "GPT-5.5 Instant is the default for logged-in users",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "openai-chatgpt-gpt55-help"
+        ],
+        "matchedSourceId": "openai-chatgpt-gpt55-help",
+        "snippet": "GPT-5.5 in ChatGPT | OpenAI Help Center Language English Login All Collections ChatGPT GPT-5.5 in ChatGPT GPT-5.5 in ChatGPT Updated: 4 days ago GPT-5.5 Instant in ChatGPT is the default for all logged-in users, and a single auto-switching system that brings together the best of ...",
+        "sourceHealth": [
+          {
+            "sourceId": "openai-chatgpt-gpt55-help",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "chatgpt::signal::chatgpt-gpt55-pro-limitations",
+      "vendorId": "chatgpt",
+      "kind": "critical_signal",
+      "label": "GPT-5.5 Pro limitations remain visible",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "openai-chatgpt-gpt55-help"
+        ],
+        "matchedSourceId": "openai-chatgpt-gpt55-help",
+        "snippet": "GPT-5.5 in ChatGPT | OpenAI Help Center Language English Login All Collections ChatGPT GPT-5.5 in ChatGPT GPT-5.5 in ChatGPT Updated: 4 days ago GPT-5.5 Instant in ChatGPT is the default for all logged-in users, and a single auto-switching system that brings together the best of ...",
+        "sourceHealth": [
+          {
+            "sourceId": "openai-chatgpt-gpt55-help",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "chatgpt::signal::chatgpt-legacy-retirement",
+      "vendorId": "chatgpt",
+      "kind": "critical_signal",
+      "label": "Legacy ChatGPT models retired from ChatGPT",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "openai-chatgpt-plus-help"
+        ],
+        "matchedSourceId": "openai-chatgpt-plus-help",
+        "snippet": "What is ChatGPT Plus? | OpenAI Help Center Language English Login All Collections ChatGPT What is ChatGPT Plus? What is ChatGPT Plus? Information about our paid subscription plan, Plus. Updated: 8 days ago As of February 13, 2026, models GPT-4o, GPT-4.1, GPT-4.1 mini, OpenAI o4-m...",
+        "sourceHealth": [
+          {
+            "sourceId": "openai-chatgpt-plus-help",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "gemini::model-lineup",
+      "vendorId": "gemini",
+      "kind": "model_lineup",
+      "label": "Gemini model lineup",
+      "status": "verified",
+      "details": {
+        "expected": [
+          "Gemini 2.5 Flash-Lite",
+          "Gemini 2.5 Flash",
+          "Gemini 2.5 Pro"
+        ],
+        "current": [
+          "Gemini 2.5 Flash-Lite",
+          "Gemini 2.5 Flash",
+          "Gemini 2.5 Pro"
+        ],
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "checkId": "gemini::seat-plans",
+      "vendorId": "gemini",
+      "kind": "seat_plan_names",
+      "label": "Gemini seat plan names",
+      "status": "verified",
+      "details": {
+        "expected": [
+          "Google AI Plus",
+          "Workspace Plus",
+          "Enterprise / Vertex AI"
+        ],
+        "current": [
+          "Google AI Plus",
+          "Workspace Plus",
+          "Enterprise / Vertex AI"
+        ],
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "checkId": "gemini::signal::gemini-20-flash-shutdown",
+      "vendorId": "gemini",
+      "kind": "critical_signal",
+      "label": "Gemini 2.0 Flash shutdown notice",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "google-gemini-api-pricing"
+        ],
+        "matchedSourceId": "google-gemini-api-pricing",
+        "snippet": "Gemini Developer API pricing &nbsp;|&nbsp; Gemini API &nbsp;|&nbsp; Google AI for Developers { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Gemini Developer API pricing\" } { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{ \"...",
+        "sourceHealth": [
+          {
+            "sourceId": "google-gemini-api-pricing",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "gemini::signal::google-ai-plus-rename",
+      "vendorId": "gemini",
+      "kind": "critical_signal",
+      "label": "AI Premium renamed to Google AI Plus",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "google-one-ai-pricing"
+        ],
+        "matchedSourceId": "google-one-ai-pricing",
+        "snippet": "Google AI Plans with Cloud Storage - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': n...",
+        "sourceHealth": [
+          {
+            "sourceId": "google-one-ai-pricing",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "gemini::signal::workspace-plus-max-users",
+      "vendorId": "gemini",
+      "kind": "critical_signal",
+      "label": "Workspace Plus remains capped at 300 users",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "google-workspace-pricing"
+        ],
+        "matchedSourceId": "google-workspace-pricing",
+        "snippet": "window['ppConfig'] = {productName: 'DasherGrowthPricingUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WI...",
+        "sourceHealth": [
+          {
+            "sourceId": "google-workspace-pricing",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "gemini::signal::workspace-plus-gemini-copy",
+      "vendorId": "gemini",
+      "kind": "critical_signal",
+      "label": "Workspace Plus still exposes Gemini AI assistant copy",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "google-workspace-pricing"
+        ],
+        "matchedSourceId": "google-workspace-pricing",
+        "snippet": "window['ppConfig'] = {productName: 'DasherGrowthPricingUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WI...",
+        "sourceHealth": [
+          {
+            "sourceId": "google-workspace-pricing",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "gemini::signal::google-ai-plus-notebooklm",
+      "vendorId": "gemini",
+      "kind": "critical_signal",
+      "label": "Google AI Plus still mentions NotebookLM",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "google-one-ai-pricing"
+        ],
+        "matchedSourceId": "google-one-ai-pricing",
+        "snippet": "Google AI Plans with Cloud Storage - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': n...",
+        "sourceHealth": [
+          {
+            "sourceId": "google-one-ai-pricing",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "githubcopilot::model-lineup",
+      "vendorId": "githubcopilot",
+      "kind": "model_lineup",
+      "label": "GitHub Copilot model lineup",
+      "status": "verified",
+      "details": {
+        "expected": [],
+        "current": [],
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "checkId": "githubcopilot::seat-plans",
+      "vendorId": "githubcopilot",
+      "kind": "seat_plan_names",
+      "label": "GitHub Copilot seat plan names",
+      "status": "verified",
+      "details": {
+        "expected": [
+          "Copilot Business",
+          "Copilot Enterprise"
+        ],
+        "current": [
+          "Copilot Business",
+          "Copilot Enterprise"
+        ],
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "checkId": "githubcopilot::signal::copilot-june-1-transition",
+      "vendorId": "githubcopilot",
+      "kind": "critical_signal",
+      "label": "Usage-based billing starts June 1, 2026",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "github-copilot-org-billing"
+        ],
+        "matchedSourceId": "github-copilot-org-billing",
+        "snippet": "About billing for GitHub Copilot in organizations and enterprises - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open me...",
+        "sourceHealth": [
+          {
+            "sourceId": "github-copilot-org-billing",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "githubcopilot::signal::copilot-premium-overage",
+      "vendorId": "githubcopilot",
+      "kind": "critical_signal",
+      "label": "Premium request overage published",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "github-copilot-org-billing"
+        ],
+        "matchedSourceId": "github-copilot-org-billing",
+        "snippet": "About billing for GitHub Copilot in organizations and enterprises - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open me...",
+        "sourceHealth": [
+          {
+            "sourceId": "github-copilot-org-billing",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "githubcopilot::signal::copilot-credits-transition-window",
+      "vendorId": "githubcopilot",
+      "kind": "critical_signal",
+      "label": "Transition window with extra AI credits remains published",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "github-copilot-usage-billing"
+        ],
+        "matchedSourceId": "github-copilot-usage-billing",
+        "snippet": "Usage-based billing for organizations and enterprises - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Side...",
+        "sourceHealth": [
+          {
+            "sourceId": "github-copilot-usage-billing",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "githubcopilot::signal::copilot-chat-in-ides",
+      "vendorId": "githubcopilot",
+      "kind": "critical_signal",
+      "label": "Plans page still exposes Copilot Chat in IDEs",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "github-copilot-plans"
+        ],
+        "matchedSourceId": "github-copilot-plans",
+        "snippet": "Plans for GitHub Copilot - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Get star...",
+        "sourceHealth": [
+          {
+            "sourceId": "github-copilot-plans",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "m365copilot::model-lineup",
+      "vendorId": "m365copilot",
+      "kind": "model_lineup",
+      "label": "Microsoft 365 Copilot model lineup",
+      "status": "verified",
+      "details": {
+        "expected": [],
+        "current": [],
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "checkId": "m365copilot::seat-plans",
+      "vendorId": "m365copilot",
+      "kind": "seat_plan_names",
+      "label": "Microsoft 365 Copilot seat plan names",
+      "status": "verified",
+      "details": {
+        "expected": [
+          "Microsoft 365 Copilot Business"
+        ],
+        "current": [
+          "Microsoft 365 Copilot Business"
+        ],
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "checkId": "m365copilot::signal::m365-copilot-chat",
+      "vendorId": "m365copilot",
+      "kind": "critical_signal",
+      "label": "Copilot Chat present in business page",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "microsoft-copilot-business"
+        ],
+        "matchedSourceId": "microsoft-copilot-business",
+        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+        "sourceHealth": [
+          {
+            "sourceId": "microsoft-copilot-business",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "m365copilot::signal::m365-up-to-300-users",
+      "vendorId": "m365copilot",
+      "kind": "critical_signal",
+      "label": "Up to 300 users limit",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "microsoft-copilot-business"
+        ],
+        "matchedSourceId": "microsoft-copilot-business",
+        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+        "sourceHealth": [
+          {
+            "sourceId": "microsoft-copilot-business",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "m365copilot::signal::m365-qualifying-plan-required",
+      "vendorId": "m365copilot",
+      "kind": "critical_signal",
+      "label": "Qualifying Microsoft 365 plan required",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "microsoft-copilot-business"
+        ],
+        "matchedSourceId": "microsoft-copilot-business",
+        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+        "sourceHealth": [
+          {
+            "sourceId": "microsoft-copilot-business",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "checkId": "m365copilot::signal::m365-agents-copy",
+      "vendorId": "m365copilot",
+      "kind": "critical_signal",
+      "label": "Agents remain core in business copy",
+      "status": "verified",
+      "details": {
+        "sourceIds": [
+          "microsoft-copilot-business"
+        ],
+        "matchedSourceId": "microsoft-copilot-business",
+        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+        "sourceHealth": [
+          {
+            "sourceId": "microsoft-copilot-business",
+            "status": "ok",
+            "error": null
+          }
+        ]
+      }
+    }
+  ],
+  "summary": "Surface graph confirmó lineup, nombres de plan y señales críticas.",
+  "runId": "2026-05-29T09:30:08.022Z::openrouter::openrouter/free"
+}

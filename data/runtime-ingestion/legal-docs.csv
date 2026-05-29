@@ -1,0 +1,2 @@
+id,label,status,useCaseId,roleProfileId,sampleWindowDays,sampleSizeRequests,sampleSizeUsers,avgInputTokens,avgOutputTokens,overheadMultiplier,avgRequestsPerUserPerDay,cacheHitRate,batchHitRate,confidence,sourceLabel,recordedAt,notes
+telemetry-legal-docs-q2,Legal review · document analysis,active,doc_analysis,analyst,18,9240,11,14800,920,1.18,31,0.12,0.38,0.91,Document workflow analytics,2026-04-24T07:45:00.000Z,Large-context PDF and contract review workload.

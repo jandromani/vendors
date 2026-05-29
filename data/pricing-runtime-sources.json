@@ -1,0 +1,53 @@
+{
+  "version": "pricing-runtime-sources-v1",
+  "sources": [
+    {
+      "id": "support-chat-warehouse",
+      "label": "Support desk warehouse export",
+      "status": "active",
+      "connector": {
+        "type": "csv_file",
+        "path": "data/runtime-ingestion/support-chat.csv"
+      },
+      "parser": {
+        "format": "aggregated_telemetry_v1"
+      }
+    },
+    {
+      "id": "engineer-coding-warehouse",
+      "label": "Engineering copilot warehouse export",
+      "status": "active",
+      "connector": {
+        "type": "csv_file",
+        "path": "data/runtime-ingestion/engineer-coding.csv"
+      },
+      "parser": {
+        "format": "aggregated_telemetry_v1"
+      }
+    },
+    {
+      "id": "agent-builder-warehouse",
+      "label": "Agent runtime analytics export",
+      "status": "active",
+      "connector": {
+        "type": "csv_file",
+        "path": "data/runtime-ingestion/agent-builder.csv"
+      },
+      "parser": {
+        "format": "aggregated_telemetry_v1"
+      }
+    },
+    {
+      "id": "legal-docs-warehouse",
+      "label": "Document review analytics export",
+      "status": "active",
+      "connector": {
+        "type": "csv_file",
+        "path": "data/runtime-ingestion/legal-docs.csv"
+      },
+      "parser": {
+        "format": "aggregated_telemetry_v1"
+      }
+    }
+  ]
+}

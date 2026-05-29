@@ -1,0 +1,966 @@
+[
+  {
+    "id": "claude",
+    "name": "Claude",
+    "company": "Anthropic",
+    "tagline": "Seguridad y razonamiento de alta precisión",
+    "color": "#D97757",
+    "bgGradient": "from-orange-950/40 to-orange-900/10",
+    "textColor": "text-orange-400",
+    "borderColor": "border-orange-800/50",
+    "badgeColor": "bg-orange-900/50 text-orange-300",
+    "models": [
+      {
+        "name": "Haiku",
+        "version": "4.5",
+        "tier": "fast",
+        "inputPricePerMTok": 1,
+        "outputPricePerMTok": 5,
+        "contextWindow": "200K",
+        "features": [
+          "Respuestas rápidas",
+          "Tareas simples",
+          "Alto volumen",
+          "Bajo coste"
+        ]
+      },
+      {
+        "name": "Sonnet",
+        "version": "4.6",
+        "tier": "balanced",
+        "inputPricePerMTok": 3,
+        "outputPricePerMTok": 15,
+        "contextWindow": "200K",
+        "features": [
+          "Balance óptimo",
+          "Coding avanzado",
+          "Análisis",
+          "Referencia actual"
+        ],
+        "badge": "Recomendado"
+      },
+      {
+        "name": "Opus",
+        "version": "4.7",
+        "tier": "premium",
+        "inputPricePerMTok": 5,
+        "outputPricePerMTok": 25,
+        "contextWindow": "200K",
+        "features": [
+          "Máxima calidad",
+          "Razonamiento complejo",
+          "Research",
+          "Última versión"
+        ]
+      }
+    ],
+    "seatPlans": [
+      {
+        "name": "Team Standard",
+        "priceMonthly": 25,
+        "priceAnnual": 20,
+        "minSeats": 5,
+        "maxSeats": 150,
+        "features": [
+          "Colaboración en equipo",
+          "Administración central",
+          "claude.ai incluido",
+          "Acceso a todos los modelos"
+        ]
+      },
+      {
+        "name": "Team Premium",
+        "priceMonthly": 125,
+        "priceAnnual": 100,
+        "minSeats": 5,
+        "maxSeats": 150,
+        "features": [
+          "Todo de Standard",
+          "Prioridad en cola",
+          "Extended context",
+          "Funciones beta"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Precio negociado",
+          "Seguridad y gobernanza enterprise",
+          "SSO y controles admin avanzados",
+          "SLA y despliegue a medida"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Web Search API",
+        "price": "$10 / 1.000 búsquedas"
+      },
+      {
+        "label": "Managed Agents runtime",
+        "price": "$0.08 / session-hora"
+      },
+      {
+        "label": "Code Execution",
+        "price": "$0.05 / hora/contenedor"
+      },
+      {
+        "label": "Región / multi-región (Bedrock/Vertex)",
+        "price": "+10% sobre tokens"
+      },
+      {
+        "label": "US-only inference (API propia)",
+        "price": "+10% sobre input+output"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Batch API",
+        "discount": "−50% en tokens"
+      },
+      {
+        "label": "Prompt Cache hits",
+        "discount": "−90% en input (10% del precio base)"
+      },
+      {
+        "label": "Cache creation",
+        "discount": "1.25× ó 2× según duración"
+      },
+      {
+        "label": "Volumen negociado",
+        "discount": "Descuentos caso a caso"
+      }
+    ],
+    "surface": "core"
+  },
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "company": "OpenAI",
+    "tagline": "Frontier API, ChatGPT y Codex bajo el ecosistema más amplio del mercado",
+    "color": "#10A37F",
+    "bgGradient": "from-emerald-950/40 to-emerald-900/10",
+    "textColor": "text-emerald-400",
+    "borderColor": "border-emerald-800/50",
+    "badgeColor": "bg-emerald-900/50 text-emerald-300",
+    "models": [
+      {
+        "name": "GPT-5.4 mini",
+        "version": "2026",
+        "tier": "fast",
+        "inputPricePerMTok": 0.75,
+        "outputPricePerMTok": 4.5,
+        "contextWindow": "400K",
+        "features": [
+          "Subagentes",
+          "Computer use",
+          "Alto volumen",
+          "Tooling completo"
+        ]
+      },
+      {
+        "name": "GPT-5.4",
+        "version": "2026",
+        "tier": "balanced",
+        "inputPricePerMTok": 2.5,
+        "outputPricePerMTok": 15,
+        "contextWindow": "1.05M",
+        "features": [
+          "Trabajo profesional",
+          "Coding serio",
+          "Reasoning configurable",
+          "JSON + tools"
+        ],
+        "badge": "Referencia OpenAI"
+      },
+      {
+        "name": "GPT-5.5",
+        "version": "2026",
+        "tier": "premium",
+        "inputPricePerMTok": 5,
+        "outputPricePerMTok": 30,
+        "contextWindow": "1.05M",
+        "features": [
+          "Última flagship",
+          "Máxima precisión",
+          "Agentic workflows",
+          "Top-end coding"
+        ]
+      }
+    ],
+    "seatPlans": [
+      {
+        "name": "ChatGPT Plus",
+        "priceMonthly": 20,
+        "priceAnnual": 0,
+        "minSeats": 1,
+        "maxSeats": 1,
+        "features": [
+          "Límites altos de GPT-5.5",
+          "Imagen + voz + projects",
+          "Deep Research",
+          "Sin facturación anual pública"
+        ]
+      },
+      {
+        "name": "ChatGPT Business",
+        "priceMonthly": 25,
+        "priceAnnual": 20,
+        "minSeats": 2,
+        "features": [
+          "Workspace compartido",
+          "Datos no usados para training",
+          "Facturación por asiento estable",
+          "Codex y funciones avanzadas"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Precio negociado",
+          "Créditos y gobernanza enterprise",
+          "SSO / SCIM / SLA",
+          "Seguridad y control avanzados"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Image generation (gpt-image)",
+        "price": "$0.04 / imagen (1024px)"
+      },
+      {
+        "label": "Realtime / voice stack",
+        "price": "Segun modelo y modalidad"
+      },
+      {
+        "label": "Web search / tool calls",
+        "price": "Se factura por modelo y herramienta"
+      },
+      {
+        "label": "Storage / files / vector infra",
+        "price": "Segun producto y uso"
+      },
+      {
+        "label": "Priority / regional processing",
+        "price": "+10% o multiplicador por tier"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Batch API",
+        "discount": "−50% en input y output"
+      },
+      {
+        "label": "Prompt Cache",
+        "discount": "−50% en input cacheado"
+      },
+      {
+        "label": "Regional processing uplift",
+        "discount": "+10% en GPT-5.4 / GPT-5.5"
+      },
+      {
+        "label": "Flex / priority routing",
+        "discount": "Coste y latencia segun tier"
+      }
+    ],
+    "surface": "core"
+  },
+  {
+    "id": "gemini",
+    "name": "Gemini",
+    "company": "Google",
+    "tagline": "Gemini API, Google AI plans y Workspace con contexto largo y precio competitivo",
+    "color": "#4285F4",
+    "bgGradient": "from-blue-950/40 to-blue-900/10",
+    "textColor": "text-blue-400",
+    "borderColor": "border-blue-800/50",
+    "badgeColor": "bg-blue-900/50 text-blue-300",
+    "models": [
+      {
+        "name": "Gemini 2.5 Flash-Lite",
+        "version": "2026",
+        "tier": "fast",
+        "inputPricePerMTok": 0.1,
+        "outputPricePerMTok": 0.4,
+        "contextWindow": "1M",
+        "features": [
+          "Tier mas barato",
+          "Multimodal nativo",
+          "Alto throughput",
+          "Ideal para volumen"
+        ]
+      },
+      {
+        "name": "Gemini 2.5 Flash",
+        "version": "2026",
+        "tier": "balanced",
+        "inputPricePerMTok": 0.3,
+        "outputPricePerMTok": 2.5,
+        "contextWindow": "1M",
+        "features": [
+          "Precio-rendimiento",
+          "Realtime y tools",
+          "Contexto 1M",
+          "Search grounding"
+        ],
+        "badge": "Mejor coste/contexto"
+      },
+      {
+        "name": "Gemini 2.5 Pro",
+        "version": "2026",
+        "tier": "premium",
+        "inputPricePerMTok": 1.25,
+        "outputPricePerMTok": 10,
+        "contextWindow": "1M",
+        "features": [
+          "Tier premium actual",
+          "Coding y reasoning",
+          "Video y multimodal",
+          "Long context nativo"
+        ]
+      }
+    ],
+    "seatPlans": [
+      {
+        "name": "Google AI Plus",
+        "priceMonthly": 19.99,
+        "priceAnnual": 19.99,
+        "minSeats": 1,
+        "maxSeats": 1,
+        "features": [
+          "Nuevo nombre de AI Premium",
+          "Gemini app + NotebookLM",
+          "200 GB Google One",
+          "Beneficios base de IA en Google"
+        ]
+      },
+      {
+        "name": "Workspace Plus",
+        "priceMonthly": 21.1,
+        "priceAnnual": 21.1,
+        "minSeats": 1,
+        "features": [
+          "Workspace Plus con Gemini",
+          "NotebookLM Plus",
+          "Meet / Gmail / Docs con IA",
+          "Admin + compliance",
+          "Precio recurrente público actual"
+        ]
+      },
+      {
+        "name": "Enterprise / Vertex AI",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Precio negociado + API",
+          "Vertex AI nativo",
+          "Governance / CMEK / VPC",
+          "Contrato enterprise"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Google Search grounding",
+        "price": "$35 / 1.000 grounded prompts"
+      },
+      {
+        "label": "Maps grounding",
+        "price": "$25 / 1.000 grounded prompts"
+      },
+      {
+        "label": "Imagen / video / live APIs",
+        "price": "Segun modalidad y modelo"
+      },
+      {
+        "label": "Managed agents",
+        "price": "Inference estandar; compute preview sin cargo"
+      },
+      {
+        "label": "File search embeddings",
+        "price": "$0.15 / 1M tokens"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Context caching",
+        "discount": "Descuento agresivo en cache hits"
+      },
+      {
+        "label": "Batch predictions / async",
+        "discount": "−50% en workflows compatibles"
+      },
+      {
+        "label": "Search free allowances",
+        "discount": "Cuotas gratuitas por modelo/tier"
+      },
+      {
+        "label": "Gemini 2.0 Flash",
+        "discount": "Cierra el 1 de junio de 2026"
+      }
+    ],
+    "surface": "core"
+  },
+  {
+    "id": "githubcopilot",
+    "surface": "tracked",
+    "name": "GitHub Copilot",
+    "company": "GitHub",
+    "tagline": "Licencias de desarrollo con premium requests y facturación por uso desde el 1 de junio",
+    "color": "#CBD5E1",
+    "bgGradient": "from-slate-950/40 to-slate-900/10",
+    "textColor": "text-slate-200",
+    "borderColor": "border-slate-700/50",
+    "badgeColor": "bg-slate-900/50 text-slate-200",
+    "models": [],
+    "seatPlans": [
+      {
+        "name": "Copilot Business",
+        "priceMonthly": 19,
+        "priceAnnual": 19,
+        "minSeats": 1,
+        "features": [
+          "Organizaciones y equipos",
+          "Premium requests incluidos",
+          "Overage a $0.04 / request",
+          "Usage-based billing desde 2026-06-01"
+        ]
+      },
+      {
+        "name": "Copilot Enterprise",
+        "priceMonthly": 39,
+        "priceAnnual": 39,
+        "minSeats": 1,
+        "features": [
+          "GitHub Enterprise Cloud",
+          "Premium requests incluidos",
+          "Overage a $0.04 / request",
+          "Facturación usage-based desde 2026-06-01"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Premium request overage",
+        "price": "$0.04 / request"
+      },
+      {
+        "label": "Data residency multiplier",
+        "price": "+10% model multiplier"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Seat consolidation",
+        "discount": "Un usuario solo se factura una vez por enterprise"
+      },
+      {
+        "label": "June 1 transition",
+        "discount": "Pasa de request-based a usage-based"
+      }
+    ]
+  },
+  {
+    "id": "m365copilot",
+    "surface": "tracked",
+    "name": "Microsoft 365 Copilot",
+    "company": "Microsoft",
+    "tagline": "Copilot para negocio con licencia adicional sobre Microsoft 365 y fuerte capa de productividad",
+    "color": "#93C5FD",
+    "bgGradient": "from-sky-950/40 to-sky-900/10",
+    "textColor": "text-sky-300",
+    "borderColor": "border-sky-700/50",
+    "badgeColor": "bg-sky-950/50 text-sky-300",
+    "models": [],
+    "seatPlans": [
+      {
+        "name": "Microsoft 365 Copilot Business",
+        "priceMonthly": 18.9,
+        "priceAnnual": 18,
+        "minSeats": 1,
+        "maxSeats": 300,
+        "features": [
+          "Copilot Chat",
+          "Agentes para trabajo",
+          "Requiere Microsoft 365 cualificado",
+          "Hasta 300 usuarios",
+          "Pricing depende del bundle Microsoft 365 base"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Licencia base Microsoft 365",
+        "price": "Requerida por separado"
+      },
+      {
+        "label": "Agentes y Copilot Studio",
+        "price": "Puede requerir productos adicionales"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Promo anual",
+        "discount": "De $21.00 a $18.00 / usuario / mes"
+      },
+      {
+        "label": "Pago mensual anualizado",
+        "discount": "$18.90 / usuario / mes"
+      }
+    ]
+  },
+  {
+    "id": "mistral",
+    "surface": "tracked",
+    "name": "Mistral",
+    "company": "Mistral AI",
+    "tagline": "Frontier abierto desde Europa con Le Chat, La Plateforme y Codestral",
+    "color": "#FA520F",
+    "bgGradient": "from-orange-950/40 to-orange-900/10",
+    "textColor": "text-orange-300",
+    "borderColor": "border-orange-800/50",
+    "badgeColor": "bg-orange-950/50 text-orange-300",
+    "models": [],
+    "seatPlans": [
+      {
+        "name": "Le Chat Pro",
+        "priceMonthly": 14.99,
+        "priceAnnual": 14.99,
+        "minSeats": 1,
+        "maxSeats": 1,
+        "features": [
+          "Le Chat con modelos premium",
+          "Búsqueda y herramientas avanzadas",
+          "Conectores empresariales"
+        ]
+      },
+      {
+        "name": "Le Chat Team",
+        "priceMonthly": 24.99,
+        "priceAnnual": 24.99,
+        "minSeats": 1,
+        "features": [
+          "Workspace compartido",
+          "SSO y gobernanza",
+          "Conectores y Agents Studio"
+        ]
+      },
+      {
+        "name": "Enterprise / La Plateforme",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Precio negociado",
+          "Despliegue VPC / on-prem",
+          "Codestral, Mistral Large, OCR API",
+          "Soporte y SLA empresarial"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "La Plateforme API",
+        "price": "Pricing público por modelo y tokens"
+      },
+      {
+        "label": "Codestral",
+        "price": "Endpoints y licencia comercial dedicados"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Open-weights",
+        "discount": "Despliegue self-hosted disponible"
+      }
+    ]
+  },
+  {
+    "id": "xai",
+    "surface": "tracked",
+    "name": "xAI Grok",
+    "company": "xAI",
+    "tagline": "Grok en X y API con énfasis en razonamiento y datos en tiempo real",
+    "color": "#E5E7EB",
+    "bgGradient": "from-zinc-950/40 to-zinc-900/10",
+    "textColor": "text-zinc-200",
+    "borderColor": "border-zinc-700/50",
+    "badgeColor": "bg-zinc-900/50 text-zinc-200",
+    "models": [],
+    "seatPlans": [
+      {
+        "name": "Premium (X)",
+        "priceMonthly": 8,
+        "priceAnnual": 8,
+        "minSeats": 1,
+        "maxSeats": 1,
+        "features": [
+          "Acceso a Grok desde X",
+          "Funciones premium de la red"
+        ]
+      },
+      {
+        "name": "SuperGrok",
+        "priceMonthly": 30,
+        "priceAnnual": 30,
+        "minSeats": 1,
+        "maxSeats": 1,
+        "features": [
+          "Grok con límites elevados",
+          "Modos avanzados de razonamiento",
+          "Acceso prioritario a nuevas versiones"
+        ]
+      },
+      {
+        "name": "xAI API",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Pricing por tokens",
+          "Modelos Grok via API",
+          "Compatible con tooling estándar"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Búsqueda en tiempo real",
+        "price": "Tarifa específica por consulta"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Suscripción anual X",
+        "discount": "Descuento sobre tarifa mensual"
+      }
+    ]
+  },
+  {
+    "id": "deepseek",
+    "surface": "tracked",
+    "name": "DeepSeek",
+    "company": "DeepSeek",
+    "tagline": "Modelos open-weight altamente coste-eficientes con caché agresiva",
+    "color": "#60A5FA",
+    "bgGradient": "from-blue-950/40 to-blue-900/10",
+    "textColor": "text-blue-300",
+    "borderColor": "border-blue-800/50",
+    "badgeColor": "bg-blue-950/50 text-blue-300",
+    "models": [],
+    "seatPlans": [
+      {
+        "name": "DeepSeek API",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Pricing por tokens con caché",
+          "Descuentos por cache hit muy agresivos",
+          "Modelos de reasoning y chat"
+        ]
+      },
+      {
+        "name": "Self-hosted",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Weights publicados",
+          "Despliegue propio sin coste de licencia"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Cache hit",
+        "price": "Hasta −90% sobre input"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Off-peak pricing",
+        "discount": "Tarifas reducidas en franjas valle"
+      }
+    ]
+  },
+  {
+    "id": "cohere",
+    "surface": "tracked",
+    "name": "Cohere",
+    "company": "Cohere",
+    "tagline": "Command, Embed y Rerank para search empresarial y RAG en producción",
+    "color": "#F472B6",
+    "bgGradient": "from-pink-950/40 to-pink-900/10",
+    "textColor": "text-pink-300",
+    "borderColor": "border-pink-800/50",
+    "badgeColor": "bg-pink-950/50 text-pink-300",
+    "models": [],
+    "seatPlans": [
+      {
+        "name": "Cohere API",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Command, Embed, Rerank",
+          "Pricing por tokens y por documento",
+          "Multilenguaje fuerte"
+        ]
+      },
+      {
+        "name": "Cohere Enterprise / North",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Precio negociado",
+          "Despliegue privado y secure compute",
+          "Soporte y SLA empresarial"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Rerank",
+        "price": "Pricing por documento procesado"
+      },
+      {
+        "label": "Embeddings",
+        "price": "Pricing por millón de tokens"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Despliegue privado",
+        "discount": "Sin coste por token en infra propia"
+      }
+    ]
+  },
+  {
+    "id": "perplexity",
+    "surface": "tracked",
+    "name": "Perplexity",
+    "company": "Perplexity",
+    "tagline": "Respuestas con búsqueda en vivo, planes consumer y Sonar API",
+    "color": "#22D3EE",
+    "bgGradient": "from-cyan-950/40 to-cyan-900/10",
+    "textColor": "text-cyan-300",
+    "borderColor": "border-cyan-800/50",
+    "badgeColor": "bg-cyan-950/50 text-cyan-300",
+    "models": [],
+    "seatPlans": [
+      {
+        "name": "Perplexity Pro",
+        "priceMonthly": 20,
+        "priceAnnual": 16.67,
+        "minSeats": 1,
+        "maxSeats": 1,
+        "features": [
+          "Pro Search ilimitada (cuota razonable)",
+          "Acceso a modelos frontier",
+          "Archivos y Spaces"
+        ]
+      },
+      {
+        "name": "Perplexity Enterprise Pro",
+        "priceMonthly": 40,
+        "priceAnnual": 33.34,
+        "minSeats": 1,
+        "features": [
+          "SSO, SCIM, audit logs",
+          "Data privacy reforzada",
+          "Soporte enterprise"
+        ]
+      },
+      {
+        "name": "Sonar API",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Pricing por tokens",
+          "Sonar online y offline",
+          "Citas y grounding en respuesta"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Búsqueda con citaciones",
+        "price": "Incluida en planes Pro / Sonar"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Plan anual",
+        "discount": "Descuento sobre tarifa mensual"
+      }
+    ]
+  },
+  {
+    "id": "meta",
+    "surface": "tracked",
+    "name": "Meta Llama API",
+    "company": "Meta",
+    "tagline": "Llama 4 servido por la propia Meta y por todo el ecosistema open-source",
+    "color": "#A78BFA",
+    "bgGradient": "from-violet-950/40 to-violet-900/10",
+    "textColor": "text-violet-300",
+    "borderColor": "border-violet-800/50",
+    "badgeColor": "bg-violet-950/50 text-violet-300",
+    "models": [],
+    "seatPlans": [
+      {
+        "name": "Llama API",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Pricing por tokens",
+          "Llama 4 y variantes",
+          "Disponibilidad geográfica progresiva"
+        ]
+      },
+      {
+        "name": "Self-hosted / partners",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Weights publicados bajo licencia Meta",
+          "Disponible en hyperscalers y hosters",
+          "Coste depende del proveedor de hosting"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Hyperscaler hosting",
+        "price": "Tarifa del proveedor (AWS, Vertex, Azure...)"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Open-weights",
+        "discount": "Sin licencia por token al desplegar propio"
+      }
+    ]
+  },
+  {
+    "id": "awsbedrock",
+    "surface": "tracked",
+    "name": "AWS Bedrock",
+    "company": "Amazon Web Services",
+    "tagline": "Gateway multi-modelo con Claude, Llama, Mistral, Titan y agentes nativos",
+    "color": "#FCD34D",
+    "bgGradient": "from-amber-950/40 to-amber-900/10",
+    "textColor": "text-amber-300",
+    "borderColor": "border-amber-800/50",
+    "badgeColor": "bg-amber-950/50 text-amber-300",
+    "models": [],
+    "seatPlans": [
+      {
+        "name": "On-demand",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Pricing por tokens según modelo",
+          "+10% típico sobre tarifa del proveedor",
+          "Catálogo multi-vendor"
+        ]
+      },
+      {
+        "name": "Provisioned throughput",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Capacidad reservada por hora",
+          "Latencia y throughput garantizados",
+          "Adecuado para producción a escala"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Agents / Knowledge Bases",
+        "price": "Cargos adicionales por orquestación"
+      },
+      {
+        "label": "Guardrails / Evals",
+        "price": "Pricing específico por feature"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "Provisioned commits",
+        "discount": "Descuento por compromiso 1m / 6m"
+      },
+      {
+        "label": "Batch inference",
+        "discount": "−50% típico vs on-demand"
+      }
+    ]
+  },
+  {
+    "id": "azureopenai",
+    "surface": "tracked",
+    "name": "Azure OpenAI Service",
+    "company": "Microsoft",
+    "tagline": "OpenAI modelos servidos por Azure con compliance enterprise, PTU y data residency",
+    "color": "#38BDF8",
+    "bgGradient": "from-sky-950/40 to-sky-900/10",
+    "textColor": "text-sky-300",
+    "borderColor": "border-sky-800/50",
+    "badgeColor": "bg-sky-950/50 text-sky-300",
+    "models": [],
+    "seatPlans": [
+      {
+        "name": "Pay-as-you-go",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Pricing por tokens según modelo OpenAI",
+          "Paridad de catálogo con OpenAI",
+          "Data residency por región"
+        ]
+      },
+      {
+        "name": "Provisioned Throughput Units",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Capacidad reservada en PTU",
+          "Latencia predecible",
+          "Compromisos 1 año / 1 mes"
+        ]
+      },
+      {
+        "name": "Enterprise Agreement",
+        "priceMonthly": 0,
+        "priceAnnual": 0,
+        "features": [
+          "Precio negociado",
+          "SLA y compliance Azure",
+          "Integración con Microsoft 365 y Fabric"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "label": "Content filtering / Safety",
+        "price": "Incluido por defecto"
+      },
+      {
+        "label": "Fine-tuning",
+        "price": "Pricing específico por modelo + hosting"
+      }
+    ],
+    "optimizations": [
+      {
+        "label": "PTU 1-year reserved",
+        "discount": "Descuento significativo vs PAYG"
+      },
+      {
+        "label": "Batch API",
+        "discount": "−50% típico"
+      }
+    ]
+  }
+]

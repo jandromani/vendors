@@ -1,0 +1,40 @@
+{
+  "lastRunAt": "2026-05-29T09:31:11.857Z",
+  "lastRunStatus": "updated",
+  "lastRunSummary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+  "protocolVersion": "pricing-runtime-v1",
+  "autonomousMode": true,
+  "manualEditsLocked": true,
+  "sourceHealth": [
+    {
+      "sourceId": "support-chat-warehouse",
+      "label": "Support desk warehouse export",
+      "status": "ok",
+      "connectorType": "csv_file",
+      "rowCount": 1
+    },
+    {
+      "sourceId": "engineer-coding-warehouse",
+      "label": "Engineering copilot warehouse export",
+      "status": "ok",
+      "connectorType": "csv_file",
+      "rowCount": 1
+    },
+    {
+      "sourceId": "agent-builder-warehouse",
+      "label": "Agent runtime analytics export",
+      "status": "ok",
+      "connectorType": "csv_file",
+      "rowCount": 1
+    },
+    {
+      "sourceId": "legal-docs-warehouse",
+      "label": "Document review analytics export",
+      "status": "ok",
+      "connectorType": "csv_file",
+      "rowCount": 1
+    }
+  ],
+  "telemetrySources": 4,
+  "appliedAssumptionOverrides": 1
+}
