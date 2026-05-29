@@ -1,0 +1,73 @@
+name: Pricing Agents
+
+on:
+  schedule:
+    # GitHub cron uses UTC. We trigger at 05:00 and 06:00 UTC and the script
+    # self-selects exactly 07:00 Europe/Madrid (covers DST changes).
+    - cron: "0 5,6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pricing-watch:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Madrid
+      PRICING_AGENT_PROVIDER: ${{ vars.PRICING_AGENT_PROVIDER || 'openrouter' }}
+      PRICING_AGENT_MODEL: ${{ vars.PRICING_AGENT_MODEL || 'openrouter/free' }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install dependencies
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - name: Install Chromium for browser fallback
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run pricing agents
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            node scripts/pricing-agents.mjs --force
+          else
+            node scripts/pricing-agents.mjs --schedule
+          fi
+
+      - name: Commit and push pricing changes
+        run: |
+          if git diff --quiet -- data/; then
+            echo "No data file changes detected."
+            exit 0
+          fi
+
+          git config user.name "pricing-agents[bot]"
+          git config user.email "pricing-agents[bot]@users.noreply.github.com"
+          git add data/pricing-overrides.json data/pricing-agent-log.json data/pricing-agent-state.json data/pricing-agent-last-run.json data/pricing-agent-dossiers.json data/pricing-truth-state.json data/pricing-truth-last-run.json data/pricing-truth-runs.json data/pricing-telemetry.json data/pricing-assumption-overrides.json data/pricing-runtime-state.json data/pricing-runtime-last-run.json data/pricing-runtime-runs.json
+
+          if git diff --cached --quiet -- data/pricing-overrides.json; then
+            git commit -m "chore(pricing): refresh agent watch state"
+          else
+            git commit -m "chore(pricing): apply automated pricing updates"
+          fi
+
+          git push
