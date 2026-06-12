@@ -38,7 +38,7 @@
     "model": "mock-agent-brain",
     "protocolVersion": "pricing-agentic-v2",
     "truthVerification": {
-      "lastRunAt": "2026-06-12T11:38:09.806Z",
+      "lastRunAt": "2026-06-12T11:42:39.790Z",
       "status": "partial",
       "needsAttention": 3,
       "publishableUpdates": 0,

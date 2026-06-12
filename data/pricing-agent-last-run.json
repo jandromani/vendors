@@ -2,7 +2,7 @@
   "provider": "mock",
   "model": "mock-agent-brain",
   "protocolVersion": "pricing-agentic-v2",
-  "cutoffDate": "2026-06-12T10:47:10.555Z",
+  "cutoffDate": "2026-06-12T11:38:12.923Z",
   "scout": {
     "result": {
       "status": "ok",
@@ -132,8 +132,8 @@
   },
   "approvedOperations": [],
   "strictlyRejectedOperations": [],
-  "runId": "2026-06-12T11:37:29.828Z::mock::mock-agent-brain",
-  "runAt": "2026-06-12T11:38:12.923Z",
+  "runId": "2026-06-12T11:42:04.188Z::mock::mock-agent-brain",
+  "runAt": "2026-06-12T11:42:42.270Z",
   "status": "needs_review",
   "vendorIdsInvolved": [],
   "agentStatuses": {
@@ -156,7 +156,7 @@
   },
   "surfaceVerification": {
     "protocolVersion": "pricing-surface-v1",
-    "runAt": "2026-06-12T11:38:12.917Z",
+    "runAt": "2026-06-12T11:42:42.265Z",
     "status": "needs_review",
     "totalChecks": 42,
     "verifiedChecks": 41,
@@ -953,10 +953,10 @@
       }
     ],
     "summary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
-    "runId": "2026-06-12T11:37:29.828Z::mock::mock-agent-brain"
+    "runId": "2026-06-12T11:42:04.188Z::mock::mock-agent-brain"
   },
   "runtimeAutopilot": {
-    "runAt": "2026-06-12T11:38:12.918Z",
+    "runAt": "2026-06-12T11:42:42.266Z",
     "status": "updated",
     "protocolVersion": "pricing-runtime-v1",
     "autonomousMode": true,
@@ -1080,7 +1080,7 @@
         "value": 0.507,
         "provenance": "measured",
         "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
-        "updatedAt": "2026-06-12T11:38:12.920Z"
+        "updatedAt": "2026-06-12T11:42:42.267Z"
       }
     ],
     "sourceRegistryVersion": "pricing-runtime-sources-v1",
@@ -1102,8 +1102,8 @@
         "provider": "openrouter",
         "model": "openrouter/free",
         "mode": "primary",
-        "startedAt": "2026-06-12T11:37:27.832Z",
-        "finishedAt": "2026-06-12T11:37:29.139Z",
+        "startedAt": "2026-06-12T11:42:02.535Z",
+        "finishedAt": "2026-06-12T11:42:03.873Z",
         "status": "error",
         "reason": "Configured primary provider.",
         "error": "OpenRouter HTTP 401: {\"error\":{\"message\":\"Missing Authentication header\",\"code\":401}}"
@@ -1112,8 +1112,8 @@
         "provider": "mock",
         "model": "mock-agent-brain",
         "mode": "degraded",
-        "startedAt": "2026-06-12T11:37:29.139Z",
-        "finishedAt": "2026-06-12T11:37:29.828Z",
+        "startedAt": "2026-06-12T11:42:03.873Z",
+        "finishedAt": "2026-06-12T11:42:04.188Z",
         "status": "ok",
         "reason": "All live providers failed or became unavailable during the run."
       }

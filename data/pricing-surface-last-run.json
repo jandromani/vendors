@@ -1,6 +1,6 @@
 {
   "protocolVersion": "pricing-surface-v1",
-  "runAt": "2026-06-12T11:38:12.917Z",
+  "runAt": "2026-06-12T11:42:42.265Z",
   "status": "needs_review",
   "totalChecks": 42,
   "verifiedChecks": 41,
@@ -797,5 +797,5 @@
     }
   ],
   "summary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
-  "runId": "2026-06-12T11:37:29.828Z::mock::mock-agent-brain"
+  "runId": "2026-06-12T11:42:04.188Z::mock::mock-agent-brain"
 }

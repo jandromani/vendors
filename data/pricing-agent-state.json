@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-06-12T11:38:12.923Z",
+  "lastRunAt": "2026-06-12T11:42:42.270Z",
   "seenItemIds": [
     "9b789f2682a586dcfa373b11fd55338043f9cd25",
     "1fb1260a997be0e2ac4b86b94ab5440e9392e12d",
@@ -38,9 +38,9 @@
   "provider": "mock",
   "model": "mock-agent-brain",
   "protocolVersion": "pricing-agentic-v2",
-  "lastRunId": "2026-06-12T11:37:29.828Z::mock::mock-agent-brain",
+  "lastRunId": "2026-06-12T11:42:04.188Z::mock::mock-agent-brain",
   "truthVerification": {
-    "lastRunAt": "2026-06-12T11:38:09.806Z",
+    "lastRunAt": "2026-06-12T11:42:39.790Z",
     "lastRunStatus": "partial",
     "lastRunSummary": "Truth graph confirmó la mayor parte de los claims, pero dejó 3 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
     "provider": "mock",
@@ -56,7 +56,7 @@
     }
   },
   "runtimeAutopilot": {
-    "lastRunAt": "2026-06-12T11:38:12.918Z",
+    "lastRunAt": "2026-06-12T11:42:42.266Z",
     "lastRunStatus": "updated",
     "lastRunSummary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
     "protocolVersion": "pricing-runtime-v1",
@@ -96,7 +96,7 @@
     "appliedAssumptionOverrides": 1
   },
   "surfaceVerification": {
-    "lastRunAt": "2026-06-12T11:38:12.917Z",
+    "lastRunAt": "2026-06-12T11:42:42.265Z",
     "lastRunStatus": "needs_review",
     "lastRunSummary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
     "protocolVersion": "pricing-surface-v1",
@@ -117,8 +117,8 @@
         "provider": "openrouter",
         "model": "openrouter/free",
         "mode": "primary",
-        "startedAt": "2026-06-12T11:37:27.832Z",
-        "finishedAt": "2026-06-12T11:37:29.139Z",
+        "startedAt": "2026-06-12T11:42:02.535Z",
+        "finishedAt": "2026-06-12T11:42:03.873Z",
         "status": "error",
         "reason": "Configured primary provider.",
         "error": "OpenRouter HTTP 401: {\"error\":{\"message\":\"Missing Authentication header\",\"code\":401}}"
@@ -127,8 +127,8 @@
         "provider": "mock",
         "model": "mock-agent-brain",
         "mode": "degraded",
-        "startedAt": "2026-06-12T11:37:29.139Z",
-        "finishedAt": "2026-06-12T11:37:29.828Z",
+        "startedAt": "2026-06-12T11:42:03.873Z",
+        "finishedAt": "2026-06-12T11:42:04.188Z",
         "status": "ok",
         "reason": "All live providers failed or became unavailable during the run."
       }

@@ -2,7 +2,7 @@
   "provider": "mock",
   "model": "mock-agent-brain",
   "protocolVersion": "pricing-truth-v1",
-  "runAt": "2026-06-12T11:38:09.806Z",
+  "runAt": "2026-06-12T11:42:39.790Z",
   "status": "partial",
   "claimInventory": {
     "totalClaims": 33,
@@ -26,7 +26,7 @@
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:37:29.831Z"
+          "fetchedAt": "2026-06-12T11:42:04.191Z"
         },
         {
           "sourceId": "anthropic-pricing",
@@ -34,7 +34,7 @@
           "url": "https://www.anthropic.com/pricing",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:37:30.580Z"
+          "fetchedAt": "2026-06-12T11:42:06.152Z"
         },
         {
           "sourceId": "openai-model-gpt-5-4-mini",
@@ -42,7 +42,7 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:37:30.902Z"
+          "fetchedAt": "2026-06-12T11:42:06.435Z"
         },
         {
           "sourceId": "openai-model-gpt-5-4",
@@ -50,7 +50,7 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:37:31.135Z"
+          "fetchedAt": "2026-06-12T11:42:07.071Z"
         },
         {
           "sourceId": "openai-model-gpt-5-5",
@@ -58,7 +58,7 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-5.5/",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:37:31.275Z"
+          "fetchedAt": "2026-06-12T11:42:07.179Z"
         },
         {
           "sourceId": "openai-chatgpt-plus-help",
@@ -66,7 +66,7 @@
           "url": "https://help.openai.com/en/articles/6950777",
           "status": "error",
           "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/6950777",
-          "fetchedAt": "2026-06-12T11:37:31.407Z"
+          "fetchedAt": "2026-06-12T11:42:07.771Z"
         },
         {
           "sourceId": "openai-chatgpt-business-help",
@@ -74,7 +74,7 @@
           "url": "https://help.openai.com/en/articles/8792828",
           "status": "error",
           "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/8792828",
-          "fetchedAt": "2026-06-12T11:37:53.916Z"
+          "fetchedAt": "2026-06-12T11:42:23.667Z"
         },
         {
           "sourceId": "google-gemini-api-pricing",
@@ -82,7 +82,7 @@
           "url": "https://ai.google.dev/gemini-api/docs/pricing",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:38:08.948Z"
+          "fetchedAt": "2026-06-12T11:42:38.812Z"
         },
         {
           "sourceId": "google-one-ai-pricing",
@@ -90,7 +90,7 @@
           "url": "https://one.google.com/about/google-ai-plans?hl=en",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:38:09.247Z"
+          "fetchedAt": "2026-06-12T11:42:39.225Z"
         },
         {
           "sourceId": "google-workspace-pricing",
@@ -98,7 +98,7 @@
           "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:38:09.302Z"
+          "fetchedAt": "2026-06-12T11:42:39.320Z"
         },
         {
           "sourceId": "github-copilot-org-billing",
@@ -106,7 +106,7 @@
           "url": "https://docs.github.com/en/copilot/concepts/billing/organizations-and-enterprises",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:38:09.539Z"
+          "fetchedAt": "2026-06-12T11:42:39.730Z"
         }
       ]
     }
@@ -252,7 +252,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.795Z"
+        "verifiedAt": "2026-06-12T11:42:39.779Z"
       },
       "trace": [
         {
@@ -423,7 +423,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.796Z"
+        "verifiedAt": "2026-06-12T11:42:39.780Z"
       },
       "trace": [
         {
@@ -594,7 +594,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.797Z"
+        "verifiedAt": "2026-06-12T11:42:39.781Z"
       },
       "trace": [
         {
@@ -765,7 +765,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.798Z"
+        "verifiedAt": "2026-06-12T11:42:39.782Z"
       },
       "trace": [
         {
@@ -936,7 +936,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.799Z"
+        "verifiedAt": "2026-06-12T11:42:39.783Z"
       },
       "trace": [
         {
@@ -1107,7 +1107,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -1210,7 +1210,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -1313,7 +1313,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -1416,7 +1416,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -1519,7 +1519,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -1622,7 +1622,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -1725,7 +1725,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -1828,7 +1828,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -1931,7 +1931,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -2034,7 +2034,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -2137,7 +2137,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.800Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -2208,7 +2208,7 @@
         "patchAllowed": false,
         "usedSources": [],
         "reason": "No approved source could be fetched successfully for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -2271,7 +2271,7 @@
         "patchAllowed": false,
         "usedSources": [],
         "reason": "No approved source could be fetched successfully for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -2334,7 +2334,7 @@
         "patchAllowed": false,
         "usedSources": [],
         "reason": "No approved source could be fetched successfully for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -2429,7 +2429,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -2532,7 +2532,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -2635,7 +2635,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.784Z"
       },
       "trace": [
         {
@@ -2738,7 +2738,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.785Z"
       },
       "trace": [
         {
@@ -2841,7 +2841,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.785Z"
       },
       "trace": [
         {
@@ -2944,7 +2944,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.785Z"
       },
       "trace": [
         {
@@ -3047,7 +3047,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.785Z"
       },
       "trace": [
         {
@@ -3150,7 +3150,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.785Z"
       },
       "trace": [
         {
@@ -3219,7 +3219,7 @@
             "aliasWindows": [
               {
                 "alias": "Workspace Plus",
-                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $22 ** / user per month Start a trial All of Standard, and: 5 ...",
+                "snippet": "Compare Standard features Plus 50% off for 3 months help 50% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $11.00 USD $22.00 (50% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $11 $22 ** / user per month Start a trial All of Standard, and: 5 TB ...",
                 "parserId": "workspace-seat-pricing"
               }
             ],
@@ -3227,7 +3227,7 @@
               {
                 "value": 22,
                 "raw": "$22",
-                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
+                "snippet": "Compare Standard features Plus 50% off for 3 months help 50% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $11.00 USD $22.00 (50% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $11 $22 *...",
                 "score": 12,
                 "parserId": "workspace-seat-pricing"
               }
@@ -3248,12 +3248,12 @@
             "sourceId": "google-workspace-pricing",
             "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
             "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-            "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
+            "snippet": "Compare Standard features Plus 50% off for 3 months help 50% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $11.00 USD $22.00 (50% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $11 $22 *...",
             "observedValue": 22
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.785Z"
       },
       "trace": [
         {
@@ -3274,7 +3274,7 @@
                 "sourceId": "google-workspace-pricing",
                 "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
                 "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
+                "snippet": "Compare Standard features Plus 50% off for 3 months help 50% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $11.00 USD $22.00 (50% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $11 $22 *...",
                 "observedValue": 22
               }
             ],
@@ -3322,7 +3322,7 @@
             "aliasWindows": [
               {
                 "alias": "Workspace Plus",
-                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $22 ** / user per month Start a trial All of Standard, and: 5 ...",
+                "snippet": "Compare Standard features Plus 50% off for 3 months help 50% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $11.00 USD $22.00 (50% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $11 $22 ** / user per month Start a trial All of Standard, and: 5 TB ...",
                 "parserId": "workspace-seat-pricing"
               }
             ],
@@ -3330,7 +3330,7 @@
               {
                 "value": 22,
                 "raw": "$22",
-                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
+                "snippet": "Compare Standard features Plus 50% off for 3 months help 50% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $11.00 USD $22.00 (50% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $11 $22 *...",
                 "score": 12,
                 "parserId": "workspace-seat-pricing"
               }
@@ -3351,12 +3351,12 @@
             "sourceId": "google-workspace-pricing",
             "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
             "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-            "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
+            "snippet": "Compare Standard features Plus 50% off for 3 months help 50% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $11.00 USD $22.00 (50% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $11 $22 *...",
             "observedValue": 22
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.801Z"
+        "verifiedAt": "2026-06-12T11:42:39.785Z"
       },
       "trace": [
         {
@@ -3377,7 +3377,7 @@
                 "sourceId": "google-workspace-pricing",
                 "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
                 "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
+                "snippet": "Compare Standard features Plus 50% off for 3 months help 50% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $11.00 USD $22.00 (50% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $11 $22 *...",
                 "observedValue": 22
               }
             ],
@@ -3469,7 +3469,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.802Z"
+        "verifiedAt": "2026-06-12T11:42:39.786Z"
       },
       "trace": [
         {
@@ -3582,7 +3582,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:38:09.803Z"
+        "verifiedAt": "2026-06-12T11:42:39.787Z"
       },
       "trace": [
         {
@@ -3707,7 +3707,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.805Z"
+        "verifiedAt": "2026-06-12T11:42:39.789Z"
       },
       "trace": [
         {
@@ -3832,7 +3832,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:38:09.806Z"
+        "verifiedAt": "2026-06-12T11:42:39.790Z"
       },
       "trace": [
         {
@@ -3883,7 +3883,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.795Z"
+      "verifiedAt": "2026-06-12T11:42:39.779Z"
     },
     {
       "claimId": "claude|model|haiku|outputPricePerMTok",
@@ -3903,7 +3903,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.796Z"
+      "verifiedAt": "2026-06-12T11:42:39.780Z"
     },
     {
       "claimId": "claude|model|sonnet|inputPricePerMTok",
@@ -3923,7 +3923,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.797Z"
+      "verifiedAt": "2026-06-12T11:42:39.781Z"
     },
     {
       "claimId": "claude|model|sonnet|outputPricePerMTok",
@@ -3943,7 +3943,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.798Z"
+      "verifiedAt": "2026-06-12T11:42:39.782Z"
     },
     {
       "claimId": "claude|model|opus|inputPricePerMTok",
@@ -3963,7 +3963,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.799Z"
+      "verifiedAt": "2026-06-12T11:42:39.783Z"
     },
     {
       "claimId": "claude|model|opus|outputPricePerMTok",
@@ -3983,7 +3983,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "claude|seatPlan|teamstandard|priceMonthly",
@@ -4003,7 +4003,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "claude|seatPlan|teamstandard|priceAnnual",
@@ -4023,7 +4023,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "claude|seatPlan|teampremium|priceMonthly",
@@ -4043,7 +4043,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "claude|seatPlan|teampremium|priceAnnual",
@@ -4063,7 +4063,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "chatgpt|model|gpt54mini|inputPricePerMTok",
@@ -4083,7 +4083,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "chatgpt|model|gpt54mini|outputPricePerMTok",
@@ -4103,7 +4103,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "chatgpt|model|gpt54|inputPricePerMTok",
@@ -4123,7 +4123,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "chatgpt|model|gpt54|outputPricePerMTok",
@@ -4143,7 +4143,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "chatgpt|model|gpt55|inputPricePerMTok",
@@ -4163,7 +4163,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "chatgpt|model|gpt55|outputPricePerMTok",
@@ -4183,7 +4183,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.800Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "chatgpt|seatPlan|chatgptplus|priceMonthly",
@@ -4195,7 +4195,7 @@
       "patchAllowed": false,
       "usedSources": [],
       "reason": "No approved source could be fetched successfully for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "chatgpt|seatPlan|chatgptbusiness|priceMonthly",
@@ -4207,7 +4207,7 @@
       "patchAllowed": false,
       "usedSources": [],
       "reason": "No approved source could be fetched successfully for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "chatgpt|seatPlan|chatgptbusiness|priceAnnual",
@@ -4219,7 +4219,7 @@
       "patchAllowed": false,
       "usedSources": [],
       "reason": "No approved source could be fetched successfully for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "gemini|model|gemini25flashlite|inputPricePerMTok",
@@ -4239,7 +4239,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "gemini|model|gemini25flashlite|outputPricePerMTok",
@@ -4259,7 +4259,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "gemini|model|gemini25flash|inputPricePerMTok",
@@ -4279,7 +4279,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.784Z"
     },
     {
       "claimId": "gemini|model|gemini25flash|outputPricePerMTok",
@@ -4299,7 +4299,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.785Z"
     },
     {
       "claimId": "gemini|model|gemini25pro|inputPricePerMTok",
@@ -4319,7 +4319,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.785Z"
     },
     {
       "claimId": "gemini|model|gemini25pro|outputPricePerMTok",
@@ -4339,7 +4339,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.785Z"
     },
     {
       "claimId": "gemini|seatPlan|googleaiplus|priceMonthly",
@@ -4359,7 +4359,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.785Z"
     },
     {
       "claimId": "gemini|seatPlan|googleaiplus|priceAnnual",
@@ -4379,7 +4379,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.785Z"
     },
     {
       "claimId": "gemini|seatPlan|workspaceplus|priceMonthly",
@@ -4394,12 +4394,12 @@
           "sourceId": "google-workspace-pricing",
           "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
           "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-          "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
+          "snippet": "Compare Standard features Plus 50% off for 3 months help 50% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $11.00 USD $22.00 (50% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $11 $22 *...",
           "observedValue": 22
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.785Z"
     },
     {
       "claimId": "gemini|seatPlan|workspaceplus|priceAnnual",
@@ -4414,12 +4414,12 @@
           "sourceId": "google-workspace-pricing",
           "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
           "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-          "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
+          "snippet": "Compare Standard features Plus 50% off for 3 months help 50% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $11.00 USD $22.00 (50% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $11 $22 *...",
           "observedValue": 22
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.801Z"
+      "verifiedAt": "2026-06-12T11:42:39.785Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotbusiness|priceMonthly",
@@ -4439,7 +4439,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.802Z"
+      "verifiedAt": "2026-06-12T11:42:39.786Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotbusiness|priceAnnual",
@@ -4459,7 +4459,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:38:09.803Z"
+      "verifiedAt": "2026-06-12T11:42:39.787Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotenterprise|priceMonthly",
@@ -4479,7 +4479,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.805Z"
+      "verifiedAt": "2026-06-12T11:42:39.789Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotenterprise|priceAnnual",
@@ -4499,7 +4499,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:38:09.806Z"
+      "verifiedAt": "2026-06-12T11:42:39.790Z"
     }
   ],
   "conflictResolver": {
@@ -4522,6 +4522,6 @@
   },
   "needsAttention": 3,
   "summary": "Truth graph confirmó la mayor parte de los claims, pero dejó 3 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
-  "runId": "2026-06-12T11:37:29.828Z::mock::mock-agent-brain",
+  "runId": "2026-06-12T11:42:04.188Z::mock::mock-agent-brain",
   "appliedOperations": []
 }
