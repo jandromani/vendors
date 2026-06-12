@@ -1,3 +1,6 @@
+import { execFile } from "node:child_process"
+import { promisify } from "node:util"
+
 function sanitizeJsonText(value) {
   return value
     .replace(/^```json\s*/i, "")
@@ -42,6 +45,7 @@ const DEFAULT_OPENROUTER_FREE_FALLBACK_MODELS = [
 ]
 const MODEL_REQUEST_TIMEOUT_MS = 20_000
 const MODEL_RETRY_DELAYS_MS = [0, 1_200]
+const execFileAsync = promisify(execFile)
 
 function getOpenRouterFallbackModels() {
   const configured = (process.env.PRICING_AGENT_OPENROUTER_FALLBACK_MODELS ?? "")
@@ -65,6 +69,64 @@ async function fetchJsonWithTimeout(url, options, timeoutMs = MODEL_REQUEST_TIME
   } finally {
     clearTimeout(timer)
   }
+}
+
+function buildOpenRouterRequestBody({ model, prompt }) {
+  const useFallbackPool = model === "openrouter/free"
+  const fallbackModels = getOpenRouterFallbackModels()
+
+  return {
+    ...(useFallbackPool ? { models: fallbackModels, route: "fallback" } : { model }),
+    messages: [
+      {
+        role: "user",
+        content: prompt,
+      },
+    ],
+    temperature: 0.1,
+    max_tokens: 2200,
+    plugins: [{ id: "response-healing" }],
+    provider: {
+      allow_fallbacks: true,
+      require_parameters: true,
+    },
+    response_format: {
+      type: "json_schema",
+      json_schema: {
+        name: "pricing_action_envelope",
+        strict: true,
+        schema: OPENAI_ACTION_SCHEMA,
+      },
+    },
+  }
+}
+
+async function callOpenRouterWithCurl({ apiKey, requestBody }) {
+  const args = [
+    "-sS",
+    "--max-time",
+    String(Math.ceil(MODEL_REQUEST_TIMEOUT_MS / 1000)),
+    "-X",
+    "POST",
+    "https://openrouter.ai/api/v1/chat/completions",
+    "-H",
+    "Content-Type: application/json",
+    "-H",
+    `Authorization: Bearer ${apiKey}`,
+    "-H",
+    "HTTP-Referer: https://ideavista.app",
+    "-H",
+    "X-OpenRouter-Title: AI Vendor Compare Pricing Agents",
+    "--data-raw",
+    JSON.stringify(requestBody),
+  ]
+
+  const { stdout } = await execFileAsync("curl", args, {
+    maxBuffer: 10 * 1024 * 1024,
+    windowsHide: true,
+  })
+
+  return JSON.parse(stdout)
 }
 
 function extractChatCompletionText(payload, providerName) {
@@ -224,8 +286,7 @@ async function callOpenAi({ apiKey, model, prompt, responseSchema }) {
 }
 
 async function callOpenRouter({ apiKey, model, prompt, responseSchema }) {
-  const useFallbackPool = model === "openrouter/free"
-  const fallbackModels = getOpenRouterFallbackModels()
+  const requestBody = buildOpenRouterRequestBody({ model, prompt })
   const response = await fetchJsonWithTimeout("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -234,34 +295,36 @@ async function callOpenRouter({ apiKey, model, prompt, responseSchema }) {
       "HTTP-Referer": "https://ideavista.app",
       "X-OpenRouter-Title": "AI Vendor Compare Pricing Agents",
     },
-    body: JSON.stringify({
-      ...(useFallbackPool ? { models: fallbackModels, route: "fallback" } : { model }),
-      messages: [
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
-      temperature: 0.1,
-      max_tokens: 2200,
-      plugins: [{ id: "response-healing" }],
-      provider: {
-        allow_fallbacks: true,
-        require_parameters: true,
-      },
-      response_format: {
-        type: "json_schema",
-        json_schema: {
-          name: "pricing_action_envelope",
-          strict: true,
-          schema: OPENAI_ACTION_SCHEMA,
-        },
-      },
-    }),
+    body: JSON.stringify(requestBody),
   })
 
   if (!response.ok) {
     const body = await response.text()
+    if (
+      response.status === 401 &&
+      /Missing Authentication header/i.test(body) &&
+      apiKey
+    ) {
+      try {
+        const curlPayload = await callOpenRouterWithCurl({
+          apiKey,
+          requestBody,
+        })
+        const curlText = extractChatCompletionText(curlPayload, "OpenRouter")
+        const curlParsed = JSON.parse(sanitizeJsonText(curlText))
+
+        return {
+          decision: curlParsed.decision,
+          rationale: curlParsed.rationale,
+          toolName: curlParsed.toolName,
+          toolInput: parseEmbeddedJsonObject("toolInput", curlParsed.toolInput),
+          finalPayload: parseEmbeddedJsonObject("finalPayload", curlParsed.finalPayload),
+        }
+      } catch (curlError) {
+        const curlMessage = curlError instanceof Error ? curlError.message : String(curlError)
+        throw new Error(`OpenRouter HTTP ${response.status}: ${body} :: curl fallback failed: ${curlMessage}`)
+      }
+    }
     throw new Error(`OpenRouter HTTP ${response.status}: ${body}`)
   }
 
