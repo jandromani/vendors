@@ -71,7 +71,7 @@ Ver detalle en [docs/pricing-agents.md](docs/pricing-agents.md).
 
 > **Nota importante**: la web en Vercel solo *lee* los JSON de `data/`. El scheduler productivo ahora vive en Vercel Cron (`/api/cron/pricing-agents`) y dispara `workflow_dispatch` sobre GitHub Actions (`.github/workflows/pricing-agents.yml`). GitHub ejecuta los agentes, hace commit & push sobre `data/`, y Vercel redeploya automáticamente.
 >
-> Si tu proyecto Vercel deja los deployments en preview aunque lleguen desde `main`, añade `VERCEL_TOKEN` a GitHub Actions: el workflow ya queda preparado para detectar el nuevo preview y promoverlo a la alias pública sin entrar al dashboard.
+> Si tu proyecto Vercel deja los deployments en preview aunque lleguen desde `main`, añade `VERCEL_TOKEN` a GitHub Actions: el workflow ya queda preparado para detectar el nuevo preview y promoverlo a producción sin entrar al dashboard. Si además usas aliases manuales como `ai-vendor-compare.vercel.app`, define `VERCEL_PRODUCTION_ALIASES` para que también se repunten en cada run.
 
 ### Secrets requeridos en Vercel
 
@@ -96,6 +96,7 @@ En `Settings → Secrets and variables → Actions`:
 - `OPENAI_API_KEY` (opcional, failover)
 - `VERCEL_TOKEN` (opcional, pero necesario si quieres promoción automática del preview a producción)
 - `VERCEL_SCOPE` como variable de Actions (opcional, solo si el token trabaja sobre varios scopes/teams)
+- `VERCEL_PRODUCTION_ALIASES` como variable de Actions (opcional, coma-separada; ejemplo: `ai-vendor-compare.vercel.app`)
 
 ## Seguridad
 

@@ -32,6 +32,7 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+      VERCEL_PRODUCTION_ALIASES: ${{ vars.VERCEL_PRODUCTION_ALIASES }}
 
     steps:
       - name: Checkout

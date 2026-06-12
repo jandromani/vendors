@@ -109,6 +109,33 @@ async function promoteDeployment(url) {
   return `${stdout}${stderr}`.trim()
 }
 
+async function assignAlias({ deploymentUrl, alias }) {
+  const vercelToken = getRequiredEnv("VERCEL_TOKEN")
+  const vercelScope = process.env.VERCEL_SCOPE
+  const npxCommand = process.platform === "win32" ? "npx.cmd" : "npx"
+  const args = [
+    "-y",
+    "vercel@latest",
+    "alias",
+    "set",
+    deploymentUrl,
+    alias,
+    "--token",
+    vercelToken,
+  ]
+
+  if (vercelScope) {
+    args.push("--scope", vercelScope)
+  }
+
+  const { stdout, stderr } = await execFileAsync(npxCommand, args, {
+    maxBuffer: 10 * 1024 * 1024,
+    windowsHide: true,
+  })
+
+  return `${stdout}${stderr}`.trim()
+}
+
 async function main() {
   const repo = process.env.GITHUB_REPOSITORY || getArg("--repo")
   const sha = process.env.TARGET_SHA || getArg("--sha")
@@ -116,6 +143,10 @@ async function main() {
   const timeoutMs = Number(getArg("--timeout-seconds", "900")) * 1000
   const pollMs = Number(getArg("--poll-seconds", "15")) * 1000
   const dryRun = hasFlag("--dry-run")
+  const aliases = (process.env.VERCEL_PRODUCTION_ALIASES ?? "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean)
 
   if (!repo) throw new Error("Missing target repo. Use GITHUB_REPOSITORY or --repo.")
   if (!sha) throw new Error("Missing target sha. Use TARGET_SHA or --sha.")
@@ -135,6 +166,7 @@ async function main() {
         deploymentId: deployment.deploymentId,
         deploymentUrl: deployment.deploymentUrl,
         productionEnvironment: deployment.productionEnvironment,
+        aliases,
         mode: dryRun ? "dry-run" : "promote",
       },
       null,
@@ -149,6 +181,17 @@ async function main() {
   const output = await promoteDeployment(deployment.deploymentUrl)
   if (output) {
     console.log(output)
+  }
+
+  for (const alias of aliases) {
+    const aliasOutput = await assignAlias({
+      deploymentUrl: deployment.deploymentUrl,
+      alias,
+    })
+
+    if (aliasOutput) {
+      console.log(aliasOutput)
+    }
   }
 }
 
