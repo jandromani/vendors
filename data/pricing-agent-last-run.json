@@ -1,14 +1,14 @@
 {
-  "provider": "openrouter",
-  "model": "openrouter/free",
+  "provider": "mock",
+  "model": "mock-agent-brain",
   "protocolVersion": "pricing-agentic-v2",
-  "cutoffDate": "2026-06-12T10:39:46.916Z",
+  "cutoffDate": "2026-06-12T10:47:10.555Z",
   "scout": {
     "result": {
-      "status": "insufficient_evidence",
+      "status": "ok",
       "candidates": [],
       "notes": [
-        "Agent reached the step limit and was closed conservatively by the orchestrator."
+        "Mock provider active. No real LLM scouting was executed."
       ]
     },
     "trace": [
@@ -16,21 +16,7 @@
         "stepNumber": 1,
         "attempt": 1,
         "decision": "tool_call",
-        "rationale": "Need to know the current watch state (seen items count and cutoff) before proceeding to source checks.",
-        "toolName": "read_watch_state",
-        "toolInput": {},
-        "toolResult": {
-          "lastRunAt": "2026-06-12T10:39:46.916Z",
-          "lastRunStatus": "needs_review",
-          "seenItemCount": 31,
-          "cutoffDate": "2026-06-12T10:39:46.916Z"
-        }
-      },
-      {
-        "stepNumber": 2,
-        "attempt": 1,
-        "decision": "tool_call",
-        "rationale": "We need to see the available sources to decide which ones to check for pricing updates. We'll start by listing the sources.",
+        "rationale": "Need the whitelisted source catalog before selecting sources.",
         "toolName": "list_sources",
         "toolInput": {},
         "toolResult": {
@@ -40,10 +26,10 @@
         }
       },
       {
-        "stepNumber": 3,
+        "stepNumber": 2,
         "attempt": 1,
         "decision": "tool_call",
-        "rationale": "We need to check for recent pricing-related items in official sources after the cutoff date. We'll start by reading the OpenAI News RSS (ChatGPT) to see if any new items appear.",
+        "rationale": "Read one official source to exercise the scout tool path.",
         "toolName": "read_source",
         "toolInput": {
           "sourceId": "openai-news-rss",
@@ -58,103 +44,15 @@
         }
       },
       {
-        "stepNumber": 4,
-        "attempt": 1,
-        "decision": "tool_call",
-        "rationale": "We have checked one official source (OpenAI News RSS) and found no items. To gather more evidence before concluding insufficient_evidence, we will check another official source for Claude (Anthropic News) for any recent pricing-related announcements.",
-        "toolName": "read_source",
-        "toolInput": {
-          "sourceId": "anthropic-news-page",
-          "limit": 5
-        },
-        "toolResult": {
-          "truncated": true,
-          "originalLength": 3033,
-          "preview": "{\n  \"sourceId\": \"anthropic-news-page\",\n  \"sourceLabel\": \"Anthropic News\",\n  \"official\": true,\n  \"vendorHint\": \"claude\",\n  \"items\": [\n    {\n      \"candidateId\": \"5561b1009c67aa4c9c0c78c24bde32440f1b46e6\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Claude Fable 5 and Claude Mythos 5 Announcements Jun 9, 2026 Our next generation of intelligence for the hardest knowledge work and coding problems.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/claude-fable-5-mythos-5\",\n      \"publishedAt\": \"2026-06-12T10:43:42.356Z\"\n    },\n    {\n      \"candidateId\": \"69926b8aab6cb5022f8cd72aa69903293d50df8b\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Announcements Jun 11, 2026 Introducing Claude Corps We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/claude-corps\",\n      \"publishedAt\": \"2026-06-12T10:43:42.356Z\"\n    },\n    {\n      \"candidateId\": \"eee735e8871a342818af5d446d0389012139b606\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Announcements Jun 2, 2026 Expanding Project Glasswing We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/expanding-project-glasswing\",\n      \"publishedAt\": \"2026-06-12T10:43:42.356Z\"\n    },\n    {\n      \"candidateId\": \"cd232fad11b0a3e5753ed627e1682ce8a377f0ef\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Announcements May 25, 2026 Anthropic co-founder Chris Olah&#x27;s remarks on Pope Leo XIV&#x27;s encyclical \\\"Magnifica humanitas\\\" The full text of Chris Olah&#x27;s remarks on the Pope&#x27;s encyclical on AI.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/chris-olah-pope-leo-encyclical\",\n      \"publishedAt\": \"2026-06-12T10:43:42.356Z\"\n    },\n..."
-        }
-      },
-      {
-        "stepNumber": 5,
-        "attempt": 1,
-        "decision": "tool_call",
-        "rationale": "We have checked OpenAI News RSS (no items) and Anthropic News (items but none about pricing). To continue searching for pricing signals, we will check the Google AI Blog RSS (vendor hint: gemini) for any recent pricing-related announcements.",
-        "toolName": "read_source",
-        "toolInput": {
-          "sourceId": "google-ai-blog-rss",
-          "limit": 5
-        },
-        "toolResult": {
-          "sourceId": "google-ai-blog-rss",
-          "sourceLabel": "Google AI Blog RSS",
-          "official": true,
-          "vendorHint": "gemini",
-          "items": []
-        }
-      },
-      {
-        "stepNumber": 6,
-        "attempt": 1,
-        "decision": "tool_call",
-        "rationale": "We have checked OpenAI News RSS (no items) and Anthropic News (items but no pricing relevance). To increase confidence before concluding insufficient evidence, we should check another official source, Google AI Blog RSS, for any Gemini pricing announcements after the cutoff.",
-        "toolName": "read_source",
-        "toolInput": {
-          "sourceId": "google-ai-blog-rss",
-          "limit": 5
-        },
-        "toolResult": {
-          "sourceId": "google-ai-blog-rss",
-          "sourceLabel": "Google AI Blog RSS",
-          "official": true,
-          "vendorHint": "gemini",
-          "items": []
-        }
-      },
-      {
-        "stepNumber": 7,
-        "attempt": 1,
-        "decision": "tool_call",
-        "rationale": "We have checked OpenAI News RSS (no items) and Anthropic News (items but none about pricing). To continue searching for pricing signals, we will check the Google AI Blog RSS (vendorHint: gemini) for any recent pricing-related announcements.",
-        "toolName": "read_source",
-        "toolInput": {
-          "sourceId": "google-ai-blog-rss",
-          "limit": 5
-        },
-        "toolResult": {
-          "sourceId": "google-ai-blog-rss",
-          "sourceLabel": "Google AI Blog RSS",
-          "official": true,
-          "vendorHint": "gemini",
-          "items": []
-        }
-      },
-      {
-        "stepNumber": 8,
-        "attempt": 1,
-        "decision": "tool_call",
-        "rationale": "We have checked OpenAI and Anthropic official sources; no pricing-related items found. To follow the Scout efficiency rule, we should check a few more official sources before concluding insufficient evidence. Next, we will check the Google AI Blog RSS (vendorHint: gemini) for any",
-        "toolName": "read_source",
-        "toolInput": {
-          "sourceId": "google-ai-blog-rss",
-          "limit": 5
-        },
-        "toolResult": {
-          "sourceId": "google-ai-blog-rss",
-          "sourceLabel": "Google AI Blog RSS",
-          "official": true,
-          "vendorHint": "gemini",
-          "items": []
-        }
-      },
-      {
-        "stepNumber": 9,
+        "stepNumber": 3,
         "attempt": 1,
         "decision": "final",
-        "rationale": "The agent exceeded its step budget, so the orchestrator emitted a conservative fallback result.",
+        "rationale": "Mock mode returns no candidates after the smoke-check tool calls.",
         "finalPayload": {
-          "status": "insufficient_evidence",
+          "status": "ok",
           "candidates": [],
           "notes": [
-            "Agent reached the step limit and was closed conservatively by the orchestrator."
+            "Mock provider active. No real LLM scouting was executed."
           ]
         }
       }
@@ -162,10 +60,10 @@
   },
   "research": {
     "result": {
-      "status": "insufficient_evidence",
+      "status": "ok",
       "evidenceBundles": [],
       "notes": [
-        "No candidates provided"
+        "Mock provider active. Research stage short-circuited."
       ]
     },
     "trace": [
@@ -173,12 +71,12 @@
         "stepNumber": 1,
         "attempt": 1,
         "decision": "final",
-        "rationale": "No candidates provided in input; insufficient evidence to evaluate pricing changes.",
+        "rationale": "No candidates to research in mock mode.",
         "finalPayload": {
-          "status": "insufficient_evidence",
+          "status": "ok",
           "evidenceBundles": [],
           "notes": [
-            "No candidates provided"
+            "Mock provider active. Research stage short-circuited."
           ]
         }
       }
@@ -186,11 +84,11 @@
   },
   "mapping": {
     "result": {
-      "status": "insufficient_evidence",
+      "status": "ok",
       "operations": [],
       "rejectedEvidence": [],
       "notes": [
-        "No evidence bundles provided"
+        "Mock provider active. Mapping stage short-circuited."
       ]
     },
     "trace": [
@@ -198,13 +96,13 @@
         "stepNumber": 1,
         "attempt": 1,
         "decision": "final",
-        "rationale": "No evidence bundles provided, insufficient evidence to map any pricing updates.",
+        "rationale": "No evidence bundles to map in mock mode.",
         "finalPayload": {
-          "status": "insufficient_evidence",
+          "status": "ok",
           "operations": [],
           "rejectedEvidence": [],
           "notes": [
-            "No evidence bundles provided"
+            "Mock provider active. Mapping stage short-circuited."
           ]
         }
       }
@@ -215,33 +113,33 @@
       "status": "insufficient_evidence",
       "approvedOperations": [],
       "rejectedOperations": [],
-      "summary": "No evidence provided to evaluate operations."
+      "summary": "Mock provider active. Audit stage produced no approvals."
     },
     "trace": [
       {
         "stepNumber": 1,
         "attempt": 1,
         "decision": "final",
-        "rationale": "No evidence bundles or operations provided; insufficient evidence to approve any changes.",
+        "rationale": "No operations to audit in mock mode.",
         "finalPayload": {
           "status": "insufficient_evidence",
           "approvedOperations": [],
           "rejectedOperations": [],
-          "summary": "No evidence provided to evaluate operations."
+          "summary": "Mock provider active. Audit stage produced no approvals."
         }
       }
     ]
   },
   "approvedOperations": [],
   "strictlyRejectedOperations": [],
-  "runId": "2026-06-12T10:46:34.164Z::openrouter::openrouter/free",
-  "runAt": "2026-06-12T10:47:10.555Z",
-  "status": "partial",
+  "runId": "2026-06-12T11:37:29.828Z::mock::mock-agent-brain",
+  "runAt": "2026-06-12T11:38:12.923Z",
+  "status": "needs_review",
   "vendorIdsInvolved": [],
   "agentStatuses": {
-    "scout": "insufficient_evidence",
-    "research": "insufficient_evidence",
-    "mapping": "insufficient_evidence",
+    "scout": "ok",
+    "research": "ok",
+    "mapping": "ok",
     "audit": "insufficient_evidence"
   },
   "appliedOperations": [],
@@ -258,12 +156,12 @@
   },
   "surfaceVerification": {
     "protocolVersion": "pricing-surface-v1",
-    "runAt": "2026-06-12T10:47:10.540Z",
-    "status": "partial",
+    "runAt": "2026-06-12T11:38:12.917Z",
+    "status": "needs_review",
     "totalChecks": 42,
-    "verifiedChecks": 37,
-    "needsReview": 0,
-    "unverifiableChecks": 5,
+    "verifiedChecks": 41,
+    "needsReview": 1,
+    "unverifiableChecks": 0,
     "checks": [
       {
         "checkId": "chatgpt::model-lineup",
@@ -312,18 +210,18 @@
         "vendorId": "chatgpt",
         "kind": "critical_signal",
         "label": "ChatGPT Plus highlights GPT-5.5",
-        "status": "unverifiable",
+        "status": "verified",
         "details": {
           "sourceIds": [
             "openai-chatgpt-plus-help"
           ],
-          "matchedSourceId": null,
-          "snippet": null,
+          "matchedSourceId": "openai-chatgpt-plus-help",
+          "snippet": "What is ChatGPT Plus? | OpenAI Help Center All Collections ChatGPT What is ChatGPT Plus? What is ChatGPT Plus? Information about our paid subscription plan, Plus. Updated: 6 hours ago As of February 13, 2026, models GPT-4o, GPT-4.1, GPT-4.1 mini, OpenAI o4-mini, and GPT-5 (Instan...",
           "sourceHealth": [
             {
               "sourceId": "openai-chatgpt-plus-help",
-              "status": "error",
-              "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-O8ILI7 --remote-debugging-pipe about:blank\u001b[22m\n"
+              "status": "ok",
+              "error": null
             }
           ]
         }
@@ -333,18 +231,18 @@
         "vendorId": "chatgpt",
         "kind": "critical_signal",
         "label": "ChatGPT Business help article reachable",
-        "status": "unverifiable",
+        "status": "verified",
         "details": {
           "sourceIds": [
             "openai-chatgpt-business-help"
           ],
-          "matchedSourceId": null,
-          "snippet": null,
+          "matchedSourceId": "openai-chatgpt-business-help",
+          "snippet": "What is ChatGPT Business? | OpenAI Help Center All Collections ChatGPT Business What is ChatGPT Business? What is ChatGPT Business? Learn what ChatGPT Business is, how different seat types work, and how pricing, privacy, and admin controls work. Updated: 2 hours ago Note: As of A...",
           "sourceHealth": [
             {
               "sourceId": "openai-chatgpt-business-help",
-              "status": "error",
-              "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-AQt7b4 --remote-debugging-pipe about:blank\u001b[22m\n"
+              "status": "ok",
+              "error": null
             }
           ]
         }
@@ -354,18 +252,18 @@
         "vendorId": "chatgpt",
         "kind": "critical_signal",
         "label": "GPT-5.5 Instant is the default for logged-in users",
-        "status": "unverifiable",
+        "status": "verified",
         "details": {
           "sourceIds": [
             "openai-chatgpt-gpt55-help"
           ],
-          "matchedSourceId": null,
-          "snippet": null,
+          "matchedSourceId": "openai-chatgpt-gpt55-help",
+          "snippet": "GPT-5.5 in ChatGPT | OpenAI Help Center All Collections ChatGPT GPT-5.5 in ChatGPT GPT-5.5 in ChatGPT Updated: yesterday GPT-5.5 Instant in ChatGPT is the default for all logged-in users, and a single auto-switching system that brings together the best of our models into a smart,...",
           "sourceHealth": [
             {
               "sourceId": "openai-chatgpt-gpt55-help",
-              "status": "error",
-              "error": "HTTP 403 on https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-TY5DQs --remote-debugging-pipe about:blank\u001b[22m\n"
+              "status": "ok",
+              "error": null
             }
           ]
         }
@@ -375,18 +273,18 @@
         "vendorId": "chatgpt",
         "kind": "critical_signal",
         "label": "GPT-5.5 Pro limitations remain visible",
-        "status": "unverifiable",
+        "status": "verified",
         "details": {
           "sourceIds": [
             "openai-chatgpt-gpt55-help"
           ],
-          "matchedSourceId": null,
-          "snippet": null,
+          "matchedSourceId": "openai-chatgpt-gpt55-help",
+          "snippet": "GPT-5.5 in ChatGPT | OpenAI Help Center All Collections ChatGPT GPT-5.5 in ChatGPT GPT-5.5 in ChatGPT Updated: yesterday GPT-5.5 Instant in ChatGPT is the default for all logged-in users, and a single auto-switching system that brings together the best of our models into a smart,...",
           "sourceHealth": [
             {
               "sourceId": "openai-chatgpt-gpt55-help",
-              "status": "error",
-              "error": "HTTP 403 on https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-TY5DQs --remote-debugging-pipe about:blank\u001b[22m\n"
+              "status": "ok",
+              "error": null
             }
           ]
         }
@@ -396,18 +294,18 @@
         "vendorId": "chatgpt",
         "kind": "critical_signal",
         "label": "Legacy ChatGPT models retired from ChatGPT",
-        "status": "unverifiable",
+        "status": "verified",
         "details": {
           "sourceIds": [
             "openai-chatgpt-plus-help"
           ],
-          "matchedSourceId": null,
-          "snippet": null,
+          "matchedSourceId": "openai-chatgpt-plus-help",
+          "snippet": "What is ChatGPT Plus? | OpenAI Help Center All Collections ChatGPT What is ChatGPT Plus? What is ChatGPT Plus? Information about our paid subscription plan, Plus. Updated: 6 hours ago As of February 13, 2026, models GPT-4o, GPT-4.1, GPT-4.1 mini, OpenAI o4-mini, and GPT-5 (Instan...",
           "sourceHealth": [
             {
               "sourceId": "openai-chatgpt-plus-help",
-              "status": "error",
-              "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-O8ILI7 --remote-debugging-pipe about:blank\u001b[22m\n"
+              "status": "ok",
+              "error": null
             }
           ]
         }
@@ -480,13 +378,13 @@
         "vendorId": "gemini",
         "kind": "critical_signal",
         "label": "AI Premium renamed to Google AI Plus",
-        "status": "verified",
+        "status": "needs_review",
         "details": {
           "sourceIds": [
             "google-one-ai-pricing"
           ],
-          "matchedSourceId": "google-one-ai-pricing",
-          "snippet": "Planes de IA de Google con almacenamiento en la nube - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].pu...",
+          "matchedSourceId": null,
+          "snippet": null,
           "sourceHealth": [
             {
               "sourceId": "google-one-ai-pricing",
@@ -549,7 +447,7 @@
             "google-one-ai-pricing"
           ],
           "matchedSourceId": "google-one-ai-pricing",
-          "snippet": "Planes de IA de Google con almacenamiento en la nube - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].pu...",
+          "snippet": "Google AI Plans with Cloud Storage - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': n...",
           "sourceHealth": [
             {
               "sourceId": "google-one-ai-pricing",
@@ -716,7 +614,7 @@
             "microsoft-copilot-business"
           ],
           "matchedSourceId": "microsoft-copilot-business",
-          "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+          "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"US\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
           "sourceHealth": [
             {
               "sourceId": "microsoft-copilot-business",
@@ -737,7 +635,7 @@
             "microsoft-copilot-business"
           ],
           "matchedSourceId": "microsoft-copilot-business",
-          "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+          "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"US\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
           "sourceHealth": [
             {
               "sourceId": "microsoft-copilot-business",
@@ -758,7 +656,7 @@
             "microsoft-copilot-business"
           ],
           "matchedSourceId": "microsoft-copilot-business",
-          "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+          "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"US\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
           "sourceHealth": [
             {
               "sourceId": "microsoft-copilot-business",
@@ -779,7 +677,7 @@
             "microsoft-copilot-business"
           ],
           "matchedSourceId": "microsoft-copilot-business",
-          "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+          "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"US\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
           "sourceHealth": [
             {
               "sourceId": "microsoft-copilot-business",
@@ -1054,11 +952,11 @@
         }
       }
     ],
-    "summary": "Surface graph confirmó la mayor parte del lineup, pero dejó 5 comprobaciones sin verificar por acceso insuficiente a fuentes oficiales.",
-    "runId": "2026-06-12T10:46:34.164Z::openrouter::openrouter/free"
+    "summary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
+    "runId": "2026-06-12T11:37:29.828Z::mock::mock-agent-brain"
   },
   "runtimeAutopilot": {
-    "runAt": "2026-06-12T10:47:10.542Z",
+    "runAt": "2026-06-12T11:38:12.918Z",
     "status": "updated",
     "protocolVersion": "pricing-runtime-v1",
     "autonomousMode": true,
@@ -1182,7 +1080,7 @@
         "value": 0.507,
         "provenance": "measured",
         "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
-        "updatedAt": "2026-06-12T10:47:10.545Z"
+        "updatedAt": "2026-06-12T11:38:12.920Z"
       }
     ],
     "sourceRegistryVersion": "pricing-runtime-sources-v1",
@@ -1195,21 +1093,31 @@
   "providerStrategy": {
     "preferredProvider": "openrouter",
     "preferredModel": "openrouter/free",
-    "selectedProvider": "openrouter",
-    "selectedModel": "openrouter/free",
-    "degradedMode": false,
-    "failoverUsed": false,
+    "selectedProvider": "mock",
+    "selectedModel": "mock-agent-brain",
+    "degradedMode": true,
+    "failoverUsed": true,
     "attempts": [
       {
         "provider": "openrouter",
         "model": "openrouter/free",
         "mode": "primary",
-        "startedAt": "2026-06-12T10:42:34.856Z",
-        "finishedAt": "2026-06-12T10:46:34.164Z",
+        "startedAt": "2026-06-12T11:37:27.832Z",
+        "finishedAt": "2026-06-12T11:37:29.139Z",
+        "status": "error",
+        "reason": "Configured primary provider.",
+        "error": "OpenRouter HTTP 401: {\"error\":{\"message\":\"Missing Authentication header\",\"code\":401}}"
+      },
+      {
+        "provider": "mock",
+        "model": "mock-agent-brain",
+        "mode": "degraded",
+        "startedAt": "2026-06-12T11:37:29.139Z",
+        "finishedAt": "2026-06-12T11:37:29.828Z",
         "status": "ok",
-        "reason": "Configured primary provider."
+        "reason": "All live providers failed or became unavailable during the run."
       }
     ],
-    "summary": "Primary provider openrouter completed the run without failover."
+    "summary": "Live providers could not complete the cycle. The system degraded to mock mode after 1 failed live attempt(s)."
   }
 }

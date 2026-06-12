@@ -1,9 +1,9 @@
 {
-  "lastRunAt": "2026-06-12T10:46:52.155Z",
+  "lastRunAt": "2026-06-12T11:38:09.806Z",
   "lastRunStatus": "partial",
   "lastRunSummary": "Truth graph confirmó la mayor parte de los claims, pero dejó 3 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
-  "provider": "openrouter",
-  "model": "openrouter/free",
+  "provider": "mock",
+  "model": "mock-agent-brain",
   "protocolVersion": "pricing-truth-v1",
   "totalClaims": 33,
   "publishableUpdates": 0,

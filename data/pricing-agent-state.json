@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-06-12T10:47:10.555Z",
+  "lastRunAt": "2026-06-12T11:38:12.923Z",
   "seenItemIds": [
     "9b789f2682a586dcfa373b11fd55338043f9cd25",
     "1fb1260a997be0e2ac4b86b94ab5440e9392e12d",
@@ -33,18 +33,18 @@
     "28a5b26503ce82ea1f9856006c588986f484de68",
     "a8a0f70841ec9617cdca84f06ae23068199e1c22"
   ],
-  "lastRunStatus": "partial",
-  "lastRunSummary": "Surface graph confirmó la mayor parte del lineup, pero dejó 5 comprobaciones sin verificar por acceso insuficiente a fuentes oficiales.",
-  "provider": "openrouter",
-  "model": "openrouter/free",
+  "lastRunStatus": "needs_review",
+  "lastRunSummary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
+  "provider": "mock",
+  "model": "mock-agent-brain",
   "protocolVersion": "pricing-agentic-v2",
-  "lastRunId": "2026-06-12T10:46:34.164Z::openrouter::openrouter/free",
+  "lastRunId": "2026-06-12T11:37:29.828Z::mock::mock-agent-brain",
   "truthVerification": {
-    "lastRunAt": "2026-06-12T10:46:52.155Z",
+    "lastRunAt": "2026-06-12T11:38:09.806Z",
     "lastRunStatus": "partial",
     "lastRunSummary": "Truth graph confirmó la mayor parte de los claims, pero dejó 3 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
-    "provider": "openrouter",
-    "model": "openrouter/free",
+    "provider": "mock",
+    "model": "mock-agent-brain",
     "protocolVersion": "pricing-truth-v1",
     "totalClaims": 33,
     "publishableUpdates": 0,
@@ -56,7 +56,7 @@
     }
   },
   "runtimeAutopilot": {
-    "lastRunAt": "2026-06-12T10:47:10.542Z",
+    "lastRunAt": "2026-06-12T11:38:12.918Z",
     "lastRunStatus": "updated",
     "lastRunSummary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
     "protocolVersion": "pricing-runtime-v1",
@@ -96,33 +96,43 @@
     "appliedAssumptionOverrides": 1
   },
   "surfaceVerification": {
-    "lastRunAt": "2026-06-12T10:47:10.540Z",
-    "lastRunStatus": "partial",
-    "lastRunSummary": "Surface graph confirmó la mayor parte del lineup, pero dejó 5 comprobaciones sin verificar por acceso insuficiente a fuentes oficiales.",
+    "lastRunAt": "2026-06-12T11:38:12.917Z",
+    "lastRunStatus": "needs_review",
+    "lastRunSummary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
     "protocolVersion": "pricing-surface-v1",
     "totalChecks": 42,
-    "verifiedChecks": 37,
-    "needsReview": 0,
-    "unverifiableChecks": 5
+    "verifiedChecks": 41,
+    "needsReview": 1,
+    "unverifiableChecks": 0
   },
   "providerStrategy": {
     "preferredProvider": "openrouter",
     "preferredModel": "openrouter/free",
-    "selectedProvider": "openrouter",
-    "selectedModel": "openrouter/free",
-    "degradedMode": false,
-    "failoverUsed": false,
+    "selectedProvider": "mock",
+    "selectedModel": "mock-agent-brain",
+    "degradedMode": true,
+    "failoverUsed": true,
     "attempts": [
       {
         "provider": "openrouter",
         "model": "openrouter/free",
         "mode": "primary",
-        "startedAt": "2026-06-12T10:42:34.856Z",
-        "finishedAt": "2026-06-12T10:46:34.164Z",
+        "startedAt": "2026-06-12T11:37:27.832Z",
+        "finishedAt": "2026-06-12T11:37:29.139Z",
+        "status": "error",
+        "reason": "Configured primary provider.",
+        "error": "OpenRouter HTTP 401: {\"error\":{\"message\":\"Missing Authentication header\",\"code\":401}}"
+      },
+      {
+        "provider": "mock",
+        "model": "mock-agent-brain",
+        "mode": "degraded",
+        "startedAt": "2026-06-12T11:37:29.139Z",
+        "finishedAt": "2026-06-12T11:37:29.828Z",
         "status": "ok",
-        "reason": "Configured primary provider."
+        "reason": "All live providers failed or became unavailable during the run."
       }
     ],
-    "summary": "Primary provider openrouter completed the run without failover."
+    "summary": "Live providers could not complete the cycle. The system degraded to mock mode after 1 failed live attempt(s)."
   }
 }

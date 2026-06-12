@@ -1,10 +1,10 @@
 {
-  "lastRunAt": "2026-06-12T10:47:10.540Z",
-  "lastRunStatus": "partial",
-  "lastRunSummary": "Surface graph confirmó la mayor parte del lineup, pero dejó 5 comprobaciones sin verificar por acceso insuficiente a fuentes oficiales.",
+  "lastRunAt": "2026-06-12T11:38:12.917Z",
+  "lastRunStatus": "needs_review",
+  "lastRunSummary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
   "protocolVersion": "pricing-surface-v1",
   "totalChecks": 42,
-  "verifiedChecks": 37,
-  "needsReview": 0,
-  "unverifiableChecks": 5
+  "verifiedChecks": 41,
+  "needsReview": 1,
+  "unverifiableChecks": 0
 }

@@ -1,11 +1,11 @@
 {
   "protocolVersion": "pricing-surface-v1",
-  "runAt": "2026-06-12T10:47:10.540Z",
-  "status": "partial",
+  "runAt": "2026-06-12T11:38:12.917Z",
+  "status": "needs_review",
   "totalChecks": 42,
-  "verifiedChecks": 37,
-  "needsReview": 0,
-  "unverifiableChecks": 5,
+  "verifiedChecks": 41,
+  "needsReview": 1,
+  "unverifiableChecks": 0,
   "checks": [
     {
       "checkId": "chatgpt::model-lineup",
@@ -54,18 +54,18 @@
       "vendorId": "chatgpt",
       "kind": "critical_signal",
       "label": "ChatGPT Plus highlights GPT-5.5",
-      "status": "unverifiable",
+      "status": "verified",
       "details": {
         "sourceIds": [
           "openai-chatgpt-plus-help"
         ],
-        "matchedSourceId": null,
-        "snippet": null,
+        "matchedSourceId": "openai-chatgpt-plus-help",
+        "snippet": "What is ChatGPT Plus? | OpenAI Help Center All Collections ChatGPT What is ChatGPT Plus? What is ChatGPT Plus? Information about our paid subscription plan, Plus. Updated: 6 hours ago As of February 13, 2026, models GPT-4o, GPT-4.1, GPT-4.1 mini, OpenAI o4-mini, and GPT-5 (Instan...",
         "sourceHealth": [
           {
             "sourceId": "openai-chatgpt-plus-help",
-            "status": "error",
-            "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-O8ILI7 --remote-debugging-pipe about:blank\u001b[22m\n"
+            "status": "ok",
+            "error": null
           }
         ]
       }
@@ -75,18 +75,18 @@
       "vendorId": "chatgpt",
       "kind": "critical_signal",
       "label": "ChatGPT Business help article reachable",
-      "status": "unverifiable",
+      "status": "verified",
       "details": {
         "sourceIds": [
           "openai-chatgpt-business-help"
         ],
-        "matchedSourceId": null,
-        "snippet": null,
+        "matchedSourceId": "openai-chatgpt-business-help",
+        "snippet": "What is ChatGPT Business? | OpenAI Help Center All Collections ChatGPT Business What is ChatGPT Business? What is ChatGPT Business? Learn what ChatGPT Business is, how different seat types work, and how pricing, privacy, and admin controls work. Updated: 2 hours ago Note: As of A...",
         "sourceHealth": [
           {
             "sourceId": "openai-chatgpt-business-help",
-            "status": "error",
-            "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-AQt7b4 --remote-debugging-pipe about:blank\u001b[22m\n"
+            "status": "ok",
+            "error": null
           }
         ]
       }
@@ -96,18 +96,18 @@
       "vendorId": "chatgpt",
       "kind": "critical_signal",
       "label": "GPT-5.5 Instant is the default for logged-in users",
-      "status": "unverifiable",
+      "status": "verified",
       "details": {
         "sourceIds": [
           "openai-chatgpt-gpt55-help"
         ],
-        "matchedSourceId": null,
-        "snippet": null,
+        "matchedSourceId": "openai-chatgpt-gpt55-help",
+        "snippet": "GPT-5.5 in ChatGPT | OpenAI Help Center All Collections ChatGPT GPT-5.5 in ChatGPT GPT-5.5 in ChatGPT Updated: yesterday GPT-5.5 Instant in ChatGPT is the default for all logged-in users, and a single auto-switching system that brings together the best of our models into a smart,...",
         "sourceHealth": [
           {
             "sourceId": "openai-chatgpt-gpt55-help",
-            "status": "error",
-            "error": "HTTP 403 on https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-TY5DQs --remote-debugging-pipe about:blank\u001b[22m\n"
+            "status": "ok",
+            "error": null
           }
         ]
       }
@@ -117,18 +117,18 @@
       "vendorId": "chatgpt",
       "kind": "critical_signal",
       "label": "GPT-5.5 Pro limitations remain visible",
-      "status": "unverifiable",
+      "status": "verified",
       "details": {
         "sourceIds": [
           "openai-chatgpt-gpt55-help"
         ],
-        "matchedSourceId": null,
-        "snippet": null,
+        "matchedSourceId": "openai-chatgpt-gpt55-help",
+        "snippet": "GPT-5.5 in ChatGPT | OpenAI Help Center All Collections ChatGPT GPT-5.5 in ChatGPT GPT-5.5 in ChatGPT Updated: yesterday GPT-5.5 Instant in ChatGPT is the default for all logged-in users, and a single auto-switching system that brings together the best of our models into a smart,...",
         "sourceHealth": [
           {
             "sourceId": "openai-chatgpt-gpt55-help",
-            "status": "error",
-            "error": "HTTP 403 on https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-TY5DQs --remote-debugging-pipe about:blank\u001b[22m\n"
+            "status": "ok",
+            "error": null
           }
         ]
       }
@@ -138,18 +138,18 @@
       "vendorId": "chatgpt",
       "kind": "critical_signal",
       "label": "Legacy ChatGPT models retired from ChatGPT",
-      "status": "unverifiable",
+      "status": "verified",
       "details": {
         "sourceIds": [
           "openai-chatgpt-plus-help"
         ],
-        "matchedSourceId": null,
-        "snippet": null,
+        "matchedSourceId": "openai-chatgpt-plus-help",
+        "snippet": "What is ChatGPT Plus? | OpenAI Help Center All Collections ChatGPT What is ChatGPT Plus? What is ChatGPT Plus? Information about our paid subscription plan, Plus. Updated: 6 hours ago As of February 13, 2026, models GPT-4o, GPT-4.1, GPT-4.1 mini, OpenAI o4-mini, and GPT-5 (Instan...",
         "sourceHealth": [
           {
             "sourceId": "openai-chatgpt-plus-help",
-            "status": "error",
-            "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-O8ILI7 --remote-debugging-pipe about:blank\u001b[22m\n"
+            "status": "ok",
+            "error": null
           }
         ]
       }
@@ -222,13 +222,13 @@
       "vendorId": "gemini",
       "kind": "critical_signal",
       "label": "AI Premium renamed to Google AI Plus",
-      "status": "verified",
+      "status": "needs_review",
       "details": {
         "sourceIds": [
           "google-one-ai-pricing"
         ],
-        "matchedSourceId": "google-one-ai-pricing",
-        "snippet": "Planes de IA de Google con almacenamiento en la nube - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].pu...",
+        "matchedSourceId": null,
+        "snippet": null,
         "sourceHealth": [
           {
             "sourceId": "google-one-ai-pricing",
@@ -291,7 +291,7 @@
           "google-one-ai-pricing"
         ],
         "matchedSourceId": "google-one-ai-pricing",
-        "snippet": "Planes de IA de Google con almacenamiento en la nube - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].pu...",
+        "snippet": "Google AI Plans with Cloud Storage - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': n...",
         "sourceHealth": [
           {
             "sourceId": "google-one-ai-pricing",
@@ -458,7 +458,7 @@
           "microsoft-copilot-business"
         ],
         "matchedSourceId": "microsoft-copilot-business",
-        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"US\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
         "sourceHealth": [
           {
             "sourceId": "microsoft-copilot-business",
@@ -479,7 +479,7 @@
           "microsoft-copilot-business"
         ],
         "matchedSourceId": "microsoft-copilot-business",
-        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"US\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
         "sourceHealth": [
           {
             "sourceId": "microsoft-copilot-business",
@@ -500,7 +500,7 @@
           "microsoft-copilot-business"
         ],
         "matchedSourceId": "microsoft-copilot-business",
-        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"US\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
         "sourceHealth": [
           {
             "sourceId": "microsoft-copilot-business",
@@ -521,7 +521,7 @@
           "microsoft-copilot-business"
         ],
         "matchedSourceId": "microsoft-copilot-business",
-        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+        "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"US\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
         "sourceHealth": [
           {
             "sourceId": "microsoft-copilot-business",
@@ -796,6 +796,6 @@
       }
     }
   ],
-  "summary": "Surface graph confirmó la mayor parte del lineup, pero dejó 5 comprobaciones sin verificar por acceso insuficiente a fuentes oficiales.",
-  "runId": "2026-06-12T10:46:34.164Z::openrouter::openrouter/free"
+  "summary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
+  "runId": "2026-06-12T11:37:29.828Z::mock::mock-agent-brain"
 }

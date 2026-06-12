@@ -1,8 +1,8 @@
 {
-  "provider": "openrouter",
-  "model": "openrouter/free",
+  "provider": "mock",
+  "model": "mock-agent-brain",
   "protocolVersion": "pricing-truth-v1",
-  "runAt": "2026-06-12T10:46:52.155Z",
+  "runAt": "2026-06-12T11:38:09.806Z",
   "status": "partial",
   "claimInventory": {
     "totalClaims": 33,
@@ -26,7 +26,7 @@
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T10:46:34.166Z"
+          "fetchedAt": "2026-06-12T11:37:29.831Z"
         },
         {
           "sourceId": "anthropic-pricing",
@@ -34,7 +34,7 @@
           "url": "https://www.anthropic.com/pricing",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T10:46:36.951Z"
+          "fetchedAt": "2026-06-12T11:37:30.580Z"
         },
         {
           "sourceId": "openai-model-gpt-5-4-mini",
@@ -42,7 +42,7 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T10:46:37.462Z"
+          "fetchedAt": "2026-06-12T11:37:30.902Z"
         },
         {
           "sourceId": "openai-model-gpt-5-4",
@@ -50,7 +50,7 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T10:46:38.129Z"
+          "fetchedAt": "2026-06-12T11:37:31.135Z"
         },
         {
           "sourceId": "openai-model-gpt-5-5",
@@ -58,23 +58,23 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-5.5/",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T10:46:38.520Z"
+          "fetchedAt": "2026-06-12T11:37:31.275Z"
         },
         {
           "sourceId": "openai-chatgpt-plus-help",
           "label": "OpenAI ChatGPT Plus Help",
           "url": "https://help.openai.com/en/articles/6950777",
           "status": "error",
-          "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-IZZXOh --remote-debugging-pipe about:blank\u001b[22m\n",
-          "fetchedAt": "2026-06-12T10:46:38.983Z"
+          "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/6950777",
+          "fetchedAt": "2026-06-12T11:37:31.407Z"
         },
         {
           "sourceId": "openai-chatgpt-business-help",
           "label": "OpenAI ChatGPT Business Help",
           "url": "https://help.openai.com/en/articles/8792828",
           "status": "error",
-          "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-lnc8GX --remote-debugging-pipe about:blank\u001b[22m\n",
-          "fetchedAt": "2026-06-12T10:46:44.455Z"
+          "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/8792828",
+          "fetchedAt": "2026-06-12T11:37:53.916Z"
         },
         {
           "sourceId": "google-gemini-api-pricing",
@@ -82,7 +82,7 @@
           "url": "https://ai.google.dev/gemini-api/docs/pricing",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T10:46:49.347Z"
+          "fetchedAt": "2026-06-12T11:38:08.948Z"
         },
         {
           "sourceId": "google-one-ai-pricing",
@@ -90,7 +90,7 @@
           "url": "https://one.google.com/about/google-ai-plans?hl=en",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T10:46:50.783Z"
+          "fetchedAt": "2026-06-12T11:38:09.247Z"
         },
         {
           "sourceId": "google-workspace-pricing",
@@ -98,7 +98,7 @@
           "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T10:46:51.016Z"
+          "fetchedAt": "2026-06-12T11:38:09.302Z"
         },
         {
           "sourceId": "github-copilot-org-billing",
@@ -106,7 +106,7 @@
           "url": "https://docs.github.com/en/copilot/concepts/billing/organizations-and-enterprises",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T10:46:52.010Z"
+          "fetchedAt": "2026-06-12T11:38:09.539Z"
         }
       ]
     }
@@ -252,7 +252,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.144Z"
+        "verifiedAt": "2026-06-12T11:38:09.795Z"
       },
       "trace": [
         {
@@ -423,7 +423,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.145Z"
+        "verifiedAt": "2026-06-12T11:38:09.796Z"
       },
       "trace": [
         {
@@ -594,7 +594,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.147Z"
+        "verifiedAt": "2026-06-12T11:38:09.797Z"
       },
       "trace": [
         {
@@ -765,7 +765,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.148Z"
+        "verifiedAt": "2026-06-12T11:38:09.798Z"
       },
       "trace": [
         {
@@ -936,7 +936,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.149Z"
+        "verifiedAt": "2026-06-12T11:38:09.799Z"
       },
       "trace": [
         {
@@ -1107,7 +1107,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.150Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -1210,7 +1210,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.150Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -1313,7 +1313,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.150Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -1416,7 +1416,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.150Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -1519,7 +1519,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.150Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -1622,7 +1622,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.150Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -1725,7 +1725,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.150Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -1828,7 +1828,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.150Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -1931,7 +1931,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -2034,7 +2034,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -2137,7 +2137,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.800Z"
       },
       "trace": [
         {
@@ -2190,7 +2190,7 @@
             "title": "OpenAI ChatGPT Plus Help",
             "status": "error",
             "sourceClass": "official",
-            "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-IZZXOh --remote-debugging-pipe about:blank\u001b[22m\n",
+            "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/6950777",
             "currentValueSeen": false,
             "structuredMatches": [],
             "aliasWindows": [],
@@ -2208,7 +2208,7 @@
         "patchAllowed": false,
         "usedSources": [],
         "reason": "No approved source could be fetched successfully for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -2253,7 +2253,7 @@
             "title": "OpenAI ChatGPT Business Help",
             "status": "error",
             "sourceClass": "official",
-            "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-lnc8GX --remote-debugging-pipe about:blank\u001b[22m\n",
+            "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/8792828",
             "currentValueSeen": false,
             "structuredMatches": [],
             "aliasWindows": [],
@@ -2271,7 +2271,7 @@
         "patchAllowed": false,
         "usedSources": [],
         "reason": "No approved source could be fetched successfully for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -2316,7 +2316,7 @@
             "title": "OpenAI ChatGPT Business Help",
             "status": "error",
             "sourceClass": "official",
-            "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-lnc8GX --remote-debugging-pipe about:blank\u001b[22m\n",
+            "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/8792828",
             "currentValueSeen": false,
             "structuredMatches": [],
             "aliasWindows": [],
@@ -2334,7 +2334,7 @@
         "patchAllowed": false,
         "usedSources": [],
         "reason": "No approved source could be fetched successfully for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -2429,7 +2429,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -2532,7 +2532,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -2635,7 +2635,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -2738,7 +2738,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -2841,7 +2841,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -2944,7 +2944,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -2994,7 +2994,7 @@
             "sourceId": "google-one-ai-pricing",
             "label": "Google AI Plans",
             "url": "https://one.google.com/about/google-ai-plans?hl=en",
-            "title": "Planes de IA de Google con almacenamiento en la nube - Google One",
+            "title": "Google AI Plans with Cloud Storage - Google One",
             "status": "ok",
             "sourceClass": "official",
             "error": null,
@@ -3013,7 +3013,7 @@
             "aliasWindows": [
               {
                 "alias": "Google AI Plus",
-                "snippet": "<!doctype html>\n<html lang=\"es-ES\">\n<head>\n<meta charset=\"utf-8\">\n<title>Planes de IA de Google con almacenamiento en la nube - Google One</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta content=\"website\" property=\"og:type\">\n<meta content=\"es-ES\" property=\"og:locale\">\n<meta content=...",
+                "snippet": "The Google AI Premium plan has a new name: Google AI Plus. It includes the same benefits like the Gemini app, NotebookLM, 400 GB of storage, and more. What’s the difference between YouTube Premium individual and YouTube Premium Lite plans? The YouTube Premium individual plan unlocks all of YouTube and YouTube Music ad-...",
                 "parserId": "google-one-ai-pricing"
               }
             ],
@@ -3021,7 +3021,7 @@
               {
                 "value": 19.99,
                 "raw": "$19.99",
-                "snippet": "<!doctype html>\n<html lang=\"es-ES\">\n<head>\n<meta charset=\"utf-8\">\n<title>Planes de IA de Google con almacenamiento en la nube - Google One</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta content=\"website\" property=\"og:type\"...",
+                "snippet": "The Google AI Premium plan has a new name: Google AI Plus. It includes the same benefits like the Gemini app, NotebookLM, 400 GB of storage, and more. What’s the difference between YouTube Premium individual and YouTube Premium Lite plans? The YouTube Premium ...",
                 "score": 12,
                 "parserId": "google-one-ai-pricing"
               }
@@ -3041,13 +3041,13 @@
           {
             "sourceId": "google-one-ai-pricing",
             "url": "https://one.google.com/about/google-ai-plans?hl=en",
-            "title": "Planes de IA de Google con almacenamiento en la nube - Google One",
-            "snippet": "<!doctype html>\n<html lang=\"es-ES\">\n<head>\n<meta charset=\"utf-8\">\n<title>Planes de IA de Google con almacenamiento en la nube - Google One</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta content=\"website\" property=\"og:type\"...",
+            "title": "Google AI Plans with Cloud Storage - Google One",
+            "snippet": "The Google AI Premium plan has a new name: Google AI Plus. It includes the same benefits like the Gemini app, NotebookLM, 400 GB of storage, and more. What’s the difference between YouTube Premium individual and YouTube Premium Lite plans? The YouTube Premium ...",
             "observedValue": 19.99
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -3067,8 +3067,8 @@
               {
                 "sourceId": "google-one-ai-pricing",
                 "url": "https://one.google.com/about/google-ai-plans?hl=en",
-                "title": "Planes de IA de Google con almacenamiento en la nube - Google One",
-                "snippet": "<!doctype html>\n<html lang=\"es-ES\">\n<head>\n<meta charset=\"utf-8\">\n<title>Planes de IA de Google con almacenamiento en la nube - Google One</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta content=\"website\" property=\"og:type\"...",
+                "title": "Google AI Plans with Cloud Storage - Google One",
+                "snippet": "The Google AI Premium plan has a new name: Google AI Plus. It includes the same benefits like the Gemini app, NotebookLM, 400 GB of storage, and more. What’s the difference between YouTube Premium individual and YouTube Premium Lite plans? The YouTube Premium ...",
                 "observedValue": 19.99
               }
             ],
@@ -3097,7 +3097,7 @@
             "sourceId": "google-one-ai-pricing",
             "label": "Google AI Plans",
             "url": "https://one.google.com/about/google-ai-plans?hl=en",
-            "title": "Planes de IA de Google con almacenamiento en la nube - Google One",
+            "title": "Google AI Plans with Cloud Storage - Google One",
             "status": "ok",
             "sourceClass": "official",
             "error": null,
@@ -3116,7 +3116,7 @@
             "aliasWindows": [
               {
                 "alias": "Google AI Plus",
-                "snippet": "<!doctype html>\n<html lang=\"es-ES\">\n<head>\n<meta charset=\"utf-8\">\n<title>Planes de IA de Google con almacenamiento en la nube - Google One</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta content=\"website\" property=\"og:type\">\n<meta content=\"es-ES\" property=\"og:locale\">\n<meta content=...",
+                "snippet": "The Google AI Premium plan has a new name: Google AI Plus. It includes the same benefits like the Gemini app, NotebookLM, 400 GB of storage, and more. What’s the difference between YouTube Premium individual and YouTube Premium Lite plans? The YouTube Premium individual plan unlocks all of YouTube and YouTube Music ad-...",
                 "parserId": "google-one-ai-pricing"
               }
             ],
@@ -3124,7 +3124,7 @@
               {
                 "value": 19.99,
                 "raw": "$19.99",
-                "snippet": "<!doctype html>\n<html lang=\"es-ES\">\n<head>\n<meta charset=\"utf-8\">\n<title>Planes de IA de Google con almacenamiento en la nube - Google One</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta content=\"website\" property=\"og:type\"...",
+                "snippet": "The Google AI Premium plan has a new name: Google AI Plus. It includes the same benefits like the Gemini app, NotebookLM, 400 GB of storage, and more. What’s the difference between YouTube Premium individual and YouTube Premium Lite plans? The YouTube Premium ...",
                 "score": 12,
                 "parserId": "google-one-ai-pricing"
               }
@@ -3144,13 +3144,13 @@
           {
             "sourceId": "google-one-ai-pricing",
             "url": "https://one.google.com/about/google-ai-plans?hl=en",
-            "title": "Planes de IA de Google con almacenamiento en la nube - Google One",
-            "snippet": "<!doctype html>\n<html lang=\"es-ES\">\n<head>\n<meta charset=\"utf-8\">\n<title>Planes de IA de Google con almacenamiento en la nube - Google One</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta content=\"website\" property=\"og:type\"...",
+            "title": "Google AI Plans with Cloud Storage - Google One",
+            "snippet": "The Google AI Premium plan has a new name: Google AI Plus. It includes the same benefits like the Gemini app, NotebookLM, 400 GB of storage, and more. What’s the difference between YouTube Premium individual and YouTube Premium Lite plans? The YouTube Premium ...",
             "observedValue": 19.99
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -3170,8 +3170,8 @@
               {
                 "sourceId": "google-one-ai-pricing",
                 "url": "https://one.google.com/about/google-ai-plans?hl=en",
-                "title": "Planes de IA de Google con almacenamiento en la nube - Google One",
-                "snippet": "<!doctype html>\n<html lang=\"es-ES\">\n<head>\n<meta charset=\"utf-8\">\n<title>Planes de IA de Google con almacenamiento en la nube - Google One</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta content=\"website\" property=\"og:type\"...",
+                "title": "Google AI Plans with Cloud Storage - Google One",
+                "snippet": "The Google AI Premium plan has a new name: Google AI Plus. It includes the same benefits like the Gemini app, NotebookLM, 400 GB of storage, and more. What’s the difference between YouTube Premium individual and YouTube Premium Lite plans? The YouTube Premium ...",
                 "observedValue": 19.99
               }
             ],
@@ -3219,7 +3219,7 @@
             "aliasWindows": [
               {
                 "alias": "Workspace Plus",
-                "snippet": "Compare Standard features Plus 20% off for 3 months help 20% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $17.60 USD $22.00 (20% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $17.60 $22 ** / user per month Start a trial All of Standard, and: 5 ...",
+                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $22 ** / user per month Start a trial All of Standard, and: 5 ...",
                 "parserId": "workspace-seat-pricing"
               }
             ],
@@ -3227,7 +3227,7 @@
               {
                 "value": 22,
                 "raw": "$22",
-                "snippet": "Compare Standard features Plus 20% off for 3 months help 20% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $17.60 USD $22.00 (20% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $17.60 $2...",
+                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
                 "score": 12,
                 "parserId": "workspace-seat-pricing"
               }
@@ -3248,12 +3248,12 @@
             "sourceId": "google-workspace-pricing",
             "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
             "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-            "snippet": "Compare Standard features Plus 20% off for 3 months help 20% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $17.60 USD $22.00 (20% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $17.60 $2...",
+            "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
             "observedValue": 22
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -3274,7 +3274,7 @@
                 "sourceId": "google-workspace-pricing",
                 "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
                 "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-                "snippet": "Compare Standard features Plus 20% off for 3 months help 20% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $17.60 USD $22.00 (20% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $17.60 $2...",
+                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
                 "observedValue": 22
               }
             ],
@@ -3322,7 +3322,7 @@
             "aliasWindows": [
               {
                 "alias": "Workspace Plus",
-                "snippet": "Compare Standard features Plus 20% off for 3 months help 20% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $17.60 USD $22.00 (20% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $17.60 $22 ** / user per month Start a trial All of Standard, and: 5 ...",
+                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $22 ** / user per month Start a trial All of Standard, and: 5 ...",
                 "parserId": "workspace-seat-pricing"
               }
             ],
@@ -3330,7 +3330,7 @@
               {
                 "value": 22,
                 "raw": "$22",
-                "snippet": "Compare Standard features Plus 20% off for 3 months help 20% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $17.60 USD $22.00 (20% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $17.60 $2...",
+                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
                 "score": 12,
                 "parserId": "workspace-seat-pricing"
               }
@@ -3351,12 +3351,12 @@
             "sourceId": "google-workspace-pricing",
             "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
             "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-            "snippet": "Compare Standard features Plus 20% off for 3 months help 20% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $17.60 USD $22.00 (20% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $17.60 $2...",
+            "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
             "observedValue": 22
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.151Z"
+        "verifiedAt": "2026-06-12T11:38:09.801Z"
       },
       "trace": [
         {
@@ -3377,7 +3377,7 @@
                 "sourceId": "google-workspace-pricing",
                 "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
                 "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-                "snippet": "Compare Standard features Plus 20% off for 3 months help 20% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $17.60 USD $22.00 (20% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $17.60 $2...",
+                "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
                 "observedValue": 22
               }
             ],
@@ -3469,7 +3469,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.152Z"
+        "verifiedAt": "2026-06-12T11:38:09.802Z"
       },
       "trace": [
         {
@@ -3582,7 +3582,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T10:46:52.153Z"
+        "verifiedAt": "2026-06-12T11:38:09.803Z"
       },
       "trace": [
         {
@@ -3707,7 +3707,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.154Z"
+        "verifiedAt": "2026-06-12T11:38:09.805Z"
       },
       "trace": [
         {
@@ -3832,7 +3832,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T10:46:52.155Z"
+        "verifiedAt": "2026-06-12T11:38:09.806Z"
       },
       "trace": [
         {
@@ -3883,7 +3883,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.144Z"
+      "verifiedAt": "2026-06-12T11:38:09.795Z"
     },
     {
       "claimId": "claude|model|haiku|outputPricePerMTok",
@@ -3903,7 +3903,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.145Z"
+      "verifiedAt": "2026-06-12T11:38:09.796Z"
     },
     {
       "claimId": "claude|model|sonnet|inputPricePerMTok",
@@ -3923,7 +3923,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.147Z"
+      "verifiedAt": "2026-06-12T11:38:09.797Z"
     },
     {
       "claimId": "claude|model|sonnet|outputPricePerMTok",
@@ -3943,7 +3943,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.148Z"
+      "verifiedAt": "2026-06-12T11:38:09.798Z"
     },
     {
       "claimId": "claude|model|opus|inputPricePerMTok",
@@ -3963,7 +3963,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.149Z"
+      "verifiedAt": "2026-06-12T11:38:09.799Z"
     },
     {
       "claimId": "claude|model|opus|outputPricePerMTok",
@@ -3983,7 +3983,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.150Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "claude|seatPlan|teamstandard|priceMonthly",
@@ -4003,7 +4003,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.150Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "claude|seatPlan|teamstandard|priceAnnual",
@@ -4023,7 +4023,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.150Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "claude|seatPlan|teampremium|priceMonthly",
@@ -4043,7 +4043,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.150Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "claude|seatPlan|teampremium|priceAnnual",
@@ -4063,7 +4063,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.150Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "chatgpt|model|gpt54mini|inputPricePerMTok",
@@ -4083,7 +4083,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.150Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "chatgpt|model|gpt54mini|outputPricePerMTok",
@@ -4103,7 +4103,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.150Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "chatgpt|model|gpt54|inputPricePerMTok",
@@ -4123,7 +4123,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.150Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "chatgpt|model|gpt54|outputPricePerMTok",
@@ -4143,7 +4143,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "chatgpt|model|gpt55|inputPricePerMTok",
@@ -4163,7 +4163,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "chatgpt|model|gpt55|outputPricePerMTok",
@@ -4183,7 +4183,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.800Z"
     },
     {
       "claimId": "chatgpt|seatPlan|chatgptplus|priceMonthly",
@@ -4195,7 +4195,7 @@
       "patchAllowed": false,
       "usedSources": [],
       "reason": "No approved source could be fetched successfully for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "chatgpt|seatPlan|chatgptbusiness|priceMonthly",
@@ -4207,7 +4207,7 @@
       "patchAllowed": false,
       "usedSources": [],
       "reason": "No approved source could be fetched successfully for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "chatgpt|seatPlan|chatgptbusiness|priceAnnual",
@@ -4219,7 +4219,7 @@
       "patchAllowed": false,
       "usedSources": [],
       "reason": "No approved source could be fetched successfully for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "gemini|model|gemini25flashlite|inputPricePerMTok",
@@ -4239,7 +4239,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "gemini|model|gemini25flashlite|outputPricePerMTok",
@@ -4259,7 +4259,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "gemini|model|gemini25flash|inputPricePerMTok",
@@ -4279,7 +4279,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "gemini|model|gemini25flash|outputPricePerMTok",
@@ -4299,7 +4299,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "gemini|model|gemini25pro|inputPricePerMTok",
@@ -4319,7 +4319,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "gemini|model|gemini25pro|outputPricePerMTok",
@@ -4339,7 +4339,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "gemini|seatPlan|googleaiplus|priceMonthly",
@@ -4353,13 +4353,13 @@
         {
           "sourceId": "google-one-ai-pricing",
           "url": "https://one.google.com/about/google-ai-plans?hl=en",
-          "title": "Planes de IA de Google con almacenamiento en la nube - Google One",
-          "snippet": "<!doctype html>\n<html lang=\"es-ES\">\n<head>\n<meta charset=\"utf-8\">\n<title>Planes de IA de Google con almacenamiento en la nube - Google One</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta content=\"website\" property=\"og:type\"...",
+          "title": "Google AI Plans with Cloud Storage - Google One",
+          "snippet": "The Google AI Premium plan has a new name: Google AI Plus. It includes the same benefits like the Gemini app, NotebookLM, 400 GB of storage, and more. What’s the difference between YouTube Premium individual and YouTube Premium Lite plans? The YouTube Premium ...",
           "observedValue": 19.99
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "gemini|seatPlan|googleaiplus|priceAnnual",
@@ -4373,13 +4373,13 @@
         {
           "sourceId": "google-one-ai-pricing",
           "url": "https://one.google.com/about/google-ai-plans?hl=en",
-          "title": "Planes de IA de Google con almacenamiento en la nube - Google One",
-          "snippet": "<!doctype html>\n<html lang=\"es-ES\">\n<head>\n<meta charset=\"utf-8\">\n<title>Planes de IA de Google con almacenamiento en la nube - Google One</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta content=\"website\" property=\"og:type\"...",
+          "title": "Google AI Plans with Cloud Storage - Google One",
+          "snippet": "The Google AI Premium plan has a new name: Google AI Plus. It includes the same benefits like the Gemini app, NotebookLM, 400 GB of storage, and more. What’s the difference between YouTube Premium individual and YouTube Premium Lite plans? The YouTube Premium ...",
           "observedValue": 19.99
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "gemini|seatPlan|workspaceplus|priceMonthly",
@@ -4394,12 +4394,12 @@
           "sourceId": "google-workspace-pricing",
           "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
           "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-          "snippet": "Compare Standard features Plus 20% off for 3 months help 20% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $17.60 USD $22.00 (20% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $17.60 $2...",
+          "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
           "observedValue": 22
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "gemini|seatPlan|workspaceplus|priceAnnual",
@@ -4414,12 +4414,12 @@
           "sourceId": "google-workspace-pricing",
           "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
           "title": "Compare Flexible Pricing Plan Options | Google Workspace",
-          "snippet": "Compare Standard features Plus 20% off for 3 months help 20% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $17.60 USD $22.00 (20% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $17.60 $2...",
+          "snippet": "Compare Standard features Plus 30% off for 3 months help 30% off for 3 months help Discount details Jun 26, 2026 – Sep 26, 2026 $15.40 USD $22.00 (30% off) per user / month for all users Starting Sep 26, 2026 $22.00 USD per user / month for all users $15.40 $2...",
           "observedValue": 22
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.151Z"
+      "verifiedAt": "2026-06-12T11:38:09.801Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotbusiness|priceMonthly",
@@ -4439,7 +4439,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.152Z"
+      "verifiedAt": "2026-06-12T11:38:09.802Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotbusiness|priceAnnual",
@@ -4459,7 +4459,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T10:46:52.153Z"
+      "verifiedAt": "2026-06-12T11:38:09.803Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotenterprise|priceMonthly",
@@ -4479,7 +4479,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.154Z"
+      "verifiedAt": "2026-06-12T11:38:09.805Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotenterprise|priceAnnual",
@@ -4499,7 +4499,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T10:46:52.155Z"
+      "verifiedAt": "2026-06-12T11:38:09.806Z"
     }
   ],
   "conflictResolver": {
@@ -4522,6 +4522,6 @@
   },
   "needsAttention": 3,
   "summary": "Truth graph confirmó la mayor parte de los claims, pero dejó 3 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
-  "runId": "2026-06-12T10:46:34.164Z::openrouter::openrouter/free",
+  "runId": "2026-06-12T11:37:29.828Z::mock::mock-agent-brain",
   "appliedOperations": []
 }

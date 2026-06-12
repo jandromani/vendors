@@ -34,11 +34,11 @@
       "Google News: AWS Bedrock pricing",
       "Google News: Azure OpenAI Service pricing"
     ],
-    "provider": "openrouter",
-    "model": "openrouter/free",
+    "provider": "mock",
+    "model": "mock-agent-brain",
     "protocolVersion": "pricing-agentic-v2",
     "truthVerification": {
-      "lastRunAt": "2026-06-12T10:46:52.155Z",
+      "lastRunAt": "2026-06-12T11:38:09.806Z",
       "status": "partial",
       "needsAttention": 3,
       "publishableUpdates": 0,
