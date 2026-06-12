@@ -3,6 +3,3539 @@
     "provider": "openrouter",
     "model": "openrouter/free",
     "protocolVersion": "pricing-agentic-v2",
+    "cutoffDate": "2026-06-12T10:39:46.916Z",
+    "scout": {
+      "result": {
+        "status": "insufficient_evidence",
+        "candidates": [],
+        "notes": [
+          "Agent reached the step limit and was closed conservatively by the orchestrator."
+        ]
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "Need to know the current watch state (seen items count and cutoff) before proceeding to source checks.",
+          "toolName": "read_watch_state",
+          "toolInput": {},
+          "toolResult": {
+            "lastRunAt": "2026-06-12T10:39:46.916Z",
+            "lastRunStatus": "needs_review",
+            "seenItemCount": 31,
+            "cutoffDate": "2026-06-12T10:39:46.916Z"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "We need to see the available sources to decide which ones to check for pricing updates. We'll start by listing the sources.",
+          "toolName": "list_sources",
+          "toolInput": {},
+          "toolResult": {
+            "truncated": true,
+            "originalLength": 5001,
+            "preview": "{\n  \"officialSources\": [\n    {\n      \"id\": \"openai-news-rss\",\n      \"label\": \"OpenAI News RSS\",\n      \"kind\": \"rss\",\n      \"url\": \"https://openai.com/news/rss.xml\",\n      \"vendorHint\": \"chatgpt\",\n      \"official\": true\n    },\n    {\n      \"id\": \"anthropic-news-page\",\n      \"label\": \"Anthropic News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://www.anthropic.com/news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true\n    },\n    {\n      \"id\": \"anthropic-api-changelog\",\n      \"label\": \"Anthropic API Changelog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://docs.anthropic.com/en/api/changelog\",\n      \"vendorHint\": \"claude\",\n      \"official\": true\n    },\n    {\n      \"id\": \"google-ai-blog-rss\",\n      \"label\": \"Google AI Blog RSS\",\n      \"kind\": \"rss\",\n      \"url\": \"https://blog.google/innovation-and-ai/technology/ai/rss/\",\n      \"vendorHint\": \"gemini\",\n      \"official\": true\n    },\n    {\n      \"id\": \"github-changelog-copilot\",\n      \"label\": \"GitHub Changelog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://github.blog/changelog/\",\n      \"vendorHint\": \"githubcopilot\",\n      \"official\": true\n    },\n    {\n      \"id\": \"microsoft-365-blog\",\n      \"label\": \"Microsoft 365 Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://www.microsoft.com/en-us/microsoft-365/blog/\",\n      \"vendorHint\": \"m365copilot\",\n      \"official\": true\n    },\n    {\n      \"id\": \"mistral-news\",\n      \"label\": \"Mistral AI News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://mistral.ai/news\",\n      \"vendorHint\": \"mistral\",\n      \"official\": true\n    },\n    {\n      \"id\": \"xai-news\",\n      \"label\": \"xAI News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://x.ai/news\",\n      \"vendorHint\": \"xai\",\n      \"official\": true\n    },\n    {\n      \"id\": \"deepseek-news\",\n      \"label\": \"DeepSeek News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://api-docs.deepseek.com/news/\",\n      \"vendorHint\": \"deepseek\",\n      \"official\": true\n    },\n    {\n      \"id\": \"cohere-blog\",\n      \"label\": \"Cohere Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://cohere.com/blog\",\n      \"vendorHint\": \"cohere\",\n      \"official\": true\n    },\n    {\n      \"id\": \"perplexity-blog\",\n      \"label\": \"Perplexity Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://www.perplexity.ai/hub/blog\",\n      \"vendorHint\": \"perplexity\",\n      \"official\": true\n    },\n    {\n      \"id\": \"meta-ai-blog\",\n      \"label\": \"Meta AI Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://ai.meta.com/blog/\",\n      \"vendorHint\": \"meta\"..."
+          }
+        },
+        {
+          "stepNumber": 3,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "We need to check for recent pricing-related items in official sources after the cutoff date. We'll start by reading the OpenAI News RSS (ChatGPT) to see if any new items appear.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "openai-news-rss",
+            "limit": 5
+          },
+          "toolResult": {
+            "sourceId": "openai-news-rss",
+            "sourceLabel": "OpenAI News RSS",
+            "official": true,
+            "vendorHint": "chatgpt",
+            "items": []
+          }
+        },
+        {
+          "stepNumber": 4,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "We have checked one official source (OpenAI News RSS) and found no items. To gather more evidence before concluding insufficient_evidence, we will check another official source for Claude (Anthropic News) for any recent pricing-related announcements.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "anthropic-news-page",
+            "limit": 5
+          },
+          "toolResult": {
+            "truncated": true,
+            "originalLength": 3033,
+            "preview": "{\n  \"sourceId\": \"anthropic-news-page\",\n  \"sourceLabel\": \"Anthropic News\",\n  \"official\": true,\n  \"vendorHint\": \"claude\",\n  \"items\": [\n    {\n      \"candidateId\": \"5561b1009c67aa4c9c0c78c24bde32440f1b46e6\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Claude Fable 5 and Claude Mythos 5 Announcements Jun 9, 2026 Our next generation of intelligence for the hardest knowledge work and coding problems.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/claude-fable-5-mythos-5\",\n      \"publishedAt\": \"2026-06-12T10:43:42.356Z\"\n    },\n    {\n      \"candidateId\": \"69926b8aab6cb5022f8cd72aa69903293d50df8b\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Announcements Jun 11, 2026 Introducing Claude Corps We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/claude-corps\",\n      \"publishedAt\": \"2026-06-12T10:43:42.356Z\"\n    },\n    {\n      \"candidateId\": \"eee735e8871a342818af5d446d0389012139b606\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Announcements Jun 2, 2026 Expanding Project Glasswing We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/expanding-project-glasswing\",\n      \"publishedAt\": \"2026-06-12T10:43:42.356Z\"\n    },\n    {\n      \"candidateId\": \"cd232fad11b0a3e5753ed627e1682ce8a377f0ef\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Announcements May 25, 2026 Anthropic co-founder Chris Olah&#x27;s remarks on Pope Leo XIV&#x27;s encyclical \\\"Magnifica humanitas\\\" The full text of Chris Olah&#x27;s remarks on the Pope&#x27;s encyclical on AI.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/chris-olah-pope-leo-encyclical\",\n      \"publishedAt\": \"2026-06-12T10:43:42.356Z\"\n    },\n..."
+          }
+        },
+        {
+          "stepNumber": 5,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "We have checked OpenAI News RSS (no items) and Anthropic News (items but none about pricing). To continue searching for pricing signals, we will check the Google AI Blog RSS (vendor hint: gemini) for any recent pricing-related announcements.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "google-ai-blog-rss",
+            "limit": 5
+          },
+          "toolResult": {
+            "sourceId": "google-ai-blog-rss",
+            "sourceLabel": "Google AI Blog RSS",
+            "official": true,
+            "vendorHint": "gemini",
+            "items": []
+          }
+        },
+        {
+          "stepNumber": 6,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "We have checked OpenAI News RSS (no items) and Anthropic News (items but no pricing relevance). To increase confidence before concluding insufficient evidence, we should check another official source, Google AI Blog RSS, for any Gemini pricing announcements after the cutoff.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "google-ai-blog-rss",
+            "limit": 5
+          },
+          "toolResult": {
+            "sourceId": "google-ai-blog-rss",
+            "sourceLabel": "Google AI Blog RSS",
+            "official": true,
+            "vendorHint": "gemini",
+            "items": []
+          }
+        },
+        {
+          "stepNumber": 7,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "We have checked OpenAI News RSS (no items) and Anthropic News (items but none about pricing). To continue searching for pricing signals, we will check the Google AI Blog RSS (vendorHint: gemini) for any recent pricing-related announcements.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "google-ai-blog-rss",
+            "limit": 5
+          },
+          "toolResult": {
+            "sourceId": "google-ai-blog-rss",
+            "sourceLabel": "Google AI Blog RSS",
+            "official": true,
+            "vendorHint": "gemini",
+            "items": []
+          }
+        },
+        {
+          "stepNumber": 8,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "We have checked OpenAI and Anthropic official sources; no pricing-related items found. To follow the Scout efficiency rule, we should check a few more official sources before concluding insufficient evidence. Next, we will check the Google AI Blog RSS (vendorHint: gemini) for any",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "google-ai-blog-rss",
+            "limit": 5
+          },
+          "toolResult": {
+            "sourceId": "google-ai-blog-rss",
+            "sourceLabel": "Google AI Blog RSS",
+            "official": true,
+            "vendorHint": "gemini",
+            "items": []
+          }
+        },
+        {
+          "stepNumber": 9,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "The agent exceeded its step budget, so the orchestrator emitted a conservative fallback result.",
+          "finalPayload": {
+            "status": "insufficient_evidence",
+            "candidates": [],
+            "notes": [
+              "Agent reached the step limit and was closed conservatively by the orchestrator."
+            ]
+          }
+        }
+      ]
+    },
+    "research": {
+      "result": {
+        "status": "insufficient_evidence",
+        "evidenceBundles": [],
+        "notes": [
+          "No candidates provided"
+        ]
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "No candidates provided in input; insufficient evidence to evaluate pricing changes.",
+          "finalPayload": {
+            "status": "insufficient_evidence",
+            "evidenceBundles": [],
+            "notes": [
+              "No candidates provided"
+            ]
+          }
+        }
+      ]
+    },
+    "mapping": {
+      "result": {
+        "status": "insufficient_evidence",
+        "operations": [],
+        "rejectedEvidence": [],
+        "notes": [
+          "No evidence bundles provided"
+        ]
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "No evidence bundles provided, insufficient evidence to map any pricing updates.",
+          "finalPayload": {
+            "status": "insufficient_evidence",
+            "operations": [],
+            "rejectedEvidence": [],
+            "notes": [
+              "No evidence bundles provided"
+            ]
+          }
+        }
+      ]
+    },
+    "audit": {
+      "result": {
+        "status": "insufficient_evidence",
+        "approvedOperations": [],
+        "rejectedOperations": [],
+        "summary": "No evidence provided to evaluate operations."
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "No evidence bundles or operations provided; insufficient evidence to approve any changes.",
+          "finalPayload": {
+            "status": "insufficient_evidence",
+            "approvedOperations": [],
+            "rejectedOperations": [],
+            "summary": "No evidence provided to evaluate operations."
+          }
+        }
+      ]
+    },
+    "approvedOperations": [],
+    "strictlyRejectedOperations": [],
+    "runId": "2026-06-12T10:46:34.164Z::openrouter::openrouter/free",
+    "runAt": "2026-06-12T10:47:10.555Z",
+    "status": "partial",
+    "vendorIdsInvolved": [],
+    "agentStatuses": {
+      "scout": "insufficient_evidence",
+      "research": "insufficient_evidence",
+      "mapping": "insufficient_evidence",
+      "audit": "insufficient_evidence"
+    },
+    "appliedOperations": [],
+    "truthVerification": {
+      "status": "partial",
+      "summary": "Truth graph confirmó la mayor parte de los claims, pero dejó 3 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
+      "verdictCounts": {
+        "confirmed": 30,
+        "unverifiable": 3
+      },
+      "needsAttention": 3,
+      "publishableUpdates": 0,
+      "appliedUpdates": 0
+    },
+    "surfaceVerification": {
+      "protocolVersion": "pricing-surface-v1",
+      "runAt": "2026-06-12T10:47:10.540Z",
+      "status": "partial",
+      "totalChecks": 42,
+      "verifiedChecks": 37,
+      "needsReview": 0,
+      "unverifiableChecks": 5,
+      "checks": [
+        {
+          "checkId": "chatgpt::model-lineup",
+          "vendorId": "chatgpt",
+          "kind": "model_lineup",
+          "label": "ChatGPT model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "GPT-5.4 mini",
+              "GPT-5.4",
+              "GPT-5.5"
+            ],
+            "current": [
+              "GPT-5.4 mini",
+              "GPT-5.4",
+              "GPT-5.5"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "chatgpt::seat-plans",
+          "vendorId": "chatgpt",
+          "kind": "seat_plan_names",
+          "label": "ChatGPT seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "ChatGPT Plus",
+              "ChatGPT Business",
+              "Enterprise"
+            ],
+            "current": [
+              "ChatGPT Plus",
+              "ChatGPT Business",
+              "Enterprise"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-plus-gpt55",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "ChatGPT Plus highlights GPT-5.5",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-plus-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-plus-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-O8ILI7 --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-business-help",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "ChatGPT Business help article reachable",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-business-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-business-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-AQt7b4 --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-gpt55-default",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "GPT-5.5 Instant is the default for logged-in users",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-gpt55-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-gpt55-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-TY5DQs --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-gpt55-pro-limitations",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "GPT-5.5 Pro limitations remain visible",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-gpt55-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-gpt55-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-TY5DQs --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-legacy-retirement",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "Legacy ChatGPT models retired from ChatGPT",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-plus-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-plus-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-O8ILI7 --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::model-lineup",
+          "vendorId": "gemini",
+          "kind": "model_lineup",
+          "label": "Gemini model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Gemini 2.5 Flash-Lite",
+              "Gemini 2.5 Flash",
+              "Gemini 2.5 Pro"
+            ],
+            "current": [
+              "Gemini 2.5 Flash-Lite",
+              "Gemini 2.5 Flash",
+              "Gemini 2.5 Pro"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "gemini::seat-plans",
+          "vendorId": "gemini",
+          "kind": "seat_plan_names",
+          "label": "Gemini seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Google AI Plus",
+              "Workspace Plus",
+              "Enterprise / Vertex AI"
+            ],
+            "current": [
+              "Google AI Plus",
+              "Workspace Plus",
+              "Enterprise / Vertex AI"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "gemini::signal::gemini-20-flash-shutdown",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Gemini 2.0 Flash shutdown notice",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-gemini-api-pricing"
+            ],
+            "matchedSourceId": "google-gemini-api-pricing",
+            "snippet": "Gemini Developer API pricing &nbsp;|&nbsp; Gemini API &nbsp;|&nbsp; Google AI for Developers { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Gemini Developer API pricing\" } { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{ \"...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-gemini-api-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::google-ai-plus-rename",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "AI Premium renamed to Google AI Plus",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-one-ai-pricing"
+            ],
+            "matchedSourceId": "google-one-ai-pricing",
+            "snippet": "Planes de IA de Google con almacenamiento en la nube - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].pu...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-one-ai-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::workspace-plus-max-users",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Workspace Plus remains capped at 300 users",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-workspace-pricing"
+            ],
+            "matchedSourceId": "google-workspace-pricing",
+            "snippet": "window['ppConfig'] = {productName: 'DasherGrowthPricingUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WI...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-workspace-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::workspace-plus-gemini-copy",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Workspace Plus still exposes Gemini AI assistant copy",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-workspace-pricing"
+            ],
+            "matchedSourceId": "google-workspace-pricing",
+            "snippet": "window['ppConfig'] = {productName: 'DasherGrowthPricingUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WI...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-workspace-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::google-ai-plus-notebooklm",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Google AI Plus still mentions NotebookLM",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-one-ai-pricing"
+            ],
+            "matchedSourceId": "google-one-ai-pricing",
+            "snippet": "Planes de IA de Google con almacenamiento en la nube - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].pu...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-one-ai-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::model-lineup",
+          "vendorId": "githubcopilot",
+          "kind": "model_lineup",
+          "label": "GitHub Copilot model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "githubcopilot::seat-plans",
+          "vendorId": "githubcopilot",
+          "kind": "seat_plan_names",
+          "label": "GitHub Copilot seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Copilot Business",
+              "Copilot Enterprise"
+            ],
+            "current": [
+              "Copilot Business",
+              "Copilot Enterprise"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-june-1-transition",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Usage-based billing starts June 1, 2026",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "github-copilot-org-billing"
+            ],
+            "matchedSourceId": "github-copilot-org-billing",
+            "snippet": "About billing for GitHub Copilot in organizations and enterprises - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open me...",
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-org-billing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-premium-overage",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Premium request overage published",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "github-copilot-org-billing"
+            ],
+            "matchedSourceId": "github-copilot-org-billing",
+            "snippet": "About billing for GitHub Copilot in organizations and enterprises - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open me...",
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-org-billing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-credits-transition-window",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Transition window with extra AI credits remains published",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "github-copilot-usage-billing"
+            ],
+            "matchedSourceId": "github-copilot-usage-billing",
+            "snippet": "Usage-based billing for organizations and enterprises - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Side...",
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-usage-billing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-chat-in-ides",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Plans page still exposes Copilot Chat in IDEs",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "github-copilot-plans"
+            ],
+            "matchedSourceId": "github-copilot-plans",
+            "snippet": "Plans for GitHub Copilot - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Get star...",
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-plans",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::model-lineup",
+          "vendorId": "m365copilot",
+          "kind": "model_lineup",
+          "label": "Microsoft 365 Copilot model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "m365copilot::seat-plans",
+          "vendorId": "m365copilot",
+          "kind": "seat_plan_names",
+          "label": "Microsoft 365 Copilot seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Microsoft 365 Copilot Business"
+            ],
+            "current": [
+              "Microsoft 365 Copilot Business"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-copilot-chat",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Copilot Chat present in business page",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-up-to-300-users",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Up to 300 users limit",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-qualifying-plan-required",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Qualifying Microsoft 365 plan required",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-agents-copy",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Agents remain core in business copy",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "mistral::model-lineup",
+          "vendorId": "mistral",
+          "kind": "model_lineup",
+          "label": "Mistral model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "mistral::seat-plans",
+          "vendorId": "mistral",
+          "kind": "seat_plan_names",
+          "label": "Mistral seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Le Chat Pro",
+              "Le Chat Team",
+              "Enterprise / La Plateforme"
+            ],
+            "current": [
+              "Le Chat Pro",
+              "Le Chat Team",
+              "Enterprise / La Plateforme"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "xai::model-lineup",
+          "vendorId": "xai",
+          "kind": "model_lineup",
+          "label": "xAI Grok model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "xai::seat-plans",
+          "vendorId": "xai",
+          "kind": "seat_plan_names",
+          "label": "xAI Grok seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Premium (X)",
+              "SuperGrok",
+              "xAI API"
+            ],
+            "current": [
+              "Premium (X)",
+              "SuperGrok",
+              "xAI API"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "deepseek::model-lineup",
+          "vendorId": "deepseek",
+          "kind": "model_lineup",
+          "label": "DeepSeek model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "deepseek::seat-plans",
+          "vendorId": "deepseek",
+          "kind": "seat_plan_names",
+          "label": "DeepSeek seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "DeepSeek API",
+              "Self-hosted"
+            ],
+            "current": [
+              "DeepSeek API",
+              "Self-hosted"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "cohere::model-lineup",
+          "vendorId": "cohere",
+          "kind": "model_lineup",
+          "label": "Cohere model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "cohere::seat-plans",
+          "vendorId": "cohere",
+          "kind": "seat_plan_names",
+          "label": "Cohere seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Cohere API",
+              "Cohere Enterprise / North"
+            ],
+            "current": [
+              "Cohere API",
+              "Cohere Enterprise / North"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "perplexity::model-lineup",
+          "vendorId": "perplexity",
+          "kind": "model_lineup",
+          "label": "Perplexity model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "perplexity::seat-plans",
+          "vendorId": "perplexity",
+          "kind": "seat_plan_names",
+          "label": "Perplexity seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Perplexity Pro",
+              "Perplexity Enterprise Pro",
+              "Sonar API"
+            ],
+            "current": [
+              "Perplexity Pro",
+              "Perplexity Enterprise Pro",
+              "Sonar API"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "meta::model-lineup",
+          "vendorId": "meta",
+          "kind": "model_lineup",
+          "label": "Meta Llama API model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "meta::seat-plans",
+          "vendorId": "meta",
+          "kind": "seat_plan_names",
+          "label": "Meta Llama API seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Llama API",
+              "Self-hosted / partners"
+            ],
+            "current": [
+              "Llama API",
+              "Self-hosted / partners"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "awsbedrock::model-lineup",
+          "vendorId": "awsbedrock",
+          "kind": "model_lineup",
+          "label": "AWS Bedrock model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "awsbedrock::seat-plans",
+          "vendorId": "awsbedrock",
+          "kind": "seat_plan_names",
+          "label": "AWS Bedrock seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "On-demand",
+              "Provisioned throughput"
+            ],
+            "current": [
+              "On-demand",
+              "Provisioned throughput"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "azureopenai::model-lineup",
+          "vendorId": "azureopenai",
+          "kind": "model_lineup",
+          "label": "Azure OpenAI Service model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "azureopenai::seat-plans",
+          "vendorId": "azureopenai",
+          "kind": "seat_plan_names",
+          "label": "Azure OpenAI Service seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Pay-as-you-go",
+              "Provisioned Throughput Units",
+              "Enterprise Agreement"
+            ],
+            "current": [
+              "Pay-as-you-go",
+              "Provisioned Throughput Units",
+              "Enterprise Agreement"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        }
+      ],
+      "summary": "Surface graph confirmó la mayor parte del lineup, pero dejó 5 comprobaciones sin verificar por acceso insuficiente a fuentes oficiales.",
+      "runId": "2026-06-12T10:46:34.164Z::openrouter::openrouter/free"
+    },
+    "runtimeAutopilot": {
+      "runAt": "2026-06-12T10:47:10.542Z",
+      "status": "updated",
+      "protocolVersion": "pricing-runtime-v1",
+      "autonomousMode": true,
+      "manualEditsLocked": true,
+      "summary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+      "sourceHealth": [
+        {
+          "sourceId": "support-chat-warehouse",
+          "label": "Support desk warehouse export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        },
+        {
+          "sourceId": "engineer-coding-warehouse",
+          "label": "Engineering copilot warehouse export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        },
+        {
+          "sourceId": "agent-builder-warehouse",
+          "label": "Agent runtime analytics export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        },
+        {
+          "sourceId": "legal-docs-warehouse",
+          "label": "Document review analytics export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        }
+      ],
+      "ingestedTelemetry": [
+        {
+          "id": "telemetry-support-chat-q2",
+          "label": "Support desk · chat",
+          "status": "active",
+          "useCaseId": "chat",
+          "roleProfileId": "support_agent",
+          "sampleWindowDays": 14,
+          "sampleSizeRequests": 128240,
+          "sampleSizeUsers": 74,
+          "avgInputTokens": 340,
+          "avgOutputTokens": 255,
+          "overheadMultiplier": 1.08,
+          "avgRequestsPerUserPerDay": 84,
+          "cacheHitRate": 0.58,
+          "batchHitRate": 0.03,
+          "confidence": 0.93,
+          "sourceLabel": "Gateway logs + product analytics",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Measured traffic for tier-fast support conversations."
+        },
+        {
+          "id": "telemetry-engineer-coding-q2",
+          "label": "Engineering copilot · coding",
+          "status": "active",
+          "useCaseId": "coding",
+          "roleProfileId": "engineer",
+          "sampleWindowDays": 21,
+          "sampleSizeRequests": 46210,
+          "sampleSizeUsers": 19,
+          "avgInputTokens": 1825,
+          "avgOutputTokens": 2140,
+          "overheadMultiplier": 1.32,
+          "avgRequestsPerUserPerDay": 61,
+          "cacheHitRate": 0.44,
+          "batchHitRate": 0.04,
+          "confidence": 0.89,
+          "sourceLabel": "IDE assistant telemetry",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Captures longer prompts and follow-up debugging loops."
+        },
+        {
+          "id": "telemetry-agents-builder-q2",
+          "label": "Agent builders · autonomous flows",
+          "status": "active",
+          "useCaseId": "agent",
+          "roleProfileId": "autonomous_builder",
+          "sampleWindowDays": 10,
+          "sampleSizeRequests": 18320,
+          "sampleSizeUsers": 9,
+          "avgInputTokens": 2380,
+          "avgOutputTokens": 1240,
+          "overheadMultiplier": 6.1,
+          "avgRequestsPerUserPerDay": 73,
+          "cacheHitRate": 0.36,
+          "batchHitRate": 0.22,
+          "confidence": 0.87,
+          "sourceLabel": "Agent runtime traces",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Long-running agent loops with tools and retries."
+        },
+        {
+          "id": "telemetry-legal-docs-q2",
+          "label": "Legal review · document analysis",
+          "status": "active",
+          "useCaseId": "doc_analysis",
+          "roleProfileId": "analyst",
+          "sampleWindowDays": 18,
+          "sampleSizeRequests": 9240,
+          "sampleSizeUsers": 11,
+          "avgInputTokens": 14800,
+          "avgOutputTokens": 920,
+          "overheadMultiplier": 1.18,
+          "avgRequestsPerUserPerDay": 31,
+          "cacheHitRate": 0.12,
+          "batchHitRate": 0.38,
+          "confidence": 0.91,
+          "sourceLabel": "Document workflow analytics",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Large-context PDF and contract review workload."
+        }
+      ],
+      "appliedAssumptionOverrides": [
+        {
+          "id": "optimization.cache_hit_rate_default",
+          "value": 0.507,
+          "provenance": "measured",
+          "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
+          "updatedAt": "2026-06-12T10:47:10.545Z"
+        }
+      ],
+      "sourceRegistryVersion": "pricing-runtime-sources-v1",
+      "sourceCounts": {
+        "configured": 4,
+        "ok": 4,
+        "errors": 0
+      }
+    },
+    "providerStrategy": {
+      "preferredProvider": "openrouter",
+      "preferredModel": "openrouter/free",
+      "selectedProvider": "openrouter",
+      "selectedModel": "openrouter/free",
+      "degradedMode": false,
+      "failoverUsed": false,
+      "attempts": [
+        {
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "mode": "primary",
+          "startedAt": "2026-06-12T10:42:34.856Z",
+          "finishedAt": "2026-06-12T10:46:34.164Z",
+          "status": "ok",
+          "reason": "Configured primary provider."
+        }
+      ],
+      "summary": "Primary provider openrouter completed the run without failover."
+    }
+  },
+  {
+    "provider": "openrouter",
+    "model": "openrouter/free",
+    "protocolVersion": "pricing-agentic-v2",
+    "cutoffDate": "2026-06-12T10:37:11.382Z",
+    "scout": {
+      "result": {
+        "status": "insufficient_evidence",
+        "candidates": [],
+        "notes": [
+          "No pricing-related items found in checked sources after cutoff."
+        ]
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "Need to know the current watch state (seen items count and cutoff) before proceeding to source checks.",
+          "toolName": "read_watch_state",
+          "toolInput": {},
+          "toolResult": {
+            "lastRunAt": "2026-06-12T10:37:11.382Z",
+            "lastRunStatus": "needs_review",
+            "seenItemCount": 31,
+            "cutoffDate": "2026-06-12T10:37:11.382Z"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "Need to see the approved source catalogue and available Google News vendor searches before deciding which sources to check for recent pricing-related items.",
+          "toolName": "list_sources",
+          "toolInput": {},
+          "toolResult": {
+            "truncated": true,
+            "originalLength": 5001,
+            "preview": "{\n  \"officialSources\": [\n    {\n      \"id\": \"openai-news-rss\",\n      \"label\": \"OpenAI News RSS\",\n      \"kind\": \"rss\",\n      \"url\": \"https://openai.com/news/rss.xml\",\n      \"vendorHint\": \"chatgpt\",\n      \"official\": true\n    },\n    {\n      \"id\": \"anthropic-news-page\",\n      \"label\": \"Anthropic News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://www.anthropic.com/news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true\n    },\n    {\n      \"id\": \"anthropic-api-changelog\",\n      \"label\": \"Anthropic API Changelog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://docs.anthropic.com/en/api/changelog\",\n      \"vendorHint\": \"claude\",\n      \"official\": true\n    },\n    {\n      \"id\": \"google-ai-blog-rss\",\n      \"label\": \"Google AI Blog RSS\",\n      \"kind\": \"rss\",\n      \"url\": \"https://blog.google/innovation-and-ai/technology/ai/rss/\",\n      \"vendorHint\": \"gemini\",\n      \"official\": true\n    },\n    {\n      \"id\": \"github-changelog-copilot\",\n      \"label\": \"GitHub Changelog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://github.blog/changelog/\",\n      \"vendorHint\": \"githubcopilot\",\n      \"official\": true\n    },\n    {\n      \"id\": \"microsoft-365-blog\",\n      \"label\": \"Microsoft 365 Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://www.microsoft.com/en-us/microsoft-365/blog/\",\n      \"vendorHint\": \"m365copilot\",\n      \"official\": true\n    },\n    {\n      \"id\": \"mistral-news\",\n      \"label\": \"Mistral AI News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://mistral.ai/news\",\n      \"vendorHint\": \"mistral\",\n      \"official\": true\n    },\n    {\n      \"id\": \"xai-news\",\n      \"label\": \"xAI News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://x.ai/news\",\n      \"vendorHint\": \"xai\",\n      \"official\": true\n    },\n    {\n      \"id\": \"deepseek-news\",\n      \"label\": \"DeepSeek News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://api-docs.deepseek.com/news/\",\n      \"vendorHint\": \"deepseek\",\n      \"official\": true\n    },\n    {\n      \"id\": \"cohere-blog\",\n      \"label\": \"Cohere Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://cohere.com/blog\",\n      \"vendorHint\": \"cohere\",\n      \"official\": true\n    },\n    {\n      \"id\": \"perplexity-blog\",\n      \"label\": \"Perplexity Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://www.perplexity.ai/hub/blog\",\n      \"vendorHint\": \"perplexity\",\n      \"official\": true\n    },\n    {\n      \"id\": \"meta-ai-blog\",\n      \"label\": \"Meta AI Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://ai.meta.com/blog/\",\n      \"vendorHint\": \"meta\"..."
+          }
+        },
+        {
+          "stepNumber": 3,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "Check OpenAI News RSS for any new items after cutoff date to see if there are pricing-related updates.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "openai-news-rss",
+            "limit": 5
+          },
+          "toolResult": {
+            "sourceId": "openai-news-rss",
+            "sourceLabel": "OpenAI News RSS",
+            "official": true,
+            "vendorHint": "chatgpt",
+            "items": []
+          }
+        },
+        {
+          "stepNumber": 4,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "We have not yet found any pricing-relevant items after the cutoff date. Checking another official source (Anthropic News) to see if there are recent announcements about Claude pricing, billing, token cost, or seat plans.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "anthropic-news-page",
+            "limit": 5
+          },
+          "toolResult": {
+            "truncated": true,
+            "originalLength": 3033,
+            "preview": "{\n  \"sourceId\": \"anthropic-news-page\",\n  \"sourceLabel\": \"Anthropic News\",\n  \"official\": true,\n  \"vendorHint\": \"claude\",\n  \"items\": [\n    {\n      \"candidateId\": \"08238985f323e949c20dd30caf0421890ced5ca8\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Claude Fable 5 and Claude Mythos 5 Announcements Jun 9, 2026 Our next generation of intelligence for the hardest knowledge work and coding problems.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/claude-fable-5-mythos-5\",\n      \"publishedAt\": \"2026-06-12T10:38:20.001Z\"\n    },\n    {\n      \"candidateId\": \"8248df44794eef139dcaf68f4558868a810edeb3\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Announcements Jun 11, 2026 Introducing Claude Corps We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/claude-corps\",\n      \"publishedAt\": \"2026-06-12T10:38:20.001Z\"\n    },\n    {\n      \"candidateId\": \"95f5fee89a831c7a4df5e62d3f11c1c8c7f2bb36\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Announcements Jun 2, 2026 Expanding Project Glasswing We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/expanding-project-glasswing\",\n      \"publishedAt\": \"2026-06-12T10:38:20.001Z\"\n    },\n    {\n      \"candidateId\": \"df1bddf2bfffdb9b18c38e718996bc81c068b9ef\",\n      \"sourceId\": \"anthropic-news-page\",\n      \"sourceLabel\": \"Anthropic News\",\n      \"sourceKind\": \"html-news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true,\n      \"title\": \"Announcements May 25, 2026 Anthropic co-founder Chris Olah&#x27;s remarks on Pope Leo XIV&#x27;s encyclical \\\"Magnifica humanitas\\\" The full text of Chris Olah&#x27;s remarks on the Pope&#x27;s encyclical on AI.\",\n      \"summary\": \"\",\n      \"link\": \"https://www.anthropic.com/news/chris-olah-pope-leo-encyclical\",\n      \"publishedAt\": \"2026-06-12T10:38:20.001Z\"\n    },\n..."
+          }
+        },
+        {
+          "stepNumber": 5,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "We have checked OpenAI News RSS (no items) and Anthropic News (items but no pricing relevance). Need to check another official source for potential pricing updates, starting with Google AI Blog RSS for Gemini.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "google-ai-blog-rss",
+            "limit": 5
+          },
+          "toolResult": {
+            "sourceId": "google-ai-blog-rss",
+            "sourceLabel": "Google AI Blog RSS",
+            "official": true,
+            "vendorHint": "gemini",
+            "items": []
+          }
+        },
+        {
+          "stepNumber": 6,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "Check Google AI Blog RSS for Gemini pricing updates after cutoff date.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "google-ai-blog-rss",
+            "limit": 5
+          },
+          "toolResult": {
+            "sourceId": "google-ai-blog-rss",
+            "sourceLabel": "Google AI Blog RSS",
+            "official": true,
+            "vendorHint": "gemini",
+            "items": []
+          }
+        },
+        {
+          "stepNumber": 7,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "We have checked OpenAI News RSS (no items) and Anthropic News (items but none about pricing). To continue searching for pricing signals, we will check the Google AI Blog RSS (vendor hint: gemini) for any recent pricing-related announcements.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "google-ai-blog-rss",
+            "limit": 5
+          },
+          "toolResult": {
+            "sourceId": "google-ai-blog-rss",
+            "sourceLabel": "Google AI Blog RSS",
+            "official": true,
+            "vendorHint": "gemini",
+            "items": []
+          }
+        },
+        {
+          "stepNumber": 8,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "Checked official sources for OpenAI and Anthropic; no pricing-related items found after cutoff. Following Scout efficiency rule, we finalize conservatively instead of checking all remaining sources.",
+          "finalPayload": {
+            "status": "insufficient_evidence",
+            "candidates": [],
+            "notes": [
+              "No pricing-related items found in checked sources after cutoff."
+            ]
+          }
+        }
+      ]
+    },
+    "research": {
+      "result": {
+        "status": "insufficient_evidence",
+        "evidenceBundles": [],
+        "notes": [
+          "No candidates provided"
+        ]
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "No candidates provided in input; insufficient evidence to evaluate pricing changes.",
+          "finalPayload": {
+            "status": "insufficient_evidence",
+            "evidenceBundles": [],
+            "notes": [
+              "No candidates provided"
+            ]
+          }
+        }
+      ]
+    },
+    "mapping": {
+      "result": {
+        "status": "insufficient_evidence",
+        "operations": [],
+        "rejectedEvidence": [],
+        "notes": [
+          "No evidence bundles provided"
+        ]
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "No evidence bundles provided, insufficient evidence to map any pricing fields.",
+          "finalPayload": {
+            "status": "insufficient_evidence",
+            "operations": [],
+            "rejectedEvidence": [],
+            "notes": [
+              "No evidence bundles provided"
+            ]
+          }
+        }
+      ]
+    },
+    "audit": {
+      "result": {
+        "status": "approved",
+        "approvedOperations": [],
+        "rejectedOperations": [],
+        "summary": "No operations to audit; approving empty set."
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "No operations present in the input payload; there is nothing to audit, so we can safely approve an empty set.",
+          "finalPayload": {
+            "status": "approved",
+            "approvedOperations": [],
+            "rejectedOperations": [],
+            "summary": "No operations to audit; approving empty set."
+          }
+        }
+      ]
+    },
+    "approvedOperations": [],
+    "strictlyRejectedOperations": [],
+    "runId": "2026-06-12T10:39:13.398Z::openrouter::openrouter/free",
+    "runAt": "2026-06-12T10:39:46.916Z",
+    "status": "needs_review",
+    "vendorIdsInvolved": [],
+    "agentStatuses": {
+      "scout": "insufficient_evidence",
+      "research": "insufficient_evidence",
+      "mapping": "insufficient_evidence",
+      "audit": "approved"
+    },
+    "appliedOperations": [],
+    "truthVerification": {
+      "status": "needs_review",
+      "summary": "Truth graph terminó sin cambios automáticos y dejó 3 claims en revisión o bloqueo.",
+      "verdictCounts": {
+        "confirmed": 30,
+        "unverifiable": 3
+      },
+      "needsAttention": 3,
+      "publishableUpdates": 0,
+      "appliedUpdates": 0
+    },
+    "surfaceVerification": {
+      "protocolVersion": "pricing-surface-v1",
+      "runAt": "2026-06-12T10:39:46.909Z",
+      "status": "needs_review",
+      "totalChecks": 42,
+      "verifiedChecks": 34,
+      "needsReview": 3,
+      "unverifiableChecks": 5,
+      "checks": [
+        {
+          "checkId": "chatgpt::model-lineup",
+          "vendorId": "chatgpt",
+          "kind": "model_lineup",
+          "label": "ChatGPT model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "GPT-5.4 mini",
+              "GPT-5.4",
+              "GPT-5.5"
+            ],
+            "current": [
+              "GPT-5.4 mini",
+              "GPT-5.4",
+              "GPT-5.5"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "chatgpt::seat-plans",
+          "vendorId": "chatgpt",
+          "kind": "seat_plan_names",
+          "label": "ChatGPT seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "ChatGPT Plus",
+              "ChatGPT Business",
+              "Enterprise"
+            ],
+            "current": [
+              "ChatGPT Plus",
+              "ChatGPT Business",
+              "Enterprise"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-plus-gpt55",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "ChatGPT Plus highlights GPT-5.5",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-plus-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-plus-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-Luixvu --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-business-help",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "ChatGPT Business help article reachable",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-business-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-business-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-z5fll7 --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-gpt55-default",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "GPT-5.5 Instant is the default for logged-in users",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-gpt55-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-gpt55-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-VgIWmF --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-gpt55-pro-limitations",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "GPT-5.5 Pro limitations remain visible",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-gpt55-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-gpt55-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-VgIWmF --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-legacy-retirement",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "Legacy ChatGPT models retired from ChatGPT",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-plus-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-plus-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-Luixvu --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::model-lineup",
+          "vendorId": "gemini",
+          "kind": "model_lineup",
+          "label": "Gemini model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Gemini 2.5 Flash-Lite",
+              "Gemini 2.5 Flash",
+              "Gemini 2.5 Pro"
+            ],
+            "current": [
+              "Gemini 2.5 Flash-Lite",
+              "Gemini 2.5 Flash",
+              "Gemini 2.5 Pro"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "gemini::seat-plans",
+          "vendorId": "gemini",
+          "kind": "seat_plan_names",
+          "label": "Gemini seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Google AI Plus",
+              "Workspace Plus",
+              "Enterprise / Vertex AI"
+            ],
+            "current": [
+              "Google AI Plus",
+              "Workspace Plus",
+              "Enterprise / Vertex AI"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "gemini::signal::gemini-20-flash-shutdown",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Gemini 2.0 Flash shutdown notice",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-gemini-api-pricing"
+            ],
+            "matchedSourceId": "google-gemini-api-pricing",
+            "snippet": "Gemini Developer API pricing &nbsp;|&nbsp; Gemini API &nbsp;|&nbsp; Google AI for Developers { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Gemini Developer API pricing\" } { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{ \"...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-gemini-api-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::google-ai-plus-rename",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "AI Premium renamed to Google AI Plus",
+          "status": "needs_review",
+          "details": {
+            "sourceIds": [
+              "google-one-ai-pricing"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "google-one-ai-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::workspace-plus-max-users",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Workspace Plus remains capped at 300 users",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-workspace-pricing"
+            ],
+            "matchedSourceId": "google-workspace-pricing",
+            "snippet": "window['ppConfig'] = {productName: 'DasherGrowthPricingUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WI...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-workspace-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::workspace-plus-gemini-copy",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Workspace Plus still exposes Gemini AI assistant copy",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-workspace-pricing"
+            ],
+            "matchedSourceId": "google-workspace-pricing",
+            "snippet": "window['ppConfig'] = {productName: 'DasherGrowthPricingUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WI...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-workspace-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::google-ai-plus-notebooklm",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Google AI Plus still mentions NotebookLM",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-one-ai-pricing"
+            ],
+            "matchedSourceId": "google-one-ai-pricing",
+            "snippet": "Planes de IA de Google con almacenamiento en la nube - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].pu...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-one-ai-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::model-lineup",
+          "vendorId": "githubcopilot",
+          "kind": "model_lineup",
+          "label": "GitHub Copilot model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "githubcopilot::seat-plans",
+          "vendorId": "githubcopilot",
+          "kind": "seat_plan_names",
+          "label": "GitHub Copilot seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Copilot Business",
+              "Copilot Enterprise"
+            ],
+            "current": [
+              "Copilot Business",
+              "Copilot Enterprise"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-june-1-transition",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Usage-based billing starts June 1, 2026",
+          "status": "needs_review",
+          "details": {
+            "sourceIds": [
+              "github-copilot-org-billing"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-org-billing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-premium-overage",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Premium request overage published",
+          "status": "needs_review",
+          "details": {
+            "sourceIds": [
+              "github-copilot-org-billing"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-org-billing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-credits-transition-window",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Transition window with extra AI credits remains published",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "github-copilot-usage-billing"
+            ],
+            "matchedSourceId": "github-copilot-usage-billing",
+            "snippet": "Usage-based billing for organizations and enterprises - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Side...",
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-usage-billing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-chat-in-ides",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Plans page still exposes Copilot Chat in IDEs",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "github-copilot-plans"
+            ],
+            "matchedSourceId": "github-copilot-plans",
+            "snippet": "Plans for GitHub Copilot - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Get star...",
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-plans",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::model-lineup",
+          "vendorId": "m365copilot",
+          "kind": "model_lineup",
+          "label": "Microsoft 365 Copilot model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "m365copilot::seat-plans",
+          "vendorId": "m365copilot",
+          "kind": "seat_plan_names",
+          "label": "Microsoft 365 Copilot seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Microsoft 365 Copilot Business"
+            ],
+            "current": [
+              "Microsoft 365 Copilot Business"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-copilot-chat",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Copilot Chat present in business page",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-up-to-300-users",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Up to 300 users limit",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-qualifying-plan-required",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Qualifying Microsoft 365 plan required",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-agents-copy",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Agents remain core in business copy",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "mistral::model-lineup",
+          "vendorId": "mistral",
+          "kind": "model_lineup",
+          "label": "Mistral model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "mistral::seat-plans",
+          "vendorId": "mistral",
+          "kind": "seat_plan_names",
+          "label": "Mistral seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Le Chat Pro",
+              "Le Chat Team",
+              "Enterprise / La Plateforme"
+            ],
+            "current": [
+              "Le Chat Pro",
+              "Le Chat Team",
+              "Enterprise / La Plateforme"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "xai::model-lineup",
+          "vendorId": "xai",
+          "kind": "model_lineup",
+          "label": "xAI Grok model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "xai::seat-plans",
+          "vendorId": "xai",
+          "kind": "seat_plan_names",
+          "label": "xAI Grok seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Premium (X)",
+              "SuperGrok",
+              "xAI API"
+            ],
+            "current": [
+              "Premium (X)",
+              "SuperGrok",
+              "xAI API"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "deepseek::model-lineup",
+          "vendorId": "deepseek",
+          "kind": "model_lineup",
+          "label": "DeepSeek model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "deepseek::seat-plans",
+          "vendorId": "deepseek",
+          "kind": "seat_plan_names",
+          "label": "DeepSeek seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "DeepSeek API",
+              "Self-hosted"
+            ],
+            "current": [
+              "DeepSeek API",
+              "Self-hosted"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "cohere::model-lineup",
+          "vendorId": "cohere",
+          "kind": "model_lineup",
+          "label": "Cohere model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "cohere::seat-plans",
+          "vendorId": "cohere",
+          "kind": "seat_plan_names",
+          "label": "Cohere seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Cohere API",
+              "Cohere Enterprise / North"
+            ],
+            "current": [
+              "Cohere API",
+              "Cohere Enterprise / North"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "perplexity::model-lineup",
+          "vendorId": "perplexity",
+          "kind": "model_lineup",
+          "label": "Perplexity model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "perplexity::seat-plans",
+          "vendorId": "perplexity",
+          "kind": "seat_plan_names",
+          "label": "Perplexity seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Perplexity Pro",
+              "Perplexity Enterprise Pro",
+              "Sonar API"
+            ],
+            "current": [
+              "Perplexity Pro",
+              "Perplexity Enterprise Pro",
+              "Sonar API"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "meta::model-lineup",
+          "vendorId": "meta",
+          "kind": "model_lineup",
+          "label": "Meta Llama API model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "meta::seat-plans",
+          "vendorId": "meta",
+          "kind": "seat_plan_names",
+          "label": "Meta Llama API seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Llama API",
+              "Self-hosted / partners"
+            ],
+            "current": [
+              "Llama API",
+              "Self-hosted / partners"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "awsbedrock::model-lineup",
+          "vendorId": "awsbedrock",
+          "kind": "model_lineup",
+          "label": "AWS Bedrock model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "awsbedrock::seat-plans",
+          "vendorId": "awsbedrock",
+          "kind": "seat_plan_names",
+          "label": "AWS Bedrock seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "On-demand",
+              "Provisioned throughput"
+            ],
+            "current": [
+              "On-demand",
+              "Provisioned throughput"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "azureopenai::model-lineup",
+          "vendorId": "azureopenai",
+          "kind": "model_lineup",
+          "label": "Azure OpenAI Service model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "azureopenai::seat-plans",
+          "vendorId": "azureopenai",
+          "kind": "seat_plan_names",
+          "label": "Azure OpenAI Service seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Pay-as-you-go",
+              "Provisioned Throughput Units",
+              "Enterprise Agreement"
+            ],
+            "current": [
+              "Pay-as-you-go",
+              "Provisioned Throughput Units",
+              "Enterprise Agreement"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        }
+      ],
+      "summary": "Surface graph dejó 8 comprobaciones con drift o bloqueo.",
+      "runId": "2026-06-12T10:39:13.398Z::openrouter::openrouter/free"
+    },
+    "runtimeAutopilot": {
+      "runAt": "2026-06-12T10:39:46.910Z",
+      "status": "updated",
+      "protocolVersion": "pricing-runtime-v1",
+      "autonomousMode": true,
+      "manualEditsLocked": true,
+      "summary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+      "sourceHealth": [
+        {
+          "sourceId": "support-chat-warehouse",
+          "label": "Support desk warehouse export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        },
+        {
+          "sourceId": "engineer-coding-warehouse",
+          "label": "Engineering copilot warehouse export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        },
+        {
+          "sourceId": "agent-builder-warehouse",
+          "label": "Agent runtime analytics export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        },
+        {
+          "sourceId": "legal-docs-warehouse",
+          "label": "Document review analytics export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        }
+      ],
+      "ingestedTelemetry": [
+        {
+          "id": "telemetry-support-chat-q2",
+          "label": "Support desk · chat",
+          "status": "active",
+          "useCaseId": "chat",
+          "roleProfileId": "support_agent",
+          "sampleWindowDays": 14,
+          "sampleSizeRequests": 128240,
+          "sampleSizeUsers": 74,
+          "avgInputTokens": 340,
+          "avgOutputTokens": 255,
+          "overheadMultiplier": 1.08,
+          "avgRequestsPerUserPerDay": 84,
+          "cacheHitRate": 0.58,
+          "batchHitRate": 0.03,
+          "confidence": 0.93,
+          "sourceLabel": "Gateway logs + product analytics",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Measured traffic for tier-fast support conversations."
+        },
+        {
+          "id": "telemetry-engineer-coding-q2",
+          "label": "Engineering copilot · coding",
+          "status": "active",
+          "useCaseId": "coding",
+          "roleProfileId": "engineer",
+          "sampleWindowDays": 21,
+          "sampleSizeRequests": 46210,
+          "sampleSizeUsers": 19,
+          "avgInputTokens": 1825,
+          "avgOutputTokens": 2140,
+          "overheadMultiplier": 1.32,
+          "avgRequestsPerUserPerDay": 61,
+          "cacheHitRate": 0.44,
+          "batchHitRate": 0.04,
+          "confidence": 0.89,
+          "sourceLabel": "IDE assistant telemetry",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Captures longer prompts and follow-up debugging loops."
+        },
+        {
+          "id": "telemetry-agents-builder-q2",
+          "label": "Agent builders · autonomous flows",
+          "status": "active",
+          "useCaseId": "agent",
+          "roleProfileId": "autonomous_builder",
+          "sampleWindowDays": 10,
+          "sampleSizeRequests": 18320,
+          "sampleSizeUsers": 9,
+          "avgInputTokens": 2380,
+          "avgOutputTokens": 1240,
+          "overheadMultiplier": 6.1,
+          "avgRequestsPerUserPerDay": 73,
+          "cacheHitRate": 0.36,
+          "batchHitRate": 0.22,
+          "confidence": 0.87,
+          "sourceLabel": "Agent runtime traces",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Long-running agent loops with tools and retries."
+        },
+        {
+          "id": "telemetry-legal-docs-q2",
+          "label": "Legal review · document analysis",
+          "status": "active",
+          "useCaseId": "doc_analysis",
+          "roleProfileId": "analyst",
+          "sampleWindowDays": 18,
+          "sampleSizeRequests": 9240,
+          "sampleSizeUsers": 11,
+          "avgInputTokens": 14800,
+          "avgOutputTokens": 920,
+          "overheadMultiplier": 1.18,
+          "avgRequestsPerUserPerDay": 31,
+          "cacheHitRate": 0.12,
+          "batchHitRate": 0.38,
+          "confidence": 0.91,
+          "sourceLabel": "Document workflow analytics",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Large-context PDF and contract review workload."
+        }
+      ],
+      "appliedAssumptionOverrides": [
+        {
+          "id": "optimization.cache_hit_rate_default",
+          "value": 0.507,
+          "provenance": "measured",
+          "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
+          "updatedAt": "2026-06-12T10:39:46.912Z"
+        }
+      ],
+      "sourceRegistryVersion": "pricing-runtime-sources-v1",
+      "sourceCounts": {
+        "configured": 4,
+        "ok": 4,
+        "errors": 0
+      }
+    },
+    "providerStrategy": {
+      "preferredProvider": "openrouter",
+      "preferredModel": "openrouter/free",
+      "selectedProvider": "openrouter",
+      "selectedModel": "openrouter/free",
+      "degradedMode": false,
+      "failoverUsed": false,
+      "attempts": [
+        {
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "mode": "primary",
+          "startedAt": "2026-06-12T10:37:36.982Z",
+          "finishedAt": "2026-06-12T10:39:13.398Z",
+          "status": "ok",
+          "reason": "Configured primary provider."
+        }
+      ],
+      "summary": "Primary provider openrouter completed the run without failover."
+    }
+  },
+  {
+    "provider": "mock",
+    "model": "mock-agent-brain",
+    "protocolVersion": "pricing-agentic-v2",
+    "cutoffDate": "2026-05-29T09:31:11.882Z",
+    "scout": {
+      "result": {
+        "status": "ok",
+        "candidates": [],
+        "notes": [
+          "Mock provider active. No real LLM scouting was executed."
+        ]
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "Need the whitelisted source catalog before selecting sources.",
+          "toolName": "list_sources",
+          "toolInput": {},
+          "toolResult": {
+            "truncated": true,
+            "originalLength": 5001,
+            "preview": "{\n  \"officialSources\": [\n    {\n      \"id\": \"openai-news-rss\",\n      \"label\": \"OpenAI News RSS\",\n      \"kind\": \"rss\",\n      \"url\": \"https://openai.com/news/rss.xml\",\n      \"vendorHint\": \"chatgpt\",\n      \"official\": true\n    },\n    {\n      \"id\": \"anthropic-news-page\",\n      \"label\": \"Anthropic News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://www.anthropic.com/news\",\n      \"vendorHint\": \"claude\",\n      \"official\": true\n    },\n    {\n      \"id\": \"anthropic-api-changelog\",\n      \"label\": \"Anthropic API Changelog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://docs.anthropic.com/en/api/changelog\",\n      \"vendorHint\": \"claude\",\n      \"official\": true\n    },\n    {\n      \"id\": \"google-ai-blog-rss\",\n      \"label\": \"Google AI Blog RSS\",\n      \"kind\": \"rss\",\n      \"url\": \"https://blog.google/innovation-and-ai/technology/ai/rss/\",\n      \"vendorHint\": \"gemini\",\n      \"official\": true\n    },\n    {\n      \"id\": \"github-changelog-copilot\",\n      \"label\": \"GitHub Changelog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://github.blog/changelog/\",\n      \"vendorHint\": \"githubcopilot\",\n      \"official\": true\n    },\n    {\n      \"id\": \"microsoft-365-blog\",\n      \"label\": \"Microsoft 365 Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://www.microsoft.com/en-us/microsoft-365/blog/\",\n      \"vendorHint\": \"m365copilot\",\n      \"official\": true\n    },\n    {\n      \"id\": \"mistral-news\",\n      \"label\": \"Mistral AI News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://mistral.ai/news\",\n      \"vendorHint\": \"mistral\",\n      \"official\": true\n    },\n    {\n      \"id\": \"xai-news\",\n      \"label\": \"xAI News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://x.ai/news\",\n      \"vendorHint\": \"xai\",\n      \"official\": true\n    },\n    {\n      \"id\": \"deepseek-news\",\n      \"label\": \"DeepSeek News\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://api-docs.deepseek.com/news/\",\n      \"vendorHint\": \"deepseek\",\n      \"official\": true\n    },\n    {\n      \"id\": \"cohere-blog\",\n      \"label\": \"Cohere Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://cohere.com/blog\",\n      \"vendorHint\": \"cohere\",\n      \"official\": true\n    },\n    {\n      \"id\": \"perplexity-blog\",\n      \"label\": \"Perplexity Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://www.perplexity.ai/hub/blog\",\n      \"vendorHint\": \"perplexity\",\n      \"official\": true\n    },\n    {\n      \"id\": \"meta-ai-blog\",\n      \"label\": \"Meta AI Blog\",\n      \"kind\": \"html-news\",\n      \"url\": \"https://ai.meta.com/blog/\",\n      \"vendorHint\": \"meta\"..."
+          }
+        },
+        {
+          "stepNumber": 2,
+          "attempt": 1,
+          "decision": "tool_call",
+          "rationale": "Read one official source to exercise the scout tool path.",
+          "toolName": "read_source",
+          "toolInput": {
+            "sourceId": "openai-news-rss",
+            "limit": 5
+          },
+          "toolResult": {
+            "truncated": true,
+            "originalLength": 3084,
+            "preview": "{\n  \"sourceId\": \"openai-news-rss\",\n  \"sourceLabel\": \"OpenAI News RSS\",\n  \"official\": true,\n  \"vendorHint\": \"chatgpt\",\n  \"items\": [\n    {\n      \"candidateId\": \"fe44fb674d2efb0767561a42752ce7bc6d91fa9a\",\n      \"sourceId\": \"openai-news-rss\",\n      \"sourceLabel\": \"OpenAI News RSS\",\n      \"sourceKind\": \"rss\",\n      \"vendorHint\": \"chatgpt\",\n      \"official\": true,\n      \"title\": \"How Preply combines AI and human tutors to personalize learning\",\n      \"summary\": \"Preply uses OpenAI to launch AI-generated lesson summaries, providing personalised feedback and language learning exercises.\",\n      \"link\": \"https://openai.com/index/preply\",\n      \"publishedAt\": \"2026-06-12T00:00:00.000Z\"\n    },\n    {\n      \"candidateId\": \"ea1084c29e4bbc9808aaaab598b84731f3f9d26c\",\n      \"sourceId\": \"openai-news-rss\",\n      \"sourceLabel\": \"OpenAI News RSS\",\n      \"sourceKind\": \"rss\",\n      \"vendorHint\": \"chatgpt\",\n      \"official\": true,\n      \"title\": \"Supporting Europe’s work in ensuring a trustworthy AI ecosystem\",\n      \"summary\": \"OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.\",\n      \"link\": \"https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem\",\n      \"publishedAt\": \"2026-06-11T00:00:00.000Z\"\n    },\n    {\n      \"candidateId\": \"bfa53e2196f2970e1d59ac136f910956abe83d54\",\n      \"sourceId\": \"openai-news-rss\",\n      \"sourceLabel\": \"OpenAI News RSS\",\n      \"sourceKind\": \"rss\",\n      \"vendorHint\": \"chatgpt\",\n      \"official\": true,\n      \"title\": \"How an astrophysicist uses Codex to help simulate black holes\",\n      \"summary\": \"Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s theory of general relativity.\",\n      \"link\": \"https://openai.com/index/using-codex-to-simulate-black-holes\",\n      \"publishedAt\": \"2026-06-11T00:00:00.000Z\"\n    },\n    {\n      \"candidateId\": \"2e86d679a04675f317cad769a580afbfd368de52\",\n      \"sourceId\": \"openai-news-rss\",\n      \"sourceLabel\": \"OpenAI News RSS\",\n      \"sourceKind\": \"rss\",\n      \"vendorHint\": \"chatgpt\",\n      \"official\": true,\n      \"title\": \"OpenAI to acquire Ona\",\n      \"summary\": \"OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.\",\n      \"link\": \"https://openai.com/index/openai-to-acquire-ona\",\n      \"publishedAt\": \"2026-06-11T00:00:0..."
+          }
+        },
+        {
+          "stepNumber": 3,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "Mock mode returns no candidates after the smoke-check tool calls.",
+          "finalPayload": {
+            "status": "ok",
+            "candidates": [],
+            "notes": [
+              "Mock provider active. No real LLM scouting was executed."
+            ]
+          }
+        }
+      ]
+    },
+    "research": {
+      "result": {
+        "status": "ok",
+        "evidenceBundles": [],
+        "notes": [
+          "Mock provider active. Research stage short-circuited."
+        ]
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "No candidates to research in mock mode.",
+          "finalPayload": {
+            "status": "ok",
+            "evidenceBundles": [],
+            "notes": [
+              "Mock provider active. Research stage short-circuited."
+            ]
+          }
+        }
+      ]
+    },
+    "mapping": {
+      "result": {
+        "status": "ok",
+        "operations": [],
+        "rejectedEvidence": [],
+        "notes": [
+          "Mock provider active. Mapping stage short-circuited."
+        ]
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "No evidence bundles to map in mock mode.",
+          "finalPayload": {
+            "status": "ok",
+            "operations": [],
+            "rejectedEvidence": [],
+            "notes": [
+              "Mock provider active. Mapping stage short-circuited."
+            ]
+          }
+        }
+      ]
+    },
+    "audit": {
+      "result": {
+        "status": "insufficient_evidence",
+        "approvedOperations": [],
+        "rejectedOperations": [],
+        "summary": "Mock provider active. Audit stage produced no approvals."
+      },
+      "trace": [
+        {
+          "stepNumber": 1,
+          "attempt": 1,
+          "decision": "final",
+          "rationale": "No operations to audit in mock mode.",
+          "finalPayload": {
+            "status": "insufficient_evidence",
+            "approvedOperations": [],
+            "rejectedOperations": [],
+            "summary": "Mock provider active. Audit stage produced no approvals."
+          }
+        }
+      ]
+    },
+    "approvedOperations": [],
+    "strictlyRejectedOperations": [],
+    "runId": "2026-06-12T10:36:35.811Z::mock::mock-agent-brain",
+    "runAt": "2026-06-12T10:37:11.382Z",
+    "status": "needs_review",
+    "vendorIdsInvolved": [],
+    "agentStatuses": {
+      "scout": "ok",
+      "research": "ok",
+      "mapping": "ok",
+      "audit": "insufficient_evidence"
+    },
+    "appliedOperations": [],
+    "truthVerification": {
+      "status": "needs_review",
+      "summary": "Truth graph terminó sin cambios automáticos y dejó 3 claims en revisión o bloqueo.",
+      "verdictCounts": {
+        "confirmed": 30,
+        "unverifiable": 3
+      },
+      "needsAttention": 3,
+      "publishableUpdates": 0,
+      "appliedUpdates": 0
+    },
+    "surfaceVerification": {
+      "protocolVersion": "pricing-surface-v1",
+      "runAt": "2026-06-12T10:37:11.375Z",
+      "status": "needs_review",
+      "totalChecks": 42,
+      "verifiedChecks": 34,
+      "needsReview": 3,
+      "unverifiableChecks": 5,
+      "checks": [
+        {
+          "checkId": "chatgpt::model-lineup",
+          "vendorId": "chatgpt",
+          "kind": "model_lineup",
+          "label": "ChatGPT model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "GPT-5.4 mini",
+              "GPT-5.4",
+              "GPT-5.5"
+            ],
+            "current": [
+              "GPT-5.4 mini",
+              "GPT-5.4",
+              "GPT-5.5"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "chatgpt::seat-plans",
+          "vendorId": "chatgpt",
+          "kind": "seat_plan_names",
+          "label": "ChatGPT seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "ChatGPT Plus",
+              "ChatGPT Business",
+              "Enterprise"
+            ],
+            "current": [
+              "ChatGPT Plus",
+              "ChatGPT Business",
+              "Enterprise"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-plus-gpt55",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "ChatGPT Plus highlights GPT-5.5",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-plus-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-plus-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-FK4QAs --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-business-help",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "ChatGPT Business help article reachable",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-business-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-business-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-AA3iGt --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-gpt55-default",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "GPT-5.5 Instant is the default for logged-in users",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-gpt55-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-gpt55-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-mHAI13 --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-gpt55-pro-limitations",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "GPT-5.5 Pro limitations remain visible",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-gpt55-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-gpt55-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-mHAI13 --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "chatgpt::signal::chatgpt-legacy-retirement",
+          "vendorId": "chatgpt",
+          "kind": "critical_signal",
+          "label": "Legacy ChatGPT models retired from ChatGPT",
+          "status": "unverifiable",
+          "details": {
+            "sourceIds": [
+              "openai-chatgpt-plus-help"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "openai-chatgpt-plus-help",
+                "status": "error",
+                "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: browserType.launchPersistentContext: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --disable-dev-shm-usage --no-sandbox --user-data-dir=C:\\Users\\abaratas\\AppData\\Local\\Temp\\pricing-browser-FK4QAs --remote-debugging-pipe about:blank\u001b[22m\n"
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::model-lineup",
+          "vendorId": "gemini",
+          "kind": "model_lineup",
+          "label": "Gemini model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Gemini 2.5 Flash-Lite",
+              "Gemini 2.5 Flash",
+              "Gemini 2.5 Pro"
+            ],
+            "current": [
+              "Gemini 2.5 Flash-Lite",
+              "Gemini 2.5 Flash",
+              "Gemini 2.5 Pro"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "gemini::seat-plans",
+          "vendorId": "gemini",
+          "kind": "seat_plan_names",
+          "label": "Gemini seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Google AI Plus",
+              "Workspace Plus",
+              "Enterprise / Vertex AI"
+            ],
+            "current": [
+              "Google AI Plus",
+              "Workspace Plus",
+              "Enterprise / Vertex AI"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "gemini::signal::gemini-20-flash-shutdown",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Gemini 2.0 Flash shutdown notice",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-gemini-api-pricing"
+            ],
+            "matchedSourceId": "google-gemini-api-pricing",
+            "snippet": "Gemini Developer API pricing &nbsp;|&nbsp; Gemini API &nbsp;|&nbsp; Google AI for Developers { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Gemini Developer API pricing\" } { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{ \"...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-gemini-api-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::google-ai-plus-rename",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "AI Premium renamed to Google AI Plus",
+          "status": "needs_review",
+          "details": {
+            "sourceIds": [
+              "google-one-ai-pricing"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "google-one-ai-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::workspace-plus-max-users",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Workspace Plus remains capped at 300 users",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-workspace-pricing"
+            ],
+            "matchedSourceId": "google-workspace-pricing",
+            "snippet": "window['ppConfig'] = {productName: 'DasherGrowthPricingUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WI...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-workspace-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::workspace-plus-gemini-copy",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Workspace Plus still exposes Gemini AI assistant copy",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-workspace-pricing"
+            ],
+            "matchedSourceId": "google-workspace-pricing",
+            "snippet": "window['ppConfig'] = {productName: 'DasherGrowthPricingUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WI...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-workspace-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "gemini::signal::google-ai-plus-notebooklm",
+          "vendorId": "gemini",
+          "kind": "critical_signal",
+          "label": "Google AI Plus still mentions NotebookLM",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "google-one-ai-pricing"
+            ],
+            "matchedSourceId": "google-one-ai-pricing",
+            "snippet": "Planes de IA de Google con almacenamiento en la nube - Google One @layer bds.base, bds.component, mws.base, mws.component, base, component, template; window.dataLayer = window.dataLayer || []; function glueCookieNotificationBarLoaded() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].pu...",
+            "sourceHealth": [
+              {
+                "sourceId": "google-one-ai-pricing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::model-lineup",
+          "vendorId": "githubcopilot",
+          "kind": "model_lineup",
+          "label": "GitHub Copilot model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "githubcopilot::seat-plans",
+          "vendorId": "githubcopilot",
+          "kind": "seat_plan_names",
+          "label": "GitHub Copilot seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Copilot Business",
+              "Copilot Enterprise"
+            ],
+            "current": [
+              "Copilot Business",
+              "Copilot Enterprise"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-june-1-transition",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Usage-based billing starts June 1, 2026",
+          "status": "needs_review",
+          "details": {
+            "sourceIds": [
+              "github-copilot-org-billing"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-org-billing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-premium-overage",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Premium request overage published",
+          "status": "needs_review",
+          "details": {
+            "sourceIds": [
+              "github-copilot-org-billing"
+            ],
+            "matchedSourceId": null,
+            "snippet": null,
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-org-billing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-credits-transition-window",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Transition window with extra AI credits remains published",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "github-copilot-usage-billing"
+            ],
+            "matchedSourceId": "github-copilot-usage-billing",
+            "snippet": "Usage-based billing for organizations and enterprises - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Side...",
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-usage-billing",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "githubcopilot::signal::copilot-chat-in-ides",
+          "vendorId": "githubcopilot",
+          "kind": "critical_signal",
+          "label": "Plans page still exposes Copilot Chat in IDEs",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "github-copilot-plans"
+            ],
+            "matchedSourceId": "github-copilot-plans",
+            "snippet": "Plans for GitHub Copilot - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Get star...",
+            "sourceHealth": [
+              {
+                "sourceId": "github-copilot-plans",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::model-lineup",
+          "vendorId": "m365copilot",
+          "kind": "model_lineup",
+          "label": "Microsoft 365 Copilot model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "m365copilot::seat-plans",
+          "vendorId": "m365copilot",
+          "kind": "seat_plan_names",
+          "label": "Microsoft 365 Copilot seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Microsoft 365 Copilot Business"
+            ],
+            "current": [
+              "Microsoft 365 Copilot Business"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-copilot-chat",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Copilot Chat present in business page",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-up-to-300-users",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Up to 300 users limit",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-qualifying-plan-required",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Qualifying Microsoft 365 plan required",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "m365copilot::signal::m365-agents-copy",
+          "vendorId": "m365copilot",
+          "kind": "critical_signal",
+          "label": "Agents remain core in business copy",
+          "status": "verified",
+          "details": {
+            "sourceIds": [
+              "microsoft-copilot-business"
+            ],
+            "matchedSourceId": "microsoft-copilot-business",
+            "snippet": "Microsoft 365 Copilot for Business: Enterprise AI Solutions | Microsoft 365 Copilot oc.geo.country = \"ES\"; var isModernBrowser = ( 'fetch' in window && 'assign' in Object ); if ( !isModernBrowser ) { var scriptElement = document.createElement('script'); scriptElement.async = fals...",
+            "sourceHealth": [
+              {
+                "sourceId": "microsoft-copilot-business",
+                "status": "ok",
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "checkId": "mistral::model-lineup",
+          "vendorId": "mistral",
+          "kind": "model_lineup",
+          "label": "Mistral model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "mistral::seat-plans",
+          "vendorId": "mistral",
+          "kind": "seat_plan_names",
+          "label": "Mistral seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Le Chat Pro",
+              "Le Chat Team",
+              "Enterprise / La Plateforme"
+            ],
+            "current": [
+              "Le Chat Pro",
+              "Le Chat Team",
+              "Enterprise / La Plateforme"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "xai::model-lineup",
+          "vendorId": "xai",
+          "kind": "model_lineup",
+          "label": "xAI Grok model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "xai::seat-plans",
+          "vendorId": "xai",
+          "kind": "seat_plan_names",
+          "label": "xAI Grok seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Premium (X)",
+              "SuperGrok",
+              "xAI API"
+            ],
+            "current": [
+              "Premium (X)",
+              "SuperGrok",
+              "xAI API"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "deepseek::model-lineup",
+          "vendorId": "deepseek",
+          "kind": "model_lineup",
+          "label": "DeepSeek model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "deepseek::seat-plans",
+          "vendorId": "deepseek",
+          "kind": "seat_plan_names",
+          "label": "DeepSeek seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "DeepSeek API",
+              "Self-hosted"
+            ],
+            "current": [
+              "DeepSeek API",
+              "Self-hosted"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "cohere::model-lineup",
+          "vendorId": "cohere",
+          "kind": "model_lineup",
+          "label": "Cohere model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "cohere::seat-plans",
+          "vendorId": "cohere",
+          "kind": "seat_plan_names",
+          "label": "Cohere seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Cohere API",
+              "Cohere Enterprise / North"
+            ],
+            "current": [
+              "Cohere API",
+              "Cohere Enterprise / North"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "perplexity::model-lineup",
+          "vendorId": "perplexity",
+          "kind": "model_lineup",
+          "label": "Perplexity model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "perplexity::seat-plans",
+          "vendorId": "perplexity",
+          "kind": "seat_plan_names",
+          "label": "Perplexity seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Perplexity Pro",
+              "Perplexity Enterprise Pro",
+              "Sonar API"
+            ],
+            "current": [
+              "Perplexity Pro",
+              "Perplexity Enterprise Pro",
+              "Sonar API"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "meta::model-lineup",
+          "vendorId": "meta",
+          "kind": "model_lineup",
+          "label": "Meta Llama API model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "meta::seat-plans",
+          "vendorId": "meta",
+          "kind": "seat_plan_names",
+          "label": "Meta Llama API seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Llama API",
+              "Self-hosted / partners"
+            ],
+            "current": [
+              "Llama API",
+              "Self-hosted / partners"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "awsbedrock::model-lineup",
+          "vendorId": "awsbedrock",
+          "kind": "model_lineup",
+          "label": "AWS Bedrock model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "awsbedrock::seat-plans",
+          "vendorId": "awsbedrock",
+          "kind": "seat_plan_names",
+          "label": "AWS Bedrock seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "On-demand",
+              "Provisioned throughput"
+            ],
+            "current": [
+              "On-demand",
+              "Provisioned throughput"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "azureopenai::model-lineup",
+          "vendorId": "azureopenai",
+          "kind": "model_lineup",
+          "label": "Azure OpenAI Service model lineup",
+          "status": "verified",
+          "details": {
+            "expected": [],
+            "current": [],
+            "missing": [],
+            "unexpected": []
+          }
+        },
+        {
+          "checkId": "azureopenai::seat-plans",
+          "vendorId": "azureopenai",
+          "kind": "seat_plan_names",
+          "label": "Azure OpenAI Service seat plan names",
+          "status": "verified",
+          "details": {
+            "expected": [
+              "Pay-as-you-go",
+              "Provisioned Throughput Units",
+              "Enterprise Agreement"
+            ],
+            "current": [
+              "Pay-as-you-go",
+              "Provisioned Throughput Units",
+              "Enterprise Agreement"
+            ],
+            "missing": [],
+            "unexpected": []
+          }
+        }
+      ],
+      "summary": "Surface graph dejó 8 comprobaciones con drift o bloqueo.",
+      "runId": "2026-06-12T10:36:35.811Z::mock::mock-agent-brain"
+    },
+    "runtimeAutopilot": {
+      "runAt": "2026-06-12T10:37:11.376Z",
+      "status": "updated",
+      "protocolVersion": "pricing-runtime-v1",
+      "autonomousMode": true,
+      "manualEditsLocked": true,
+      "summary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
+      "sourceHealth": [
+        {
+          "sourceId": "support-chat-warehouse",
+          "label": "Support desk warehouse export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        },
+        {
+          "sourceId": "engineer-coding-warehouse",
+          "label": "Engineering copilot warehouse export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        },
+        {
+          "sourceId": "agent-builder-warehouse",
+          "label": "Agent runtime analytics export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        },
+        {
+          "sourceId": "legal-docs-warehouse",
+          "label": "Document review analytics export",
+          "status": "ok",
+          "connectorType": "csv_file",
+          "rowCount": 1
+        }
+      ],
+      "ingestedTelemetry": [
+        {
+          "id": "telemetry-support-chat-q2",
+          "label": "Support desk · chat",
+          "status": "active",
+          "useCaseId": "chat",
+          "roleProfileId": "support_agent",
+          "sampleWindowDays": 14,
+          "sampleSizeRequests": 128240,
+          "sampleSizeUsers": 74,
+          "avgInputTokens": 340,
+          "avgOutputTokens": 255,
+          "overheadMultiplier": 1.08,
+          "avgRequestsPerUserPerDay": 84,
+          "cacheHitRate": 0.58,
+          "batchHitRate": 0.03,
+          "confidence": 0.93,
+          "sourceLabel": "Gateway logs + product analytics",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Measured traffic for tier-fast support conversations."
+        },
+        {
+          "id": "telemetry-engineer-coding-q2",
+          "label": "Engineering copilot · coding",
+          "status": "active",
+          "useCaseId": "coding",
+          "roleProfileId": "engineer",
+          "sampleWindowDays": 21,
+          "sampleSizeRequests": 46210,
+          "sampleSizeUsers": 19,
+          "avgInputTokens": 1825,
+          "avgOutputTokens": 2140,
+          "overheadMultiplier": 1.32,
+          "avgRequestsPerUserPerDay": 61,
+          "cacheHitRate": 0.44,
+          "batchHitRate": 0.04,
+          "confidence": 0.89,
+          "sourceLabel": "IDE assistant telemetry",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Captures longer prompts and follow-up debugging loops."
+        },
+        {
+          "id": "telemetry-agents-builder-q2",
+          "label": "Agent builders · autonomous flows",
+          "status": "active",
+          "useCaseId": "agent",
+          "roleProfileId": "autonomous_builder",
+          "sampleWindowDays": 10,
+          "sampleSizeRequests": 18320,
+          "sampleSizeUsers": 9,
+          "avgInputTokens": 2380,
+          "avgOutputTokens": 1240,
+          "overheadMultiplier": 6.1,
+          "avgRequestsPerUserPerDay": 73,
+          "cacheHitRate": 0.36,
+          "batchHitRate": 0.22,
+          "confidence": 0.87,
+          "sourceLabel": "Agent runtime traces",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Long-running agent loops with tools and retries."
+        },
+        {
+          "id": "telemetry-legal-docs-q2",
+          "label": "Legal review · document analysis",
+          "status": "active",
+          "useCaseId": "doc_analysis",
+          "roleProfileId": "analyst",
+          "sampleWindowDays": 18,
+          "sampleSizeRequests": 9240,
+          "sampleSizeUsers": 11,
+          "avgInputTokens": 14800,
+          "avgOutputTokens": 920,
+          "overheadMultiplier": 1.18,
+          "avgRequestsPerUserPerDay": 31,
+          "cacheHitRate": 0.12,
+          "batchHitRate": 0.38,
+          "confidence": 0.91,
+          "sourceLabel": "Document workflow analytics",
+          "recordedAt": "2026-04-24T07:45:00.000Z",
+          "notes": "Large-context PDF and contract review workload."
+        }
+      ],
+      "appliedAssumptionOverrides": [
+        {
+          "id": "optimization.cache_hit_rate_default",
+          "value": 0.507,
+          "provenance": "measured",
+          "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
+          "updatedAt": "2026-06-12T10:37:11.377Z"
+        }
+      ],
+      "sourceRegistryVersion": "pricing-runtime-sources-v1",
+      "sourceCounts": {
+        "configured": 4,
+        "ok": 4,
+        "errors": 0
+      }
+    },
+    "providerStrategy": {
+      "preferredProvider": "openrouter",
+      "preferredModel": "openrouter/free",
+      "selectedProvider": "mock",
+      "selectedModel": "mock-agent-brain",
+      "degradedMode": true,
+      "failoverUsed": true,
+      "attempts": [
+        {
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "mode": "primary",
+          "startedAt": "2026-06-12T10:36:32.512Z",
+          "finishedAt": "2026-06-12T10:36:35.109Z",
+          "status": "error",
+          "reason": "Configured primary provider.",
+          "error": "OpenRouter HTTP 400: {\"error\":{\"message\":\"'models' array must have 3 items or fewer.\",\"code\":400},\"user_id\":\"user_346KpJPO3bTHIbvPgDOcAh9Smm7\"}"
+        },
+        {
+          "provider": "mock",
+          "model": "mock-agent-brain",
+          "mode": "degraded",
+          "startedAt": "2026-06-12T10:36:35.109Z",
+          "finishedAt": "2026-06-12T10:36:35.811Z",
+          "status": "ok",
+          "reason": "All live providers failed or became unavailable during the run."
+        }
+      ],
+      "summary": "Live providers could not complete the cycle. The system degraded to mock mode after 1 failed live attempt(s)."
+    }
+  },
+  {
+    "provider": "openrouter",
+    "model": "openrouter/free",
+    "protocolVersion": "pricing-agentic-v2",
     "cutoffDate": "2026-05-29T09:25:45.625Z",
     "scout": {
       "result": {

@@ -1485,9 +1485,10 @@ function planTruthOperations(claims, claimVerdicts, truthRegistry) {
 
 function buildTruthRunStatus({ publishableOperations, verdictCounts, blockedOperations }) {
   if (publishableOperations.length > 0) return "updated"
-  if ((verdictCounts.conflict_hold ?? 0) > 0 || (verdictCounts.stale_review_needed ?? 0) > 0 || (verdictCounts.unverifiable ?? 0) > 0 || blockedOperations.length > 0) {
+  if ((verdictCounts.conflict_hold ?? 0) > 0 || (verdictCounts.stale_review_needed ?? 0) > 0 || blockedOperations.length > 0) {
     return "needs_review"
   }
+  if ((verdictCounts.unverifiable ?? 0) > 0) return "partial"
   return "verified"
 }
 
@@ -1626,8 +1627,10 @@ export async function runTruthVerificationOrchestrator({
     summary:
       planning.publishableOperations.length > 0
         ? `Truth graph preparó ${planning.publishableOperations.length} actualizaciones publicables.`
-        : needsAttention > 0
-          ? `Truth graph terminó sin cambios automáticos y dejó ${needsAttention} claims en revisión o bloqueo.`
-          : "Truth graph confirmó los claims verificados sin generar cambios.",
+        : status === "needs_review"
+          ? `Truth graph terminó sin cambios automáticos y dejó ${needsAttention} claims en revisión real o conflicto.`
+          : status === "partial"
+            ? `Truth graph confirmó la mayor parte de los claims, pero dejó ${needsAttention} sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.`
+            : "Truth graph confirmó los claims verificados sin generar cambios.",
   }
 }

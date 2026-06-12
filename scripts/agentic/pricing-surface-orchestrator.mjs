@@ -189,6 +189,8 @@ export async function runSurfaceVerificationOrchestrator({
     summary:
       status === 'verified'
         ? 'Surface graph confirmó lineup, nombres de plan y señales críticas.'
-        : `Surface graph dejó ${(counts.needs_review ?? 0) + (counts.unverifiable ?? 0)} comprobaciones con drift o bloqueo.`,
+        : status === 'needs_review'
+          ? `Surface graph dejó ${(counts.needs_review ?? 0)} comprobaciones con drift editorial real y ${(counts.unverifiable ?? 0)} sin verificar.`
+          : `Surface graph confirmó la mayor parte del lineup, pero dejó ${(counts.unverifiable ?? 0)} comprobaciones sin verificar por acceso insuficiente a fuentes oficiales.`,
   }
 }

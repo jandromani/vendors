@@ -4,6 +4,7 @@ import agentState from "@/data/pricing-agent-state.json"
 import truthState from "@/data/pricing-truth-state.json"
 import surfaceState from "@/data/pricing-surface-state.json"
 import runtimeState from "@/data/pricing-runtime-state.json"
+import { buildFreshnessStatus, getAgeHours } from "@/lib/automation-status"
 import { vendors, trackedVendors } from "@/lib/vendor-data"
 
 export const dynamic = "force-dynamic"
@@ -13,13 +14,6 @@ interface MinimalState {
   lastRunAt?: string | null
   lastRunStatus?: string | null
   lastRunSummary?: string | null
-}
-
-function ageHours(iso: string | null | undefined): number | null {
-  if (!iso) return null
-  const t = Date.parse(iso)
-  if (Number.isNaN(t)) return null
-  return Math.round(((Date.now() - t) / 36e5) * 10) / 10
 }
 
 export async function GET() {
@@ -42,10 +36,12 @@ export async function GET() {
   const surfaceTotal = surface.totalChecks ?? 0
   const surfaceRatio = surfaceTotal > 0 ? surfaceVerified / surfaceTotal : 0
 
-  const lastRunAgeH = ageHours(agent.lastRunAt)
+  const lastRunAgeH = getAgeHours(agent.lastRunAt)
+  const freshness = buildFreshnessStatus(agent.lastRunAt)
 
   const checks = {
     agentLastRunHours: lastRunAgeH,
+    freshnessLevel: freshness.level,
     truthRatio,
     surfaceRatio,
     runtimeStatus: runtime.lastRunStatus ?? "never",
@@ -71,6 +67,11 @@ export async function GET() {
         total: vendors.length + trackedVendors.length,
       },
       checks,
+      freshness,
+      automation: {
+        scheduler: "vercel-cron -> github-actions -> git commit -> vercel redeploy",
+        expectedRunHour: "07:00 Europe/Madrid",
+      },
     },
     {
       status: ok ? 200 : 503,

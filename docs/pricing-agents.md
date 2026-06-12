@@ -287,6 +287,11 @@ PRICING_AGENT_PROVIDER=openrouter
 PRICING_AGENT_MODEL=openrouter/free
 OPENROUTER_API_KEY=your_openrouter_api_key_here
 PRICING_AGENT_OPENROUTER_FALLBACK_MODELS=openai/gpt-oss-120b:free,poolside/laguna-m.1:free,nvidia/nemotron-3-super-120b-a12b:free,openrouter/owl-alpha
+CRON_SECRET=your_vercel_cron_secret_here
+GITHUB_ACTIONS_TRIGGER_TOKEN=your_github_actions_pat_here
+GITHUB_ACTIONS_REPOSITORY=owner/repo
+GITHUB_ACTIONS_WORKFLOW_FILE=pricing-agents.yml
+GITHUB_ACTIONS_REF=main
 
 # o bien Gemini
 # PRICING_AGENT_PROVIDER=gemini
@@ -360,5 +365,38 @@ powershell -ExecutionPolicy Bypass -File .\scripts\register-pricing-task.ps1
 
 ## Programación diaria
 
-El workflow de GitHub se lanza a `05:00` y `06:00` UTC.
-El script vuelve a comprobar internamente la hora local de Madrid y solo ejecuta el ciclo real a las `07:00` Europe/Madrid.
+La arquitectura productiva recomendada es:
+
+1. `Vercel Cron`
+   - Define dos slots UTC en `vercel.json` (`05:00` y `06:00`) para cubrir DST.
+   - Llama a `GET /api/cron/pricing-agents`.
+
+2. `Cron Route`
+   - Verifica `Authorization: Bearer <CRON_SECRET>`.
+   - Rechaza el slot que no corresponda a las `07:00` Europe/Madrid.
+   - Dispara `workflow_dispatch` sobre GitHub Actions usando `GITHUB_ACTIONS_TRIGGER_TOKEN`.
+
+3. `GitHub Actions`
+   - Ejecuta `node scripts/pricing-agents.mjs --force`.
+   - Hace `git add data`, commit y push si cambió cualquier JSON operativo.
+
+4. `Vercel`
+   - Detecta el nuevo commit y redeploya la web con la foto actualizada.
+
+### Variables necesarias en Vercel
+
+- `OPENROUTER_API_KEY`
+- `PRICING_AGENT_PROVIDER=openrouter`
+- `PRICING_AGENT_MODEL=openrouter/free`
+- `PRICING_AGENT_OPENROUTER_FALLBACK_MODELS=...`
+- `CRON_SECRET`
+- `GITHUB_ACTIONS_TRIGGER_TOKEN`
+- `GITHUB_ACTIONS_REPOSITORY`
+- `GITHUB_ACTIONS_WORKFLOW_FILE=pricing-agents.yml`
+- `GITHUB_ACTIONS_REF=main`
+
+### Variables necesarias en GitHub Actions
+
+- `OPENROUTER_API_KEY`
+- `GEMINI_API_KEY` (opcional)
+- `OPENAI_API_KEY` (opcional)

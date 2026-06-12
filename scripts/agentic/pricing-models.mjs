@@ -49,7 +49,8 @@ function getOpenRouterFallbackModels() {
     .map((value) => value.trim())
     .filter(Boolean)
 
-  return configured.length > 0 ? configured : DEFAULT_OPENROUTER_FREE_FALLBACK_MODELS
+  const selected = configured.length > 0 ? configured : DEFAULT_OPENROUTER_FREE_FALLBACK_MODELS
+  return [...new Set(selected)].slice(0, 3)
 }
 
 async function fetchJsonWithTimeout(url, options, timeoutMs = MODEL_REQUEST_TIMEOUT_MS) {

@@ -4,6 +4,16 @@
   "buildCommand": "pnpm build",
   "installCommand": "pnpm install --frozen-lockfile=false",
   "regions": ["cdg1"],
+  "crons": [
+    {
+      "path": "/api/cron/pricing-agents",
+      "schedule": "0 5 * * *"
+    },
+    {
+      "path": "/api/cron/pricing-agents",
+      "schedule": "0 6 * * *"
+    }
+  ],
   "headers": [
     {
       "source": "/api/(.*)",

@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-05-29T09:31:11.857Z",
+  "runAt": "2026-06-12T10:47:10.542Z",
   "status": "updated",
   "protocolVersion": "pricing-runtime-v1",
   "autonomousMode": true,
@@ -123,7 +123,7 @@
       "value": 0.507,
       "provenance": "measured",
       "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
-      "updatedAt": "2026-05-29T09:31:11.865Z"
+      "updatedAt": "2026-06-12T10:47:10.545Z"
     }
   ],
   "sourceRegistryVersion": "pricing-runtime-sources-v1",

@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-05-29T09:31:11.882Z",
+  "lastRunAt": "2026-06-12T10:47:10.555Z",
   "seenItemIds": [
     "9b789f2682a586dcfa373b11fd55338043f9cd25",
     "1fb1260a997be0e2ac4b86b94ab5440e9392e12d",
@@ -33,29 +33,30 @@
     "28a5b26503ce82ea1f9856006c588986f484de68",
     "a8a0f70841ec9617cdca84f06ae23068199e1c22"
   ],
-  "lastRunStatus": "no_changes",
-  "lastRunSummary": "Truth graph confirmó los claims verificados sin generar cambios.",
+  "lastRunStatus": "partial",
+  "lastRunSummary": "Surface graph confirmó la mayor parte del lineup, pero dejó 5 comprobaciones sin verificar por acceso insuficiente a fuentes oficiales.",
   "provider": "openrouter",
   "model": "openrouter/free",
   "protocolVersion": "pricing-agentic-v2",
-  "lastRunId": "2026-05-29T09:30:08.022Z::openrouter::openrouter/free",
+  "lastRunId": "2026-06-12T10:46:34.164Z::openrouter::openrouter/free",
   "truthVerification": {
-    "lastRunAt": "2026-05-29T09:30:37.256Z",
-    "lastRunStatus": "verified",
-    "lastRunSummary": "Truth graph confirmó los claims verificados sin generar cambios.",
+    "lastRunAt": "2026-06-12T10:46:52.155Z",
+    "lastRunStatus": "partial",
+    "lastRunSummary": "Truth graph confirmó la mayor parte de los claims, pero dejó 3 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
     "provider": "openrouter",
     "model": "openrouter/free",
     "protocolVersion": "pricing-truth-v1",
     "totalClaims": 33,
     "publishableUpdates": 0,
     "appliedUpdates": 0,
-    "needsAttention": 0,
+    "needsAttention": 3,
     "verdictCounts": {
-      "confirmed": 33
+      "confirmed": 30,
+      "unverifiable": 3
     }
   },
   "runtimeAutopilot": {
-    "lastRunAt": "2026-05-29T09:31:11.857Z",
+    "lastRunAt": "2026-06-12T10:47:10.542Z",
     "lastRunStatus": "updated",
     "lastRunSummary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
     "protocolVersion": "pricing-runtime-v1",
@@ -95,14 +96,14 @@
     "appliedAssumptionOverrides": 1
   },
   "surfaceVerification": {
-    "lastRunAt": "2026-05-29T09:31:11.852Z",
-    "lastRunStatus": "verified",
-    "lastRunSummary": "Surface graph confirmó lineup, nombres de plan y señales críticas.",
+    "lastRunAt": "2026-06-12T10:47:10.540Z",
+    "lastRunStatus": "partial",
+    "lastRunSummary": "Surface graph confirmó la mayor parte del lineup, pero dejó 5 comprobaciones sin verificar por acceso insuficiente a fuentes oficiales.",
     "protocolVersion": "pricing-surface-v1",
-    "totalChecks": 26,
-    "verifiedChecks": 26,
+    "totalChecks": 42,
+    "verifiedChecks": 37,
     "needsReview": 0,
-    "unverifiableChecks": 0
+    "unverifiableChecks": 5
   },
   "providerStrategy": {
     "preferredProvider": "openrouter",
@@ -116,8 +117,8 @@
         "provider": "openrouter",
         "model": "openrouter/free",
         "mode": "primary",
-        "startedAt": "2026-05-29T09:26:42.484Z",
-        "finishedAt": "2026-05-29T09:30:08.022Z",
+        "startedAt": "2026-06-12T10:42:34.856Z",
+        "finishedAt": "2026-06-12T10:46:34.164Z",
         "status": "ok",
         "reason": "Configured primary provider."
       }

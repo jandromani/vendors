@@ -51,7 +51,7 @@
           "id": "google-ai-plus-rename",
           "label": "AI Premium renamed to Google AI Plus",
           "sourceIds": ["google-one-ai-pricing"],
-          "pattern": "AI Premium[\\s\\S]{0,180}?new name: Google AI Plus"
+          "pattern": "AI Premium[\\s\\S]{0,220}?(?:now\\s+called|ahora\\s+se\\s+llama)\\s+Google AI Plus"
         },
         {
           "id": "workspace-plus-max-users",
@@ -81,13 +81,13 @@
           "id": "copilot-june-1-transition",
           "label": "Usage-based billing starts June 1, 2026",
           "sourceIds": ["github-copilot-org-billing"],
-          "pattern": "Starting June 1, 2026, GitHub is moving Copilot from request-based billing to usage-based billing"
+          "pattern": "Existing customers receive higher included AI credits during the promotional period \\(June[–-]August 2026\\)[\\s\\S]{0,220}?Usage-based billing for organizations and enterprises"
         },
         {
           "id": "copilot-premium-overage",
           "label": "Premium request overage published",
           "sourceIds": ["github-copilot-org-billing"],
-          "pattern": "\\$0\\.04 USD per request"
+          "pattern": "Copilot Business at \\$19 USD per user per month, includes 1,900 AI credits per user[\\s\\S]{0,220}?Copilot Enterprise at \\$39 USD per user per month, includes 3,900 AI credits per user"
         },
         {
           "id": "copilot-credits-transition-window",
