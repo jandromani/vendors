@@ -34,13 +34,13 @@
       "Google News: AWS Bedrock pricing",
       "Google News: Azure OpenAI Service pricing"
     ],
-    "provider": "mock",
-    "model": "mock-agent-brain",
+    "provider": "openrouter",
+    "model": "openrouter/free",
     "protocolVersion": "pricing-agentic-v2",
     "truthVerification": {
-      "lastRunAt": "2026-06-12T11:53:38.133Z",
-      "status": "partial",
-      "needsAttention": 1,
+      "lastRunAt": "2026-06-12T15:48:49.194Z",
+      "status": "verified",
+      "needsAttention": 0,
       "publishableUpdates": 0,
       "appliedUpdates": 0
     },
@@ -50,6 +50,7 @@
       "OpenAI GPT-5.4 mini Model Page",
       "OpenAI GPT-5.4 Model Page",
       "OpenAI GPT-5.5 Model Page",
+      "OpenAI ChatGPT Plus Help",
       "OpenAI ChatGPT Business Help",
       "Google Gemini API Pricing",
       "Google AI Plans",

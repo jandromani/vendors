@@ -1,14 +1,14 @@
 {
-  "provider": "mock",
-  "model": "mock-agent-brain",
+  "provider": "openrouter",
+  "model": "openrouter/free",
   "protocolVersion": "pricing-agentic-v2",
-  "cutoffDate": "2026-06-12T11:42:42.270Z",
+  "cutoffDate": "2026-06-12T11:53:40.752Z",
   "scout": {
     "result": {
-      "status": "ok",
+      "status": "insufficient_evidence",
       "candidates": [],
       "notes": [
-        "Mock provider active. No real LLM scouting was executed."
+        "Checked official sources for OpenAI, Anthropic, Google AI blog; no recent unseen items; no pricing signals found."
       ]
     },
     "trace": [
@@ -16,7 +16,21 @@
         "stepNumber": 1,
         "attempt": 1,
         "decision": "tool_call",
-        "rationale": "Need the whitelisted source catalog before selecting sources.",
+        "rationale": "Get current watch state to know cutoff date and seen items count.",
+        "toolName": "read_watch_state",
+        "toolInput": {},
+        "toolResult": {
+          "lastRunAt": "2026-06-12T11:53:40.752Z",
+          "lastRunStatus": "needs_review",
+          "seenItemCount": 31,
+          "cutoffDate": "2026-06-12T11:53:40.752Z"
+        }
+      },
+      {
+        "stepNumber": 2,
+        "attempt": 1,
+        "decision": "tool_call",
+        "rationale": "Need to see the approved source catalogue before checking any sources for pricing updates.",
         "toolName": "list_sources",
         "toolInput": {},
         "toolResult": {
@@ -26,10 +40,10 @@
         }
       },
       {
-        "stepNumber": 2,
+        "stepNumber": 3,
         "attempt": 1,
         "decision": "tool_call",
-        "rationale": "Read one official source to exercise the scout tool path.",
+        "rationale": "Check OpenAI News RSS for any recent pricing-related items after the cutoff date.",
         "toolName": "read_source",
         "toolInput": {
           "sourceId": "openai-news-rss",
@@ -44,15 +58,51 @@
         }
       },
       {
-        "stepNumber": 3,
+        "stepNumber": 4,
+        "attempt": 1,
+        "decision": "tool_call",
+        "rationale": "We have checked one official source (openai-news-rss) and found no items. To increase confidence while adhering to the Scout efficiency rule, we will check one more official source (anthropic-api-changelog) for Claude before considering finalization. If this also yields no items,",
+        "toolName": "read_source",
+        "toolInput": {
+          "sourceId": "anthropic-api-changelog",
+          "limit": 5
+        },
+        "toolResult": {
+          "sourceId": "anthropic-api-changelog",
+          "sourceLabel": "Anthropic API Changelog",
+          "official": true,
+          "vendorHint": "claude",
+          "items": []
+        }
+      },
+      {
+        "stepNumber": 5,
+        "attempt": 1,
+        "decision": "tool_call",
+        "rationale": "We have checked two official sources (OpenAI News RSS and Anthropic API Changelog) and found no items. We will check one more official source (Google AI Blog RSS for Gemini) to see if there are any recent items. If we still find none, we will then finalize conservatively due to l",
+        "toolName": "read_source",
+        "toolInput": {
+          "sourceId": "google-ai-blog-rss",
+          "limit": 5
+        },
+        "toolResult": {
+          "sourceId": "google-ai-blog-rss",
+          "sourceLabel": "Google AI Blog RSS",
+          "official": true,
+          "vendorHint": "gemini",
+          "items": []
+        }
+      },
+      {
+        "stepNumber": 6,
         "attempt": 1,
         "decision": "final",
-        "rationale": "Mock mode returns no candidates after the smoke-check tool calls.",
+        "rationale": "Checked three official sources (OpenAI News RSS, Anthropic API Changelog, Google AI Blog RSS) and found no recent unseen items after the cutoff date. No pricing-relevant candidates were discovered. Following the scout efficiency rule, we finalize conservatively rather than exhaus",
         "finalPayload": {
-          "status": "ok",
+          "status": "insufficient_evidence",
           "candidates": [],
           "notes": [
-            "Mock provider active. No real LLM scouting was executed."
+            "Checked official sources for OpenAI, Anthropic, Google AI blog; no recent unseen items; no pricing signals found."
           ]
         }
       }
@@ -60,10 +110,10 @@
   },
   "research": {
     "result": {
-      "status": "ok",
+      "status": "insufficient_evidence",
       "evidenceBundles": [],
       "notes": [
-        "Mock provider active. Research stage short-circuited."
+        "No candidates to evaluate"
       ]
     },
     "trace": [
@@ -71,12 +121,12 @@
         "stepNumber": 1,
         "attempt": 1,
         "decision": "final",
-        "rationale": "No candidates to research in mock mode.",
+        "rationale": "No candidates provided in the input payload, so there is nothing to evaluate for pricing-change signals.",
         "finalPayload": {
-          "status": "ok",
+          "status": "insufficient_evidence",
           "evidenceBundles": [],
           "notes": [
-            "Mock provider active. Research stage short-circuited."
+            "No candidates to evaluate"
           ]
         }
       }
@@ -84,11 +134,11 @@
   },
   "mapping": {
     "result": {
-      "status": "ok",
+      "status": "insufficient_evidence",
       "operations": [],
       "rejectedEvidence": [],
       "notes": [
-        "Mock provider active. Mapping stage short-circuited."
+        "No evidence bundles provided"
       ]
     },
     "trace": [
@@ -96,13 +146,13 @@
         "stepNumber": 1,
         "attempt": 1,
         "decision": "final",
-        "rationale": "No evidence bundles to map in mock mode.",
+        "rationale": "No evidence bundles provided; insufficient evidence to map any pricing updates.",
         "finalPayload": {
-          "status": "ok",
+          "status": "insufficient_evidence",
           "operations": [],
           "rejectedEvidence": [],
           "notes": [
-            "Mock provider active. Mapping stage short-circuited."
+            "No evidence bundles provided"
           ]
         }
       }
@@ -113,50 +163,49 @@
       "status": "insufficient_evidence",
       "approvedOperations": [],
       "rejectedOperations": [],
-      "summary": "Mock provider active. Audit stage produced no approvals."
+      "summary": "No evidence provided to evaluate any operations."
     },
     "trace": [
       {
         "stepNumber": 1,
         "attempt": 1,
         "decision": "final",
-        "rationale": "No operations to audit in mock mode.",
+        "rationale": "No operations or evidence provided; insufficient evidence to approve any changes.",
         "finalPayload": {
           "status": "insufficient_evidence",
           "approvedOperations": [],
           "rejectedOperations": [],
-          "summary": "Mock provider active. Audit stage produced no approvals."
+          "summary": "No evidence provided to evaluate any operations."
         }
       }
     ]
   },
   "approvedOperations": [],
   "strictlyRejectedOperations": [],
-  "runId": "2026-06-12T11:53:17.477Z::mock::mock-agent-brain",
-  "runAt": "2026-06-12T11:53:40.752Z",
+  "runId": "2026-06-12T15:48:33.257Z::openrouter::openrouter/free",
+  "runAt": "2026-06-12T15:48:55.442Z",
   "status": "needs_review",
   "vendorIdsInvolved": [],
   "agentStatuses": {
-    "scout": "ok",
-    "research": "ok",
-    "mapping": "ok",
+    "scout": "insufficient_evidence",
+    "research": "insufficient_evidence",
+    "mapping": "insufficient_evidence",
     "audit": "insufficient_evidence"
   },
   "appliedOperations": [],
   "truthVerification": {
-    "status": "partial",
-    "summary": "Truth graph confirmó la mayor parte de los claims, pero dejó 1 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
+    "status": "verified",
+    "summary": "Truth graph confirmó los claims verificados sin generar cambios.",
     "verdictCounts": {
-      "confirmed": 32,
-      "unverifiable": 1
+      "confirmed": 33
     },
-    "needsAttention": 1,
+    "needsAttention": 0,
     "publishableUpdates": 0,
     "appliedUpdates": 0
   },
   "surfaceVerification": {
     "protocolVersion": "pricing-surface-v1",
-    "runAt": "2026-06-12T11:53:40.746Z",
+    "runAt": "2026-06-12T15:48:55.436Z",
     "status": "needs_review",
     "totalChecks": 42,
     "verifiedChecks": 41,
@@ -216,7 +265,7 @@
             "openai-chatgpt-plus-help"
           ],
           "matchedSourceId": "openai-chatgpt-plus-help",
-          "snippet": "What is ChatGPT Plus? | OpenAI Help Center All Collections ChatGPT What is ChatGPT Plus? What is ChatGPT Plus? Information about our paid subscription plan, Plus. Updated: 6 hours ago As of February 13, 2026, models GPT-4o, GPT-4.1, GPT-4.1 mini, OpenAI o4-mini, and GPT-5 (Instan...",
+          "snippet": "What is ChatGPT Plus? | OpenAI Help Center All Collections ChatGPT What is ChatGPT Plus? What is ChatGPT Plus? Information about our paid subscription plan, Plus. Updated: 10 hours ago As of February 13, 2026, models GPT-4o, GPT-4.1, GPT-4.1 mini, OpenAI o4-mini, and GPT-5 (Insta...",
           "sourceHealth": [
             {
               "sourceId": "openai-chatgpt-plus-help",
@@ -237,7 +286,7 @@
             "openai-chatgpt-business-help"
           ],
           "matchedSourceId": "openai-chatgpt-business-help",
-          "snippet": "What is ChatGPT Business? | OpenAI Help Center All Collections ChatGPT Business What is ChatGPT Business? What is ChatGPT Business? Learn what ChatGPT Business is, how different seat types work, and how pricing, privacy, and admin controls work. Updated: 2 hours ago Note: As of A...",
+          "snippet": "What is ChatGPT Business? | OpenAI Help Center All Collections ChatGPT Business What is ChatGPT Business? What is ChatGPT Business? Learn what ChatGPT Business is, how different seat types work, and how pricing, privacy, and admin controls work. Updated: 26 minutes ago Note: As o...",
           "sourceHealth": [
             {
               "sourceId": "openai-chatgpt-business-help",
@@ -258,7 +307,7 @@
             "openai-chatgpt-gpt55-help"
           ],
           "matchedSourceId": "openai-chatgpt-gpt55-help",
-          "snippet": "GPT-5.5 in ChatGPT | OpenAI Help Center All Collections ChatGPT GPT-5.5 in ChatGPT GPT-5.5 in ChatGPT Updated: yesterday GPT-5.5 Instant in ChatGPT is the default for all logged-in users, and a single auto-switching system that brings together the best of our models into a smart,...",
+          "snippet": "GPT-5.5 in ChatGPT | OpenAI Help Center All Collections ChatGPT GPT-5.5 in ChatGPT GPT-5.5 in ChatGPT Updated: 2 days ago GPT-5.5 Instant in ChatGPT is the default for all logged-in users, and a single auto-switching system that brings together the best of our models into a smart...",
           "sourceHealth": [
             {
               "sourceId": "openai-chatgpt-gpt55-help",
@@ -279,7 +328,7 @@
             "openai-chatgpt-gpt55-help"
           ],
           "matchedSourceId": "openai-chatgpt-gpt55-help",
-          "snippet": "GPT-5.5 in ChatGPT | OpenAI Help Center All Collections ChatGPT GPT-5.5 in ChatGPT GPT-5.5 in ChatGPT Updated: yesterday GPT-5.5 Instant in ChatGPT is the default for all logged-in users, and a single auto-switching system that brings together the best of our models into a smart,...",
+          "snippet": "GPT-5.5 in ChatGPT | OpenAI Help Center All Collections ChatGPT GPT-5.5 in ChatGPT GPT-5.5 in ChatGPT Updated: 2 days ago GPT-5.5 Instant in ChatGPT is the default for all logged-in users, and a single auto-switching system that brings together the best of our models into a smart...",
           "sourceHealth": [
             {
               "sourceId": "openai-chatgpt-gpt55-help",
@@ -300,7 +349,7 @@
             "openai-chatgpt-plus-help"
           ],
           "matchedSourceId": "openai-chatgpt-plus-help",
-          "snippet": "What is ChatGPT Plus? | OpenAI Help Center All Collections ChatGPT What is ChatGPT Plus? What is ChatGPT Plus? Information about our paid subscription plan, Plus. Updated: 6 hours ago As of February 13, 2026, models GPT-4o, GPT-4.1, GPT-4.1 mini, OpenAI o4-mini, and GPT-5 (Instan...",
+          "snippet": "What is ChatGPT Plus? | OpenAI Help Center All Collections ChatGPT What is ChatGPT Plus? What is ChatGPT Plus? Information about our paid subscription plan, Plus. Updated: 10 hours ago As of February 13, 2026, models GPT-4o, GPT-4.1, GPT-4.1 mini, OpenAI o4-mini, and GPT-5 (Insta...",
           "sourceHealth": [
             {
               "sourceId": "openai-chatgpt-plus-help",
@@ -953,10 +1002,10 @@
       }
     ],
     "summary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
-    "runId": "2026-06-12T11:53:17.477Z::mock::mock-agent-brain"
+    "runId": "2026-06-12T15:48:33.257Z::openrouter::openrouter/free"
   },
   "runtimeAutopilot": {
-    "runAt": "2026-06-12T11:53:40.747Z",
+    "runAt": "2026-06-12T15:48:55.437Z",
     "status": "updated",
     "protocolVersion": "pricing-runtime-v1",
     "autonomousMode": true,
@@ -1080,7 +1129,7 @@
         "value": 0.507,
         "provenance": "measured",
         "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
-        "updatedAt": "2026-06-12T11:53:40.749Z"
+        "updatedAt": "2026-06-12T15:48:55.439Z"
       }
     ],
     "sourceRegistryVersion": "pricing-runtime-sources-v1",
@@ -1093,31 +1142,21 @@
   "providerStrategy": {
     "preferredProvider": "openrouter",
     "preferredModel": "openrouter/free",
-    "selectedProvider": "mock",
-    "selectedModel": "mock-agent-brain",
-    "degradedMode": true,
-    "failoverUsed": true,
+    "selectedProvider": "openrouter",
+    "selectedModel": "openrouter/free",
+    "degradedMode": false,
+    "failoverUsed": false,
     "attempts": [
       {
         "provider": "openrouter",
         "model": "openrouter/free",
         "mode": "primary",
-        "startedAt": "2026-06-12T11:53:15.647Z",
-        "finishedAt": "2026-06-12T11:53:17.054Z",
-        "status": "error",
-        "reason": "Configured primary provider.",
-        "error": "OpenRouter HTTP 401: {\"error\":{\"message\":\"Missing Authentication header\",\"code\":401}} :: curl fallback failed: OpenRouter returned no structured JSON text."
-      },
-      {
-        "provider": "mock",
-        "model": "mock-agent-brain",
-        "mode": "degraded",
-        "startedAt": "2026-06-12T11:53:17.055Z",
-        "finishedAt": "2026-06-12T11:53:17.477Z",
+        "startedAt": "2026-06-12T15:42:35.353Z",
+        "finishedAt": "2026-06-12T15:48:33.257Z",
         "status": "ok",
-        "reason": "All live providers failed or became unavailable during the run."
+        "reason": "Configured primary provider."
       }
     ],
-    "summary": "Live providers could not complete the cycle. The system degraded to mock mode after 1 failed live attempt(s)."
+    "summary": "Primary provider openrouter completed the run without failover."
   }
 }

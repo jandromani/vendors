@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-06-12T11:53:40.752Z",
+  "lastRunAt": "2026-06-12T15:48:55.442Z",
   "seenItemIds": [
     "9b789f2682a586dcfa373b11fd55338043f9cd25",
     "1fb1260a997be0e2ac4b86b94ab5440e9392e12d",
@@ -35,28 +35,27 @@
   ],
   "lastRunStatus": "needs_review",
   "lastRunSummary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
-  "provider": "mock",
-  "model": "mock-agent-brain",
+  "provider": "openrouter",
+  "model": "openrouter/free",
   "protocolVersion": "pricing-agentic-v2",
-  "lastRunId": "2026-06-12T11:53:17.477Z::mock::mock-agent-brain",
+  "lastRunId": "2026-06-12T15:48:33.257Z::openrouter::openrouter/free",
   "truthVerification": {
-    "lastRunAt": "2026-06-12T11:53:38.133Z",
-    "lastRunStatus": "partial",
-    "lastRunSummary": "Truth graph confirmó la mayor parte de los claims, pero dejó 1 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
-    "provider": "mock",
-    "model": "mock-agent-brain",
+    "lastRunAt": "2026-06-12T15:48:49.194Z",
+    "lastRunStatus": "verified",
+    "lastRunSummary": "Truth graph confirmó los claims verificados sin generar cambios.",
+    "provider": "openrouter",
+    "model": "openrouter/free",
     "protocolVersion": "pricing-truth-v1",
     "totalClaims": 33,
     "publishableUpdates": 0,
     "appliedUpdates": 0,
-    "needsAttention": 1,
+    "needsAttention": 0,
     "verdictCounts": {
-      "confirmed": 32,
-      "unverifiable": 1
+      "confirmed": 33
     }
   },
   "runtimeAutopilot": {
-    "lastRunAt": "2026-06-12T11:53:40.747Z",
+    "lastRunAt": "2026-06-12T15:48:55.437Z",
     "lastRunStatus": "updated",
     "lastRunSummary": "Runtime autopilot ingirió 4 fuentes de telemetría y aplicó 1 overrides medidos.",
     "protocolVersion": "pricing-runtime-v1",
@@ -96,7 +95,7 @@
     "appliedAssumptionOverrides": 1
   },
   "surfaceVerification": {
-    "lastRunAt": "2026-06-12T11:53:40.746Z",
+    "lastRunAt": "2026-06-12T15:48:55.436Z",
     "lastRunStatus": "needs_review",
     "lastRunSummary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
     "protocolVersion": "pricing-surface-v1",
@@ -108,31 +107,21 @@
   "providerStrategy": {
     "preferredProvider": "openrouter",
     "preferredModel": "openrouter/free",
-    "selectedProvider": "mock",
-    "selectedModel": "mock-agent-brain",
-    "degradedMode": true,
-    "failoverUsed": true,
+    "selectedProvider": "openrouter",
+    "selectedModel": "openrouter/free",
+    "degradedMode": false,
+    "failoverUsed": false,
     "attempts": [
       {
         "provider": "openrouter",
         "model": "openrouter/free",
         "mode": "primary",
-        "startedAt": "2026-06-12T11:53:15.647Z",
-        "finishedAt": "2026-06-12T11:53:17.054Z",
-        "status": "error",
-        "reason": "Configured primary provider.",
-        "error": "OpenRouter HTTP 401: {\"error\":{\"message\":\"Missing Authentication header\",\"code\":401}} :: curl fallback failed: OpenRouter returned no structured JSON text."
-      },
-      {
-        "provider": "mock",
-        "model": "mock-agent-brain",
-        "mode": "degraded",
-        "startedAt": "2026-06-12T11:53:17.055Z",
-        "finishedAt": "2026-06-12T11:53:17.477Z",
+        "startedAt": "2026-06-12T15:42:35.353Z",
+        "finishedAt": "2026-06-12T15:48:33.257Z",
         "status": "ok",
-        "reason": "All live providers failed or became unavailable during the run."
+        "reason": "Configured primary provider."
       }
     ],
-    "summary": "Live providers could not complete the cycle. The system degraded to mock mode after 1 failed live attempt(s)."
+    "summary": "Primary provider openrouter completed the run without failover."
   }
 }

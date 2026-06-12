@@ -1,6 +1,6 @@
 {
   "version": "pricing-assumption-overrides-v1",
-  "updatedAt": "2026-06-12T11:53:40.747Z",
+  "updatedAt": "2026-06-12T15:48:55.437Z",
   "updatedBy": "runtime-autopilot",
   "overrides": [
     {
@@ -8,7 +8,7 @@
       "value": 0.507,
       "provenance": "measured",
       "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
-      "updatedAt": "2026-06-12T11:53:40.749Z"
+      "updatedAt": "2026-06-12T15:48:55.439Z"
     }
   ]
 }
