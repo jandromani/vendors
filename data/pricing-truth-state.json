@@ -1,16 +1,16 @@
 {
-  "lastRunAt": "2026-06-12T11:42:39.790Z",
+  "lastRunAt": "2026-06-12T11:53:38.133Z",
   "lastRunStatus": "partial",
-  "lastRunSummary": "Truth graph confirmó la mayor parte de los claims, pero dejó 3 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
+  "lastRunSummary": "Truth graph confirmó la mayor parte de los claims, pero dejó 1 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
   "provider": "mock",
   "model": "mock-agent-brain",
   "protocolVersion": "pricing-truth-v1",
   "totalClaims": 33,
   "publishableUpdates": 0,
   "appliedUpdates": 0,
-  "needsAttention": 3,
+  "needsAttention": 1,
   "verdictCounts": {
-    "confirmed": 30,
-    "unverifiable": 3
+    "confirmed": 32,
+    "unverifiable": 1
   }
 }

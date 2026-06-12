@@ -2,7 +2,7 @@
   "provider": "mock",
   "model": "mock-agent-brain",
   "protocolVersion": "pricing-truth-v1",
-  "runAt": "2026-06-12T11:42:39.790Z",
+  "runAt": "2026-06-12T11:53:38.133Z",
   "status": "partial",
   "claimInventory": {
     "totalClaims": 33,
@@ -26,7 +26,7 @@
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:42:04.191Z"
+          "fetchedAt": "2026-06-12T11:53:17.480Z"
         },
         {
           "sourceId": "anthropic-pricing",
@@ -34,7 +34,7 @@
           "url": "https://www.anthropic.com/pricing",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:42:06.152Z"
+          "fetchedAt": "2026-06-12T11:53:18.146Z"
         },
         {
           "sourceId": "openai-model-gpt-5-4-mini",
@@ -42,7 +42,7 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:42:06.435Z"
+          "fetchedAt": "2026-06-12T11:53:18.397Z"
         },
         {
           "sourceId": "openai-model-gpt-5-4",
@@ -50,7 +50,7 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:42:07.071Z"
+          "fetchedAt": "2026-06-12T11:53:18.744Z"
         },
         {
           "sourceId": "openai-model-gpt-5-5",
@@ -58,7 +58,7 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-5.5/",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:42:07.179Z"
+          "fetchedAt": "2026-06-12T11:53:18.858Z"
         },
         {
           "sourceId": "openai-chatgpt-plus-help",
@@ -66,15 +66,15 @@
           "url": "https://help.openai.com/en/articles/6950777",
           "status": "error",
           "error": "HTTP 403 on https://help.openai.com/en/articles/6950777. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/6950777",
-          "fetchedAt": "2026-06-12T11:42:07.771Z"
+          "fetchedAt": "2026-06-12T11:53:19.046Z"
         },
         {
           "sourceId": "openai-chatgpt-business-help",
           "label": "OpenAI ChatGPT Business Help",
           "url": "https://help.openai.com/en/articles/8792828",
-          "status": "error",
-          "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/8792828",
-          "fetchedAt": "2026-06-12T11:42:23.667Z"
+          "status": "ok",
+          "error": null,
+          "fetchedAt": "2026-06-12T11:53:35.471Z"
         },
         {
           "sourceId": "google-gemini-api-pricing",
@@ -82,7 +82,7 @@
           "url": "https://ai.google.dev/gemini-api/docs/pricing",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:42:38.812Z"
+          "fetchedAt": "2026-06-12T11:53:37.446Z"
         },
         {
           "sourceId": "google-one-ai-pricing",
@@ -90,7 +90,7 @@
           "url": "https://one.google.com/about/google-ai-plans?hl=en",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:42:39.225Z"
+          "fetchedAt": "2026-06-12T11:53:37.717Z"
         },
         {
           "sourceId": "google-workspace-pricing",
@@ -98,7 +98,7 @@
           "url": "https://workspace.google.com/pricing.html?hl=en&region=us",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:42:39.320Z"
+          "fetchedAt": "2026-06-12T11:53:37.787Z"
         },
         {
           "sourceId": "github-copilot-org-billing",
@@ -106,7 +106,7 @@
           "url": "https://docs.github.com/en/copilot/concepts/billing/organizations-and-enterprises",
           "status": "ok",
           "error": null,
-          "fetchedAt": "2026-06-12T11:42:39.730Z"
+          "fetchedAt": "2026-06-12T11:53:38.024Z"
         }
       ]
     }
@@ -252,7 +252,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.779Z"
+        "verifiedAt": "2026-06-12T11:53:38.123Z"
       },
       "trace": [
         {
@@ -423,7 +423,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.780Z"
+        "verifiedAt": "2026-06-12T11:53:38.124Z"
       },
       "trace": [
         {
@@ -594,7 +594,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.781Z"
+        "verifiedAt": "2026-06-12T11:53:38.125Z"
       },
       "trace": [
         {
@@ -765,7 +765,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.782Z"
+        "verifiedAt": "2026-06-12T11:53:38.126Z"
       },
       "trace": [
         {
@@ -936,7 +936,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.783Z"
+        "verifiedAt": "2026-06-12T11:53:38.127Z"
       },
       "trace": [
         {
@@ -1107,7 +1107,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.127Z"
       },
       "trace": [
         {
@@ -1210,7 +1210,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.127Z"
       },
       "trace": [
         {
@@ -1313,7 +1313,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -1416,7 +1416,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -1519,7 +1519,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -1622,7 +1622,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -1725,7 +1725,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -1828,7 +1828,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -1931,7 +1931,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -2034,7 +2034,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -2137,7 +2137,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -2208,7 +2208,7 @@
         "patchAllowed": false,
         "usedSources": [],
         "reason": "No approved source could be fetched successfully for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -2250,45 +2250,85 @@
             "sourceId": "openai-chatgpt-business-help",
             "label": "OpenAI ChatGPT Business Help",
             "url": "https://help.openai.com/en/articles/8792828",
-            "title": "OpenAI ChatGPT Business Help",
-            "status": "error",
+            "title": "What is ChatGPT Business? | OpenAI Help Center",
+            "status": "ok",
             "sourceClass": "official",
-            "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/8792828",
-            "currentValueSeen": false,
-            "structuredMatches": [],
-            "aliasWindows": [],
-            "candidateValues": []
+            "error": null,
+            "currentValueSeen": true,
+            "structuredMatches": [
+              {
+                "parserId": "openai-business-help",
+                "targetName": "ChatGPT Business",
+                "matchedAlias": "ChatGPT Business",
+                "fields": {
+                  "priceMonthly": 25,
+                  "priceAnnual": 20
+                }
+              }
+            ],
+            "aliasWindows": [
+              {
+                "alias": "ChatGPT Business",
+                "snippet": "For most countries, pricing (USD) is $25 per user per month if billed monthly and $20 per user per month if billed annually. Note that pricing may vary depending on your country and currency type - see the pricing page for more details. Standard ChatGPT seats include access to ChatGPT and Codex within the Business work...",
+                "parserId": "openai-business-help"
+              }
+            ],
+            "candidateValues": [
+              {
+                "value": 25,
+                "raw": "$25",
+                "snippet": "For most countries, pricing (USD) is $25 per user per month if billed monthly and $20 per user per month if billed annually. Note that pricing may vary depending on your country and currency type - see the pricing page for more details. Standard ChatGPT seats ...",
+                "score": 12,
+                "parserId": "openai-business-help"
+              }
+            ]
           }
         ]
       },
       "result": {
         "claimId": "chatgpt|seatPlan|chatgptbusiness|priceMonthly",
-        "verdict": "unverifiable",
+        "verdict": "confirmed",
         "currentValue": 25,
         "proposedValue": null,
-        "confidence": 1,
-        "freshnessStatus": "unknown",
+        "confidence": 0.95,
+        "freshnessStatus": "fresh",
         "patchAllowed": false,
-        "usedSources": [],
-        "reason": "No approved source could be fetched successfully for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "usedSources": [
+          {
+            "sourceId": "openai-chatgpt-business-help",
+            "url": "https://help.openai.com/en/articles/8792828",
+            "title": "What is ChatGPT Business? | OpenAI Help Center",
+            "snippet": "For most countries, pricing (USD) is $25 per user per month if billed monthly and $20 per user per month if billed annually. Note that pricing may vary depending on your country and currency type - see the pricing page for more details. Standard ChatGPT seats ...",
+            "observedValue": 25
+          }
+        ],
+        "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
           "stepNumber": 1,
           "attempt": 1,
           "decision": "final",
-          "rationale": "No approved source could be fetched successfully for this claim.",
+          "rationale": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
           "finalPayload": {
             "claimId": "chatgpt|seatPlan|chatgptbusiness|priceMonthly",
-            "verdict": "unverifiable",
+            "verdict": "confirmed",
             "currentValue": 25,
             "proposedValue": null,
-            "confidence": 1,
-            "freshnessStatus": "unknown",
+            "confidence": 0.95,
+            "freshnessStatus": "fresh",
             "patchAllowed": false,
-            "usedSources": [],
-            "reason": "No approved source could be fetched successfully for this claim."
+            "usedSources": [
+              {
+                "sourceId": "openai-chatgpt-business-help",
+                "url": "https://help.openai.com/en/articles/8792828",
+                "title": "What is ChatGPT Business? | OpenAI Help Center",
+                "snippet": "For most countries, pricing (USD) is $25 per user per month if billed monthly and $20 per user per month if billed annually. Note that pricing may vary depending on your country and currency type - see the pricing page for more details. Standard ChatGPT seats ...",
+                "observedValue": 25
+              }
+            ],
+            "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted."
           }
         }
       ],
@@ -2313,45 +2353,85 @@
             "sourceId": "openai-chatgpt-business-help",
             "label": "OpenAI ChatGPT Business Help",
             "url": "https://help.openai.com/en/articles/8792828",
-            "title": "OpenAI ChatGPT Business Help",
-            "status": "error",
+            "title": "What is ChatGPT Business? | OpenAI Help Center",
+            "status": "ok",
             "sourceClass": "official",
-            "error": "HTTP 403 on https://help.openai.com/en/articles/8792828. Browser fallback failed: Browser fallback still received a challenge page for https://help.openai.com/en/articles/8792828",
-            "currentValueSeen": false,
-            "structuredMatches": [],
-            "aliasWindows": [],
-            "candidateValues": []
+            "error": null,
+            "currentValueSeen": true,
+            "structuredMatches": [
+              {
+                "parserId": "openai-business-help",
+                "targetName": "ChatGPT Business",
+                "matchedAlias": "ChatGPT Business",
+                "fields": {
+                  "priceMonthly": 25,
+                  "priceAnnual": 20
+                }
+              }
+            ],
+            "aliasWindows": [
+              {
+                "alias": "ChatGPT Business",
+                "snippet": "For most countries, pricing (USD) is $25 per user per month if billed monthly and $20 per user per month if billed annually. Note that pricing may vary depending on your country and currency type - see the pricing page for more details. Standard ChatGPT seats include access to ChatGPT and Codex within the Business work...",
+                "parserId": "openai-business-help"
+              }
+            ],
+            "candidateValues": [
+              {
+                "value": 20,
+                "raw": "$20",
+                "snippet": "For most countries, pricing (USD) is $25 per user per month if billed monthly and $20 per user per month if billed annually. Note that pricing may vary depending on your country and currency type - see the pricing page for more details. Standard ChatGPT seats ...",
+                "score": 12,
+                "parserId": "openai-business-help"
+              }
+            ]
           }
         ]
       },
       "result": {
         "claimId": "chatgpt|seatPlan|chatgptbusiness|priceAnnual",
-        "verdict": "unverifiable",
+        "verdict": "confirmed",
         "currentValue": 20,
         "proposedValue": null,
-        "confidence": 1,
-        "freshnessStatus": "unknown",
+        "confidence": 0.95,
+        "freshnessStatus": "fresh",
         "patchAllowed": false,
-        "usedSources": [],
-        "reason": "No approved source could be fetched successfully for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "usedSources": [
+          {
+            "sourceId": "openai-chatgpt-business-help",
+            "url": "https://help.openai.com/en/articles/8792828",
+            "title": "What is ChatGPT Business? | OpenAI Help Center",
+            "snippet": "For most countries, pricing (USD) is $25 per user per month if billed monthly and $20 per user per month if billed annually. Note that pricing may vary depending on your country and currency type - see the pricing page for more details. Standard ChatGPT seats ...",
+            "observedValue": 20
+          }
+        ],
+        "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
           "stepNumber": 1,
           "attempt": 1,
           "decision": "final",
-          "rationale": "No approved source could be fetched successfully for this claim.",
+          "rationale": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
           "finalPayload": {
             "claimId": "chatgpt|seatPlan|chatgptbusiness|priceAnnual",
-            "verdict": "unverifiable",
+            "verdict": "confirmed",
             "currentValue": 20,
             "proposedValue": null,
-            "confidence": 1,
-            "freshnessStatus": "unknown",
+            "confidence": 0.95,
+            "freshnessStatus": "fresh",
             "patchAllowed": false,
-            "usedSources": [],
-            "reason": "No approved source could be fetched successfully for this claim."
+            "usedSources": [
+              {
+                "sourceId": "openai-chatgpt-business-help",
+                "url": "https://help.openai.com/en/articles/8792828",
+                "title": "What is ChatGPT Business? | OpenAI Help Center",
+                "snippet": "For most countries, pricing (USD) is $25 per user per month if billed monthly and $20 per user per month if billed annually. Note that pricing may vary depending on your country and currency type - see the pricing page for more details. Standard ChatGPT seats ...",
+                "observedValue": 20
+              }
+            ],
+            "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted."
           }
         }
       ],
@@ -2429,7 +2509,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -2532,7 +2612,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -2635,7 +2715,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.784Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -2738,7 +2818,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.785Z"
+        "verifiedAt": "2026-06-12T11:53:38.128Z"
       },
       "trace": [
         {
@@ -2841,7 +2921,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.785Z"
+        "verifiedAt": "2026-06-12T11:53:38.129Z"
       },
       "trace": [
         {
@@ -2944,7 +3024,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.785Z"
+        "verifiedAt": "2026-06-12T11:53:38.129Z"
       },
       "trace": [
         {
@@ -3047,7 +3127,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.785Z"
+        "verifiedAt": "2026-06-12T11:53:38.129Z"
       },
       "trace": [
         {
@@ -3150,7 +3230,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.785Z"
+        "verifiedAt": "2026-06-12T11:53:38.129Z"
       },
       "trace": [
         {
@@ -3253,7 +3333,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.785Z"
+        "verifiedAt": "2026-06-12T11:53:38.129Z"
       },
       "trace": [
         {
@@ -3356,7 +3436,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.785Z"
+        "verifiedAt": "2026-06-12T11:53:38.129Z"
       },
       "trace": [
         {
@@ -3469,7 +3549,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.786Z"
+        "verifiedAt": "2026-06-12T11:53:38.130Z"
       },
       "trace": [
         {
@@ -3582,7 +3662,7 @@
           }
         ],
         "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-        "verifiedAt": "2026-06-12T11:42:39.787Z"
+        "verifiedAt": "2026-06-12T11:53:38.131Z"
       },
       "trace": [
         {
@@ -3707,7 +3787,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.789Z"
+        "verifiedAt": "2026-06-12T11:53:38.132Z"
       },
       "trace": [
         {
@@ -3832,7 +3912,7 @@
           }
         ],
         "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-        "verifiedAt": "2026-06-12T11:42:39.790Z"
+        "verifiedAt": "2026-06-12T11:53:38.133Z"
       },
       "trace": [
         {
@@ -3883,7 +3963,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.779Z"
+      "verifiedAt": "2026-06-12T11:53:38.123Z"
     },
     {
       "claimId": "claude|model|haiku|outputPricePerMTok",
@@ -3903,7 +3983,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.780Z"
+      "verifiedAt": "2026-06-12T11:53:38.124Z"
     },
     {
       "claimId": "claude|model|sonnet|inputPricePerMTok",
@@ -3923,7 +4003,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.781Z"
+      "verifiedAt": "2026-06-12T11:53:38.125Z"
     },
     {
       "claimId": "claude|model|sonnet|outputPricePerMTok",
@@ -3943,7 +4023,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.782Z"
+      "verifiedAt": "2026-06-12T11:53:38.126Z"
     },
     {
       "claimId": "claude|model|opus|inputPricePerMTok",
@@ -3963,7 +4043,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.783Z"
+      "verifiedAt": "2026-06-12T11:53:38.127Z"
     },
     {
       "claimId": "claude|model|opus|outputPricePerMTok",
@@ -3983,7 +4063,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.127Z"
     },
     {
       "claimId": "claude|seatPlan|teamstandard|priceMonthly",
@@ -4003,7 +4083,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.127Z"
     },
     {
       "claimId": "claude|seatPlan|teamstandard|priceAnnual",
@@ -4023,7 +4103,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "claude|seatPlan|teampremium|priceMonthly",
@@ -4043,7 +4123,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "claude|seatPlan|teampremium|priceAnnual",
@@ -4063,7 +4143,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "chatgpt|model|gpt54mini|inputPricePerMTok",
@@ -4083,7 +4163,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "chatgpt|model|gpt54mini|outputPricePerMTok",
@@ -4103,7 +4183,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "chatgpt|model|gpt54|inputPricePerMTok",
@@ -4123,7 +4203,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "chatgpt|model|gpt54|outputPricePerMTok",
@@ -4143,7 +4223,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "chatgpt|model|gpt55|inputPricePerMTok",
@@ -4163,7 +4243,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "chatgpt|model|gpt55|outputPricePerMTok",
@@ -4183,7 +4263,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "chatgpt|seatPlan|chatgptplus|priceMonthly",
@@ -4195,31 +4275,47 @@
       "patchAllowed": false,
       "usedSources": [],
       "reason": "No approved source could be fetched successfully for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "chatgpt|seatPlan|chatgptbusiness|priceMonthly",
-      "verdict": "unverifiable",
+      "verdict": "confirmed",
       "currentValue": 25,
       "proposedValue": null,
-      "confidence": 1,
-      "freshnessStatus": "unknown",
+      "confidence": 0.95,
+      "freshnessStatus": "fresh",
       "patchAllowed": false,
-      "usedSources": [],
-      "reason": "No approved source could be fetched successfully for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "usedSources": [
+        {
+          "sourceId": "openai-chatgpt-business-help",
+          "url": "https://help.openai.com/en/articles/8792828",
+          "title": "What is ChatGPT Business? | OpenAI Help Center",
+          "snippet": "For most countries, pricing (USD) is $25 per user per month if billed monthly and $20 per user per month if billed annually. Note that pricing may vary depending on your country and currency type - see the pricing page for more details. Standard ChatGPT seats ...",
+          "observedValue": 25
+        }
+      ],
+      "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "chatgpt|seatPlan|chatgptbusiness|priceAnnual",
-      "verdict": "unverifiable",
+      "verdict": "confirmed",
       "currentValue": 20,
       "proposedValue": null,
-      "confidence": 1,
-      "freshnessStatus": "unknown",
+      "confidence": 0.95,
+      "freshnessStatus": "fresh",
       "patchAllowed": false,
-      "usedSources": [],
-      "reason": "No approved source could be fetched successfully for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "usedSources": [
+        {
+          "sourceId": "openai-chatgpt-business-help",
+          "url": "https://help.openai.com/en/articles/8792828",
+          "title": "What is ChatGPT Business? | OpenAI Help Center",
+          "snippet": "For most countries, pricing (USD) is $25 per user per month if billed monthly and $20 per user per month if billed annually. Note that pricing may vary depending on your country and currency type - see the pricing page for more details. Standard ChatGPT seats ...",
+          "observedValue": 20
+        }
+      ],
+      "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "gemini|model|gemini25flashlite|inputPricePerMTok",
@@ -4239,7 +4335,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "gemini|model|gemini25flashlite|outputPricePerMTok",
@@ -4259,7 +4355,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "gemini|model|gemini25flash|inputPricePerMTok",
@@ -4279,7 +4375,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.784Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "gemini|model|gemini25flash|outputPricePerMTok",
@@ -4299,7 +4395,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.785Z"
+      "verifiedAt": "2026-06-12T11:53:38.128Z"
     },
     {
       "claimId": "gemini|model|gemini25pro|inputPricePerMTok",
@@ -4319,7 +4415,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.785Z"
+      "verifiedAt": "2026-06-12T11:53:38.129Z"
     },
     {
       "claimId": "gemini|model|gemini25pro|outputPricePerMTok",
@@ -4339,7 +4435,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.785Z"
+      "verifiedAt": "2026-06-12T11:53:38.129Z"
     },
     {
       "claimId": "gemini|seatPlan|googleaiplus|priceMonthly",
@@ -4359,7 +4455,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.785Z"
+      "verifiedAt": "2026-06-12T11:53:38.129Z"
     },
     {
       "claimId": "gemini|seatPlan|googleaiplus|priceAnnual",
@@ -4379,7 +4475,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.785Z"
+      "verifiedAt": "2026-06-12T11:53:38.129Z"
     },
     {
       "claimId": "gemini|seatPlan|workspaceplus|priceMonthly",
@@ -4399,7 +4495,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.785Z"
+      "verifiedAt": "2026-06-12T11:53:38.129Z"
     },
     {
       "claimId": "gemini|seatPlan|workspaceplus|priceAnnual",
@@ -4419,7 +4515,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.785Z"
+      "verifiedAt": "2026-06-12T11:53:38.129Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotbusiness|priceMonthly",
@@ -4439,7 +4535,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.786Z"
+      "verifiedAt": "2026-06-12T11:53:38.130Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotbusiness|priceAnnual",
@@ -4459,7 +4555,7 @@
         }
       ],
       "reason": "The current website value appears explicitly in the official source bundle and no conflicting numeric value was extracted.",
-      "verifiedAt": "2026-06-12T11:42:39.787Z"
+      "verifiedAt": "2026-06-12T11:53:38.131Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotenterprise|priceMonthly",
@@ -4479,7 +4575,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.789Z"
+      "verifiedAt": "2026-06-12T11:53:38.132Z"
     },
     {
       "claimId": "githubcopilot|seatPlan|copilotenterprise|priceAnnual",
@@ -4499,7 +4595,7 @@
         }
       ],
       "reason": "The current value had the strongest explicit official evidence after scoring the candidate bundle for this claim.",
-      "verifiedAt": "2026-06-12T11:42:39.790Z"
+      "verifiedAt": "2026-06-12T11:53:38.133Z"
     }
   ],
   "conflictResolver": {
@@ -4517,11 +4613,11 @@
   "publishableOperations": [],
   "blockedOperations": [],
   "verdictCounts": {
-    "confirmed": 30,
-    "unverifiable": 3
+    "confirmed": 32,
+    "unverifiable": 1
   },
-  "needsAttention": 3,
-  "summary": "Truth graph confirmó la mayor parte de los claims, pero dejó 3 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
-  "runId": "2026-06-12T11:42:04.188Z::mock::mock-agent-brain",
+  "needsAttention": 1,
+  "summary": "Truth graph confirmó la mayor parte de los claims, pero dejó 1 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
+  "runId": "2026-06-12T11:53:17.477Z::mock::mock-agent-brain",
   "appliedOperations": []
 }

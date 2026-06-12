@@ -2,7 +2,7 @@
   "provider": "mock",
   "model": "mock-agent-brain",
   "protocolVersion": "pricing-agentic-v2",
-  "cutoffDate": "2026-06-12T11:38:12.923Z",
+  "cutoffDate": "2026-06-12T11:42:42.270Z",
   "scout": {
     "result": {
       "status": "ok",
@@ -132,8 +132,8 @@
   },
   "approvedOperations": [],
   "strictlyRejectedOperations": [],
-  "runId": "2026-06-12T11:42:04.188Z::mock::mock-agent-brain",
-  "runAt": "2026-06-12T11:42:42.270Z",
+  "runId": "2026-06-12T11:53:17.477Z::mock::mock-agent-brain",
+  "runAt": "2026-06-12T11:53:40.752Z",
   "status": "needs_review",
   "vendorIdsInvolved": [],
   "agentStatuses": {
@@ -145,18 +145,18 @@
   "appliedOperations": [],
   "truthVerification": {
     "status": "partial",
-    "summary": "Truth graph confirmó la mayor parte de los claims, pero dejó 3 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
+    "summary": "Truth graph confirmó la mayor parte de los claims, pero dejó 1 sin verificar por bloqueo o acceso insuficiente a fuentes oficiales.",
     "verdictCounts": {
-      "confirmed": 30,
-      "unverifiable": 3
+      "confirmed": 32,
+      "unverifiable": 1
     },
-    "needsAttention": 3,
+    "needsAttention": 1,
     "publishableUpdates": 0,
     "appliedUpdates": 0
   },
   "surfaceVerification": {
     "protocolVersion": "pricing-surface-v1",
-    "runAt": "2026-06-12T11:42:42.265Z",
+    "runAt": "2026-06-12T11:53:40.746Z",
     "status": "needs_review",
     "totalChecks": 42,
     "verifiedChecks": 41,
@@ -953,10 +953,10 @@
       }
     ],
     "summary": "Surface graph dejó 1 comprobaciones con drift editorial real y 0 sin verificar.",
-    "runId": "2026-06-12T11:42:04.188Z::mock::mock-agent-brain"
+    "runId": "2026-06-12T11:53:17.477Z::mock::mock-agent-brain"
   },
   "runtimeAutopilot": {
-    "runAt": "2026-06-12T11:42:42.266Z",
+    "runAt": "2026-06-12T11:53:40.747Z",
     "status": "updated",
     "protocolVersion": "pricing-runtime-v1",
     "autonomousMode": true,
@@ -1080,7 +1080,7 @@
         "value": 0.507,
         "provenance": "measured",
         "reason": "Autopilot override from 4 telemetry sources and 202010 measured requests.",
-        "updatedAt": "2026-06-12T11:42:42.267Z"
+        "updatedAt": "2026-06-12T11:53:40.749Z"
       }
     ],
     "sourceRegistryVersion": "pricing-runtime-sources-v1",
@@ -1102,18 +1102,18 @@
         "provider": "openrouter",
         "model": "openrouter/free",
         "mode": "primary",
-        "startedAt": "2026-06-12T11:42:02.535Z",
-        "finishedAt": "2026-06-12T11:42:03.873Z",
+        "startedAt": "2026-06-12T11:53:15.647Z",
+        "finishedAt": "2026-06-12T11:53:17.054Z",
         "status": "error",
         "reason": "Configured primary provider.",
-        "error": "OpenRouter HTTP 401: {\"error\":{\"message\":\"Missing Authentication header\",\"code\":401}}"
+        "error": "OpenRouter HTTP 401: {\"error\":{\"message\":\"Missing Authentication header\",\"code\":401}} :: curl fallback failed: OpenRouter returned no structured JSON text."
       },
       {
         "provider": "mock",
         "model": "mock-agent-brain",
         "mode": "degraded",
-        "startedAt": "2026-06-12T11:42:03.873Z",
-        "finishedAt": "2026-06-12T11:42:04.188Z",
+        "startedAt": "2026-06-12T11:53:17.055Z",
+        "finishedAt": "2026-06-12T11:53:17.477Z",
         "status": "ok",
         "reason": "All live providers failed or became unavailable during the run."
       }
