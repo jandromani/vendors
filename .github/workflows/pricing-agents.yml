@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  deployments: read
 
 concurrency:
   group: pricing-agents
@@ -29,6 +30,8 @@ jobs:
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
 
     steps:
       - name: Checkout
@@ -81,3 +84,18 @@ jobs:
 
           git pull --rebase origin "${GITHUB_REF_NAME:-main}"
           git push
+
+      - name: Resolve target sha for Vercel promotion
+        id: deploy-sha
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Promote latest Vercel deployment to production
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_SHA: ${{ steps.deploy-sha.outputs.sha }}
+        run: node scripts/promote-vercel-production.mjs --timeout-seconds 900 --poll-seconds 15
+
+      - name: Note missing Vercel promotion token
+        if: ${{ secrets.VERCEL_TOKEN == '' }}
+        run: echo "VERCEL_TOKEN not configured. Deployments will stay on preview URLs until a token is added."

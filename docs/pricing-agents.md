@@ -292,6 +292,8 @@ GITHUB_ACTIONS_TRIGGER_TOKEN=your_github_actions_pat_here
 GITHUB_ACTIONS_REPOSITORY=owner/repo
 GITHUB_ACTIONS_WORKFLOW_FILE=pricing-agents.yml
 GITHUB_ACTIONS_REF=main
+VERCEL_TOKEN=your_vercel_access_token_here
+# VERCEL_SCOPE=your-team-slug
 
 # o bien Gemini
 # PRICING_AGENT_PROVIDER=gemini
@@ -382,6 +384,7 @@ La arquitectura productiva recomendada es:
 
 4. `Vercel`
    - Detecta el nuevo commit y redeploya la web con la foto actualizada.
+   - Si el proyecto usa staged production deployments, el mismo workflow puede promover automáticamente ese preview a la alias pública usando `VERCEL_TOKEN`.
 
 ### Variables necesarias en Vercel
 
@@ -400,3 +403,5 @@ La arquitectura productiva recomendada es:
 - `OPENROUTER_API_KEY`
 - `GEMINI_API_KEY` (opcional)
 - `OPENAI_API_KEY` (opcional)
+- `VERCEL_TOKEN` (opcional, necesario para promoción automática a producción)
+- `VERCEL_SCOPE` (opcional, solo si el token necesita scope explícito)
